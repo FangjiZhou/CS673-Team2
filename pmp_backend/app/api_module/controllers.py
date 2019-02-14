@@ -34,7 +34,7 @@ def token_required(f):
 
         try:
             data = jwt.decode(token, app.config['SECRET_KEY'])
-            current_user = User.query.filter_by(public_id=data['public_id']).first()
+            current_user = User.query.filter_by(id=data['id']).first()
         except:
             return jsonify({'message': 'Token is invalid!'}), 401
 
@@ -52,6 +52,108 @@ def home():
 @api_mod.route('/doc/', methods=['GET'])
 def doc():
     return render_template("docstring.html")
+
+
+@api_mod.route('/user/', methods=['POST'])
+@token_required
+def create_user(current_user):
+    if not current_user.admin:
+        return jsonify({'message': 'Cannot perform that function!'})
+
+    data = request.get_json()
+
+    hashed_password = generate_password_hash(data['password'], method='sha256')
+    name = data['name']
+    email = data['email']
+    profile = data['profile']
+    admin = data['admin']
+    skills = ','.join(data['skills'])
+    new_user = User(name=name, email=email, password=hashed_password, admin=admin, profile=profile, skills=skills)
+    db.session.add(new_user)
+    db.session.commit()
+
+    return jsonify({'message': 'New user created!'})
+
+
+@api_mod.route('/user/', methods=['GET'])
+@token_required
+def get_all_users(current_user):
+
+    if not current_user.admin:
+        return jsonify({'message': 'Cannot perform that function!'})
+
+    users = User.query.all()
+
+    output = []
+
+    for user in users:
+        user_data = {}
+        user_data['id'] = user.id
+        user_data['name'] = user.name
+        user_data['email'] = user.email
+        output.append(user_data)
+
+    return jsonify({'users': output})
+
+
+@api_mod.route('/user/<user_id>/', methods=['GET'])
+@token_required
+def get_one_user(current_user, user_id):
+
+    if not current_user.admin:
+        return jsonify({'message': 'Cannot perform that function!'})
+
+    user = User.query.filter_by(id=user_id).first()
+
+    if not user:
+        return jsonify({'message': 'No user found!'})
+
+    user_data = {}
+    user_data['id'] = user.id
+    user_data['name'] = user.name
+    user_data['email'] = user.email
+    user_data['password'] = user.password
+    user_data['admin'] = user.admin
+
+    return jsonify({'user': user_data})
+
+
+@api_mod.route('/user/<user_id>/', methods=['DELETE'])
+@token_required
+def delete_user(current_user, user_id):
+    if not current_user.admin:
+        return jsonify({'message': 'Cannot perform that function!'})
+
+    user = User.query.filter_by(id=user_id).first()
+
+    if not user:
+        return jsonify({'message': 'No user found!'})
+
+    db.session.delete(user)
+    db.session.commit()
+
+    return jsonify({'message': 'The user has been deleted!'})
+
+
+@api_mod.route('/login/')
+def login():
+    auth = request.authorization
+
+    if not auth or not auth.username or not auth.password:
+        return make_response('Could not verify', 401, {'WWW-Authenticate': 'Basic realm="Login required!"'})
+
+    user = User.query.filter_by(email=auth.username).first()
+
+    if not user:
+        return make_response('Could not verify', 401, {'WWW-Authenticate': 'Basic realm="Login required!"'})
+
+    if check_password_hash(user.password, auth.password):
+        exp_date = datetime.datetime.utcnow() + datetime.timedelta(minutes=360)
+        token = jwt.encode({'id': user.id, 'exp': exp_date}, app.config['SECRET_KEY'])
+
+        return jsonify({'username': auth.username, 'token': token.decode('UTF-8'), 'expiration date': exp_date})
+
+    return make_response('Could not verify', 401, {'WWW-Authenticate': 'Basic realm="Login required!"'})
 
 
 # @api_mod.route('/signin/', methods=['GET', 'POST'])
