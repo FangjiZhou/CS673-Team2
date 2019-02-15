@@ -156,7 +156,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="json" value="1" />
-          <entry key="md" value="1" />
+          <entry key="md" value="2" />
           <entry key="py" value="8" />
           <entry key="txt" value="1" />
         </counts>
@@ -164,7 +164,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="1" />
-          <entry key="Markdown" value="1" />
+          <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Python" value="8" />
         </counts>
@@ -172,7 +172,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.3614532">
+    <splitter split-orientation="horizontal" split-proportion="0.22290641">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -214,36 +214,13 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/api_module/team_controller.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="510">
                   <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/api_module/models.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1920">
-                  <caret line="128" column="41" lean-forward="true" selection-start-line="128" selection-start-column="41" selection-end-line="128" selection-end-column="41" />
-                  <folding>
-                    <element signature="e#135#153#0" expanded="true" />
-                    <marker date="1550256361074" expanded="true" signature="5124:5268" ph="..." />
-                    <marker date="1550256361074" expanded="true" signature="5695:5791" ph="..." />
-                    <marker date="1550256361074" expanded="true" signature="6227:6329" ph="..." />
-                    <marker date="1550256361074" expanded="true" signature="7132:7439" ph="..." />
-                    <marker date="1550256361074" expanded="true" signature="8368:8658" ph="..." />
-                    <marker date="1550256361074" expanded="true" signature="9693:10039" ph="..." />
-                    <marker date="1550256361074" expanded="true" signature="11004:11234" ph="..." />
-                    <marker date="1550256361074" expanded="true" signature="12251:12577" ph="..." />
-                    <marker date="1550256361074" expanded="true" signature="13532:13790" ph="..." />
-                    <marker date="1550256361074" expanded="true" signature="14962:15137" ph="..." />
-                    <marker date="1550256361074" expanded="true" signature="16058:16304" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -299,8 +276,8 @@
             <entry file="file://$PROJECT_DIR$/readme.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="645">
-                    <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+                  <first_editor relative-caret-position="210">
+                    <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
                   </first_editor>
                   <second_editor />
                 </state>
@@ -749,23 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/helpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/team_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/api_module/employee_controller.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-129">
@@ -804,11 +764,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/team_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="645">
-            <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <first_editor relative-caret-position="210">
+            <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
           </first_editor>
           <second_editor />
         </state>

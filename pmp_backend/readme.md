@@ -13,15 +13,6 @@
     │   │   └── __init__.cpython-36.pyc
     │   ├── api_module
     │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   │   ├── __init__.cpython-36.pyc
-    │   │   │   ├── company_controller.cpython-36.pyc
-    │   │   │   ├── employee_controller.cpython-36.pyc
-    │   │   │   ├── helpers.cpython-36.pyc
-    │   │   │   ├── models.cpython-36.pyc
-    │   │   │   ├── role_controller.cpython-36.pyc
-    │   │   │   ├── team_controller.cpython-36.pyc
-    │   │   │   └── user_controllers.cpython-36.pyc
     │   │   ├── company_controller.py
     │   │   ├── employee_controller.py
     │   │   ├── helpers.py
