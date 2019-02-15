@@ -3,31 +3,44 @@
 - The api_module will handle all the call from the client side
 - The file structure is represented as follows :
 ```
-├── __pycache__
-│   └── config.cpython-36.pyc
-├── app
-│   ├── __init__.py
-│   ├── __pycache__
-│   │   └── __init__.cpython-36.pyc
-│   ├── api_module
-│   │   ├── __init__.py
-│   │   ├── __pycache__
-│   │   │   ├── __init__.cpython-36.pyc
-│   │   │   ├── controllers.cpython-36.pyc
-│   │   │   └── models.cpython-36.pyc
-│   │   ├── controllers.py
-│   │   └── models.py
-│   └── templates
-│       ├── 404.html
-│       └── docstring.html
-├── config.py
-├── local
-│   └── db
-│       └── app.db
-├── readme.md
-├── run.py
-├── static
-└── tests
+├── README.md
+└── pmp_backend
+    ├── __pycache__
+    │   └── config.cpython-36.pyc
+    ├── app
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   └── __init__.cpython-36.pyc
+    │   ├── api_module
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-36.pyc
+    │   │   │   ├── company_controller.cpython-36.pyc
+    │   │   │   ├── employee_controller.cpython-36.pyc
+    │   │   │   ├── helpers.cpython-36.pyc
+    │   │   │   ├── models.cpython-36.pyc
+    │   │   │   ├── role_controller.cpython-36.pyc
+    │   │   │   ├── team_controller.cpython-36.pyc
+    │   │   │   └── user_controllers.cpython-36.pyc
+    │   │   ├── company_controller.py
+    │   │   ├── employee_controller.py
+    │   │   ├── helpers.py
+    │   │   ├── models.py
+    │   │   ├── role_controller.py
+    │   │   ├── team_controller.py
+    │   │   └── user_controllers.py
+    │   └── templates
+    │       ├── 404.html
+    │       └── docstring.html
+    ├── config.py
+    ├── local
+    │   └── db
+    │       └── app.db
+    ├── readme.md
+    ├── run.py
+    ├── static
+    └── tests
+        └── payload.txt
 
 ```
 

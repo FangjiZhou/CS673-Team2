@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9c56f80-65c8-4633-80e3-83d3b6980f69" name="Default Changelist" comment="adding the user api paths">
-      <change afterPath="$PROJECT_DIR$/app/api_module/company_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api_module/employee_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api_module/helpers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api_module/role_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api_module/team_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/payload.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/controllers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/user_controllers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local/db/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/local/db/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -167,6 +156,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="json" value="1" />
+          <entry key="md" value="1" />
           <entry key="py" value="8" />
           <entry key="txt" value="1" />
         </counts>
@@ -174,6 +164,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="1" />
+          <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Python" value="8" />
         </counts>
@@ -181,7 +172,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49552238">
+    <splitter split-orientation="horizontal" split-proportion="0.3614532">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -238,7 +229,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/api_module/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-3631">
+                <state relative-caret-position="1920">
                   <caret line="128" column="41" lean-forward="true" selection-start-line="128" selection-start-column="41" selection-end-line="128" selection-end-column="41" />
                   <folding>
                     <element signature="e#135#153#0" expanded="true" />
@@ -286,10 +277,10 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tests/payload.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="327">
+                <state relative-caret-position="2655">
                   <caret line="177" column="35" lean-forward="true" selection-start-line="177" selection-start-column="35" selection-end-line="177" selection-end-column="35" />
                 </state>
               </provider>
@@ -300,6 +291,18 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="405">
                   <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/readme.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="SPLIT">
+                  <first_editor relative-caret-position="645">
+                    <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+                  </first_editor>
+                  <second_editor />
                 </state>
               </provider>
             </entry>
@@ -342,7 +345,6 @@
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/../backend/t.py" />
-        <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/app/api_module/controllers.py" />
         <option value="$PROJECT_DIR$/app/api_module/user_controllers.py" />
         <option value="$PROJECT_DIR$/app/api_module/company_controller.py" />
@@ -354,6 +356,7 @@
         <option value="$PROJECT_DIR$/app/api_module/models.py" />
         <option value="$PROJECT_DIR$/app/api_module/employee_controller.py" />
         <option value="$PROJECT_DIR$/tests/payload.txt" />
+        <option value="$PROJECT_DIR$/readme.md" />
       </list>
     </option>
   </component>
@@ -607,12 +610,12 @@
     <frame x="1680" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.108093716" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13525027" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.60170394" visible="true" weight="0.33960396" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.60170394" weight="0.33960396" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -620,8 +623,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RDE" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.5654952" weight="0.38118812" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.39829606" side_tool="true" visible="true" weight="0.33960396" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.56443024" visible="true" weight="0.24455446" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.43556976" side_tool="true" visible="true" weight="0.24455446" />
       <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Black Caiman" order="13" />
       <window_info anchor="bottom" id="Python Console" order="14" weight="0.32970297" />
@@ -691,16 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="140" column="8" selection-start-line="140" selection-start-column="8" selection-end-line="140" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="184">
-            <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -785,7 +778,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api_module/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3631">
+        <state relative-caret-position="1920">
           <caret line="128" column="41" lean-forward="true" selection-start-line="128" selection-start-column="41" selection-end-line="128" selection-end-column="41" />
           <folding>
             <element signature="e#135#153#0" expanded="true" />
@@ -806,8 +799,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/payload.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
+        <state relative-caret-position="2655">
           <caret line="177" column="35" lean-forward="true" selection-start-line="177" selection-start-column="35" selection-end-line="177" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="645">
+            <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
