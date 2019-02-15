@@ -1,7 +1,5 @@
 import datetime
 from functools import wraps
-from flask_sqlalchemy import SQLAlchemy
-import uuid
 from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
 from flask import Blueprint, render_template, flash, g, session, \
@@ -11,11 +9,10 @@ from werkzeug.security import check_password_hash, generate_password_hash
 # Import the database object from the main app module
 from app import db
 
-
 # Import module models (i.e. User)
 from app.api_module.models import User
 
-# Define the blueprint: 'api', set its url prefix: app.url/auth
+# Define the blueprint: 'api', set its url prefix: app.url/${path}
 api_mod = Blueprint('api', __name__, url_prefix='/api')
 
 from app import app

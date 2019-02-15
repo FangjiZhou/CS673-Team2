@@ -22,10 +22,18 @@ def not_found(error):
 
 
 # Import a module / component using its blueprint handler variable (api_module)
-from app.api_module.controllers import api_mod as api_mod
+from app.api_module.user_controllers import api_mod as api_mod
+from app.api_module.company_controller import company_mod as comp_mod
+from app.api_module.role_controller import role_mod as role_mod
+from app.api_module.team_controller import team_mod as team_mod
+from app.api_module.employee_controller import employee_mod as employee_mod
 
 # Register blueprint(s)
 app.register_blueprint(api_mod)
+app.register_blueprint(comp_mod)
+app.register_blueprint(role_mod)
+app.register_blueprint(team_mod)
+app.register_blueprint(employee_mod)
 # app.register_blueprint(xyz_module)
 
 # Build the database:
