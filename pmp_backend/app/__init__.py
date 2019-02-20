@@ -27,6 +27,11 @@ from app.api_module.company_controller import company_mod as comp_mod
 from app.api_module.role_controller import role_mod as role_mod
 from app.api_module.team_controller import team_mod as team_mod
 from app.api_module.employee_controller import employee_mod as employee_mod
+from app.api_module.project_controller import project_mod as project_mod
+from app.api_module.sprint_controller import sprint_mod as sprint_mod
+from app.api_module.task_controller import task_mod as task_mod
+from app.api_module.issue_controller import issue_mod as issue_mod
+from app.api_module.chat_controller import chat_mod as chat_mod
 
 # Register blueprint(s)
 app.register_blueprint(api_mod)
@@ -34,6 +39,11 @@ app.register_blueprint(comp_mod)
 app.register_blueprint(role_mod)
 app.register_blueprint(team_mod)
 app.register_blueprint(employee_mod)
+app.register_blueprint(project_mod)
+app.register_blueprint(sprint_mod)
+app.register_blueprint(task_mod)
+app.register_blueprint(issue_mod)
+app.register_blueprint(chat_mod)
 # app.register_blueprint(xyz_module)
 
 # Build the database:

@@ -3,35 +3,33 @@
 - The api_module will handle all the call from the client side
 - The file structure is represented as follows :
 ```
-├── README.md
-└── pmp_backend
-    ├── __pycache__
-    │   └── config.cpython-36.pyc
-    ├── app
-    │   ├── __init__.py
-    │   ├── __pycache__
-    │   │   └── __init__.cpython-36.pyc
-    │   ├── api_module
-    │   │   ├── __init__.py
-    │   │   ├── company_controller.py
-    │   │   ├── employee_controller.py
-    │   │   ├── helpers.py
-    │   │   ├── models.py
-    │   │   ├── role_controller.py
-    │   │   ├── team_controller.py
-    │   │   └── user_controllers.py
-    │   └── templates
-    │       ├── 404.html
-    │       └── docstring.html
-    ├── config.py
-    ├── local
-    │   └── db
-    │       └── app.db
-    ├── readme.md
-    ├── run.py
-    ├── static
-    └── tests
-        └── payload.txt
+│   ├── api_module
+│   │   ├── __init__.py
+│   │   ├── chat_controller.py
+│   │   ├── company_controller.py
+│   │   ├── employee_controller.py
+│   │   ├── helpers.py
+│   │   ├── issue_controller.py
+│   │   ├── models.py
+│   │   ├── project_controller.py
+│   │   ├── role_controller.py
+│   │   ├── sprint_controller.py
+│   │   ├── task_controller.py
+│   │   ├── team_controller.py
+│   │   └── user_controllers.py
+│   └── templates
+│       ├── 404.html
+│       └── docstring.html
+├── config.py
+├── local
+│   └── db
+│       └── app.db
+├── readme.md
+├── run.py
+├── static
+└── tests
+    ├── payload.txt
+    └── pmp_backend.postman_collection.json
 
 ```
 

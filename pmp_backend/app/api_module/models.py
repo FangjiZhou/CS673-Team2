@@ -159,7 +159,7 @@ class Company(db.Model):
     __tablename__ = 'company'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String(192), nullable=False)
+    name = db.Column(db.String(192), nullable=False, unique=True)
     comment = db.Column(db.Text, nullable=True)
 
     def __init__(self, json_company):
@@ -175,6 +175,10 @@ class Company(db.Model):
 
 class Project(db.Model):
     __tablename__ = 'project'
+
+    __table_args__ = (
+        db.UniqueConstraint('name', 'company_id', name='unique_project_name_per_company'),
+    )
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(192), nullable=False)
@@ -202,6 +206,10 @@ class Project(db.Model):
 
 class Sprint(db.Model):
     __tablename__ = 'sprint'
+
+    __table_args__ = (
+        db.UniqueConstraint('name', 'project_id', name='unique_sprint_name_per_project'),
+    )
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(192), nullable=False)
@@ -253,6 +261,14 @@ class Issue(db.Model):
         self.project = json_issue.get('project', None)
         self.employee = json_issue.get('employee', None)
 
+    def update(self, json_issue):
+        self.name = json_issue.get('name')
+        self.start_date = json_issue.get('start_date', datetime.now())
+        self.due_date = json_issue.get('due_date', datetime.now())
+        self.status = json_issue.get('status')
+        self.project = json_issue.get('project', None)
+        self.employee = json_issue.get('employee', None)
+
     def __repr__(self):
         return str(self.__class__) + ": " + str(self.__dict__)
 
@@ -269,7 +285,7 @@ class IssueTracking(db.Model):
 
     # 1 to 1 relationship with issue
     issue_id = db.Column(db.Integer, db.ForeignKey('issue.id'), nullable=False)
-    issue = db.relationship('Issue', backref=db.backref('issue_tracking', lazy=True, uselist=False))
+    issue = db.relationship('Issue', backref=db.backref('issue_tracking'))
 
     # 1 to 1 relationship with employee
     employee_id = db.Column(db.Integer, db.ForeignKey('employee.id'), nullable=False)
@@ -290,6 +306,10 @@ class IssueTracking(db.Model):
 
 class Task(db.Model):
     __tablename__ = 'task'
+
+    __table_args__ = (
+        db.UniqueConstraint('name', 'sprint_id', name='unique_task_name_per_sprint'),
+    )
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(192), nullable=False)
@@ -313,6 +333,14 @@ class Task(db.Model):
         self.sprint = json_task.get('sprint')
         self.employee = json_task.get('employee')
 
+    def update(self, json_task):
+        self.name = json_task.get('name')
+        self.start_date = json_task.get('start_date', datetime.now())
+        self.due_date = json_task.get('due_date', datetime.now())
+        self.status = json_task.get('status')
+        self.sprint = json_task.get('sprint')
+        self.employee = json_task.get('employee')
+
     def __repr__(self):
         return str(self.__class__) + ": " + str(self.__dict__)
 
@@ -327,9 +355,9 @@ class TaskTracking(db.Model):
     date = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
     comment = db.Column(db.Text, nullable=True)
 
-    # 1 to 1 relationship with task
+    # 1 to n relationship with task
     task_id = db.Column(db.Integer, db.ForeignKey('task.id'), nullable=False)
-    task = db.relationship('Task', backref=db.backref('task_tracking', lazy=True, uselist=False))
+    task = db.relationship('Task', backref=db.backref('task_tracking'))
 
     # 1 to 1 relationship with employee
     employee_id = db.Column(db.Integer, db.ForeignKey('employee.id'), nullable=False)
@@ -360,7 +388,7 @@ class ChatRoom(db.Model):
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(192), nullable=False)
-    # DM or Group will be hold by the type, this will help avoid having many DM for same pair of users
+    # Direct Message (DM) or Group will be hold by the type, this will help avoid having many DM for same pair of users
     type = db.Column(db.String(192), nullable=False)
     start_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 

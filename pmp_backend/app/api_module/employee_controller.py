@@ -18,12 +18,12 @@ employee_mod = Blueprint('employee', __name__, url_prefix='/api/employee')
 @token_required
 def create_employee(current_user):
     if not current_user.admin:
-        return jsonify({'message': 'Cannot perform that function!'})
+        return jsonify({'message': 'Cannot perform that function!'}), 401
 
     data = request.get_json()
     badge = data.get('badge')
     start_date = parse_date(data.get('start_date', ''))
-    end_date = (data.get('end_date', ''))
+    end_date = parse_date(data.get('end_date', ''))
     is_full_time = data.get('is_full_time')
     user = User.query.filter_by(id=data.get('user_id')).first()
     role = Role.query.filter_by(id=data.get('role_id')).first()
@@ -46,7 +46,7 @@ def create_employee(current_user):
 def get_all_employee(current_user):
 
     if not current_user.admin:
-        return jsonify({'message': 'Cannot perform that function!'})
+        return jsonify({'message': 'Cannot perform that function!'}), 401
 
     employees = Employee.query.all()
     output = []
@@ -68,14 +68,13 @@ def get_all_employee(current_user):
 def get_one_employee(current_user, employee_id):
 
     if not current_user.admin:
-        return jsonify({'message': 'Cannot perform that function!'})
+        return jsonify({'message': 'Cannot perform that function!'}), 401
 
     employee = Employee.query.filter_by(id=employee_id).first()
 
     if not employee:
         return jsonify({'message': 'No Employee found!'})
 
-    team_data = {}
     employe_data = {}
     employe_data['id'] = employee.id
     employe_data['badge'] = employee.badge
@@ -85,7 +84,7 @@ def get_one_employee(current_user, employee_id):
     employe_data['role'] = {'id': employee.role.id, 'name': employee.role.name}
     employe_data['team'] = {'id': employee.team.id, 'name': employee.team.name}
 
-    return jsonify({'employee': team_data})
+    return jsonify({'employee': employe_data})
 
 
 @employee_mod.route('/company/<company_id>/', methods=['GET'])
@@ -93,7 +92,7 @@ def get_one_employee(current_user, employee_id):
 def get_all_employee_of_a_company(current_user, company_id):
 
     if not current_user.admin:
-        return jsonify({'message': 'Cannot perform that function!'})
+        return jsonify({'message': 'Cannot perform that function!'}), 401
 
     employees = Employee.query.filter_by(company_id=company_id)
     output = []
@@ -117,7 +116,7 @@ def get_all_employee_of_a_company(current_user, company_id):
 def get_all_employee_of_a_team(current_user, company_id, team_id):
 
     if not current_user.admin:
-        return jsonify({'message': 'Cannot perform that function!'})
+        return jsonify({'message': 'Cannot perform that function!'}), 401
 
     employees = Employee.query.filter_by(company_id=company_id, team_id=team_id)
     output = []
