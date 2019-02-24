@@ -76,6 +76,15 @@ class UsersTest(unittest.TestCase):
                    admin=False, profile="", skills=json_user['skills'])
         self.assertIsInstance(usr, User)
 
+    def tearDown(self):
+        """
+        Tear Down
+        """
+        with self.app.app_context():
+            print("ending the app testing")
+            # db.session.remove()
+            # db.drop_all()
+
 
 if __name__ == '__main__':
     unittest.main()

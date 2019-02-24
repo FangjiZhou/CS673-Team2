@@ -145,7 +145,7 @@ def login():
         return make_response('Could not verify', 401, {'WWW-Authenticate': 'Basic realm="Login required!"'})
 
     if check_password_hash(user.password, auth.password):
-        exp_date = datetime.datetime.utcnow() + datetime.timedelta(minutes=360)
+        exp_date = datetime.datetime.utcnow() + datetime.timedelta(minutes=360000)
         token = jwt.encode({'id': user.id, 'exp': exp_date}, app.config['SECRET_KEY'])
 
         return jsonify({'username': auth.username, 'token': token.decode('UTF-8'), 'expiration date': exp_date})

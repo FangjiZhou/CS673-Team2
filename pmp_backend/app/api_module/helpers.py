@@ -1,5 +1,7 @@
 from datetime import datetime
-
+import random
+import string
+import os, math, string, struct
 
 def parse_date(date_str):
     """
@@ -22,6 +24,11 @@ def parse_date(date_str):
             return None
     except Exception as e:
         raise Exception('fail in date parser for :' + date_str + '  ' + str(e))
+
+
+def string_generator(size=6, chars=string.ascii_uppercase + string.digits):
+    return ''.join(random.choice(chars) for _ in range(size))
+
 
 
 # print(type(parse_date("2019-01-18 13:57:43")))
