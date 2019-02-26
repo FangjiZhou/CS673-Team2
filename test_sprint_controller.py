@@ -85,6 +85,15 @@ class SprintTest(unittest.TestCase):
         result = get_data.get('sprints')[0]['name']
         self.assertEqual(result, 'sprint_test_name')
 
+    def tearDown(self):
+        """
+        Tear Down
+        """
+        with self.app.app_context():
+            print("ending the app testing")
+            # db.session.remove()
+            # db.drop_all()
+
 
 if __name__ == '__main__':
     unittest.main()

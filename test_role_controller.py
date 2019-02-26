@@ -135,5 +135,14 @@ class RoleTest(unittest.TestCase):
         result = get_data.get('message')
         self.assertEqual(result,'Cannot perform that function!')
 
+    def tearDown(self):
+        """
+        Tear Down
+        """
+        with self.app.app_context():
+            print("ending the app testing")
+            # db.session.remove()
+            # db.drop_all()
+
 if __name__ == '__main__':
     unittest.main()
