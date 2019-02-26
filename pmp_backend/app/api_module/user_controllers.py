@@ -1,5 +1,5 @@
 import datetime
-from functools import wraps
+from functools import wraps, update_wrapper
 from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
 from flask import Blueprint, render_template, flash, g, session, \
@@ -8,6 +8,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 # Import the database object from the main app module
 from app import db
+from flask_cors import CORS
 
 # Import module models (i.e. User)
 from app.api_module.models import User
@@ -17,6 +18,7 @@ api_mod = Blueprint('api', __name__, url_prefix='/api')
 
 from app import app
 
+CORS(app, resources={r"*": {"origins": "*"}})
 
 def token_required(f):
     @wraps(f)
@@ -132,46 +134,25 @@ def delete_user(current_user, user_id):
     return jsonify({'message': 'The user has been deleted!'})
 
 
-@api_mod.route('/login/')
+@api_mod.route('/login', methods=['POST'])
 def login():
-    auth = request.authorization
+    data = request.get_json()
+    auth ={}
+    auth['username'] = data['username']
+    auth['password'] = data['password']
 
-    if not auth or not auth.username or not auth.password:
-        return make_response('Could not verify', 401, {'WWW-Authenticate': 'Basic realm="Login required!"'})
+    if not auth or not auth['username'] or not auth['password']:
+        return make_response(jsonify({'message': 'Could not verify'}), 401, {'WWW-Authenticate': 'Basic realm="Login required!"'})
 
-    user = User.query.filter_by(email=auth.username).first()
+    user = User.query.filter_by(email=auth['username']).first()
 
     if not user:
-        return make_response('Could not verify', 401, {'WWW-Authenticate': 'Basic realm="Login required!"'})
+        return make_response(jsonify({'message': 'Could not verify'}), 401, {'WWW-Authenticate': 'Basic realm="Login required!"'})
 
-    if check_password_hash(user.password, auth.password):
+    if check_password_hash(user.password, auth['password']):
         exp_date = datetime.datetime.utcnow() + datetime.timedelta(minutes=360000)
         token = jwt.encode({'id': user.id, 'exp': exp_date}, app.config['SECRET_KEY'])
+        out = jsonify({'username': auth['username'], 'token': token.decode('UTF-8'), 'expiration date': exp_date})
+        return out
 
-        return jsonify({'username': auth.username, 'token': token.decode('UTF-8'), 'expiration date': exp_date})
-
-    return make_response('Could not verify', 401, {'WWW-Authenticate': 'Basic realm="Login required!"'})
-
-
-# @api_mod.route('/signin/', methods=['GET', 'POST'])
-# def signin():
-#
-#     # If sign in form is submitted
-#     form = LoginForm(request.form)
-#
-#     # Verify the sign in form
-#     if form.validate_on_submit():
-#
-#         user = User.query.filter_by(email=form.email.data).first()
-#
-#         if user and check_password_hash(user.password, form.password.data):
-#
-#             session['user_id'] = user.id
-#
-#             flash('Welcome %s' % user.name)
-#
-#             return redirect(url_for('auth.home'))
-#
-#         flash('Wrong email or password', 'error-message')
-#
-#     return render_template("auth/signin.html", form=form)
+    return make_response(jsonify({'message': 'Could not verify'}), 401, {'WWW-Authenticate': 'Basic realm="Login required!"'})

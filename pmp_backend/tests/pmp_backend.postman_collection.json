@@ -10,20 +10,23 @@
 		{
 			"name": "login",
 			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"username": "wgcyrl@amazon.com",
-						"password": "cyril@12345",
-						"showPassword": false
-					}
-				},
 				"url": "http://0.0.0.0:5005/api/login",
-				"method": "GET",
-				"header": [],
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW5AZW1haWwuY29tOmFkbWluQDEyMzQ1",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": ""
+					"raw": "{\n\t\"username\":\"admin@email.com\",\n\t\"password\":\"admin@12345\"\n}"
 				},
 				"description": null
 			},

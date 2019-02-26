@@ -1,5 +1,7 @@
 # Import flask and template operators
 from flask import Flask, render_template
+from flask_cors import CORS, cross_origin
+
 
 # Import SQLAlchemy
 from flask_sqlalchemy import SQLAlchemy
@@ -49,4 +51,6 @@ app.register_blueprint(chat_mod)
 # Build the database:
 # This will create the database file using SQLAlchemy
 db.create_all()
+
+CORS(app)
 
