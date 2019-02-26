@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="_authService.isAuthenticated">
+  <a class="navbar-brand" href="#">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/issues" routerLinkActive="active">Issues</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/sprints" routerLinkActive="inactive">Sprints</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admin" routerLinkActive="inactive">Admin</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+        <a class="nav-link" routerLink="/messages" routerLinkActive="inactive">Messages</a>
+        <a class="nav-link" routerLink="/login" *ngIf="!_authService.isAuthenticated" routerLinkActive="inactive">Login</a>
+        <a class="nav-link" style="cursor:pointer" *ngIf="_authService.isAuthenticated" (click)="_authService.logoutUser()">Logout</a> 
+    </ul>
+  </div>
+</nav>    
