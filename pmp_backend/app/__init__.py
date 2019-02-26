@@ -52,5 +52,6 @@ app.register_blueprint(chat_mod)
 # This will create the database file using SQLAlchemy
 db.create_all()
 
+
 CORS(app)
 
