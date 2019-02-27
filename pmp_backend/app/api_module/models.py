@@ -218,9 +218,9 @@ class Sprint(db.Model):
     date_modified = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
     comment = db.Column(db.Text, nullable=True)
 
-    # 1 to 1 relationship with user
+    # 1 to n relationship with user
     project_id = db.Column(db.Integer, db.ForeignKey('project.id'), nullable=False)
-    project = db.relationship('Project', backref=db.backref('sprint', lazy=True, uselist=False))
+    project = db.relationship('Project', backref=db.backref('sprint', lazy=True))
 
     def __init__(self, json_sprint):
         self.name = json_sprint.get('name')
