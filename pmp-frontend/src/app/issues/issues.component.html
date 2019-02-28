@@ -1,0 +1,219 @@
+
+<div class="row vdivide" style="margin-top:5px">
+  <div class="col-sm-2">
+    <div>
+      <h6>Input queue</h6>
+      <hr width="100%" style="margin:0;">
+    </div>
+  </div>
+  <div class="col-sm-2" >
+      <h6>Requirements Gathering</h6>
+      <hr width="100%" style="margin:0;">
+  </div>
+  <div class="col-sm-2" >
+      <div >
+          <h6> Work In Progress</h6>
+          <hr width="100%" style="margin:0;">
+      </div>
+   </div>
+  <div class="col-sm-2" >
+      <div >
+          <h6> Quality Assurance</h6>
+          <hr width="100%" style="margin:0;">
+      </div>
+  </div>
+  <div class="col-sm-2" >
+      <div >
+          <h6> User Acceptance</h6>
+          <hr width="100%" style="margin:0;">
+      </div>
+  </div>
+  <div class="col-sm-2" >
+      <div>
+          <h6>Done</h6>
+          <hr width="100%" style="margin:0;">
+      </div>
+  </div>
+</div>
+
+<br/>
+<div class="row vdivide" >
+    <div class="col-sm-2" >
+        <div class="example-container">
+            <!-- <h6>List</h6> -->
+            <cdk-drop
+            #inputqueueList
+            [data]="inputqueue"
+            [connectedTo]="[requirementsgatheringList, workinprogressList, qualityassuranceList, useracceptanceList, doneList]"
+            (dropped)="drop($event)"
+            class="example-list" id="inputqueue">
+                <div class="card" *ngFor="let item of inputqueue" id="{{item.id}}" cdkDrag>
+                        <div class="card-header" style="height:40px; font-size: 12px; font-weight: bold;">
+                                <table style="width:100%">
+                                    <tr>
+                                        <td >Project-name</td>
+                                        <td align="right"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></td>
+                                        <td align="right"><i class="fa fa-ban" aria-hidden="true"></i></td>
+                                        <td align="right"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+                                    </tr>
+                                </table>
+                            </div>
+    
+                            <div class="card-body">
+                                <a href="#" >
+                                <h6 class="card-title" style="font-size: 12px; font-weight: bold;">{{item.title}}</h6>
+                                </a>
+                                <i class="fa fa-user fa-xs" aria-hidden="true">
+                                    user
+                                </i> <i class="fa fa-caret-down fa-xs" aria-hidden="true"></i>
+                                
+                            </div>
+                </div>
+            </cdk-drop>
+        </div>
+    </div>
+
+    <div class="col-sm-2" >
+        <div class="example-container">
+            <!-- <h6>List</h6> -->
+            <cdk-drop
+                #requirementsgatheringList
+                [data]="requirementsgathering"
+                [connectedTo]="[inputqueueList, workinprogressList, qualityassuranceList, useracceptanceList, doneList]"
+                (dropped)="drop($event)"
+                class="example-list" id="requirementsgathering">
+                <div class="card" *ngFor="let item of requirementsgathering" id="{{item.id}}" cdkDrag>
+                        <div class="card-header" style="height:40px; font-size: 12px; font-weight: bold;">
+                                <table style="width:100%">
+                                    <tr>
+                                        <td >Project-name</td>
+                                        <td align="right"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></td>
+                                        <td align="right"><i class="fa fa-ban" aria-hidden="true"></i></td>
+                                        <td align="right"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+                                    </tr>
+                                </table>
+                            </div>
+    
+                            <div class="card-body" style="margin:0px">
+                                <a href="#" >
+                                <h6 class="card-title" style="font-size: 12px; font-weight: bold; margin-top: 0px;">{{item.title}}</h6>
+                                </a>
+                                <i class="fa fa-user fa-xs" aria-hidden="true">user</i> <i class="fa fa-caret-down fa-xs" aria-hidden="true"></i>
+                            </div>
+                </div>
+            </cdk-drop>
+        </div>
+    </div>
+    <div class="col-sm-2" >
+        <div class="example-container">
+            <cdk-drop
+            #workinprogressList
+            [data]="workinprogress"
+            [connectedTo]="[inputqueueList, requirementsgatheringList, qualityassuranceList, useracceptanceList, doneList]"
+            (dropped)="drop($event)"
+            class="example-list" id="workinprogress">
+                <div class="card" *ngFor="let item of workinprogress" id="{{item.id}}" cdkDrag>
+                        <div class="card-header bg-secondary" style="height:40px; font-size: 12px; font-weight: bold;">
+                            <table style="width:100%">
+                                <tr>
+                                    <td >Project-name</td>
+                                    <td align="right"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></td>
+                                    <td align="right"><i class="fa fa-ban" aria-hidden="true"></i></td>
+                                    <td align="right"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="card-body" style="margin:0px">
+                            <a href="#" >
+                            <h6 class="card-title" style="font-size: 12px; font-weight: bold; margin-top: 0px;">{{item.title}}</h6>
+                            </a>
+                            <i class="fa fa-user fa-xs" aria-hidden="true">user</i> <i class="fa fa-caret-down fa-xs" aria-hidden="true"></i>
+                        </div>
+                </div>
+            </cdk-drop>
+        </div>
+
+    </div>
+    <div class="col-sm-2" >
+        <div class="example-container">
+            <cdk-drop
+            #qualityassuranceList
+            [data]="qualityassurance"
+            [connectedTo]="[inputqueueList, requirementsgatheringList, workinprogressList, useracceptanceList, doneList]"
+            (dropped)="drop($event)"
+            class="example-list" id="qualityassurance">
+                <div class="card" *ngFor="let item of qualityassurance" id="{{item.id}}" cdkDrag>
+                        <div class="card-header bg-info" style="height:40px; font-size: 12px; font-weight: bold;">
+                                <table style="width:100%">
+                                    <tr>
+                                        <td >Project-name</td>
+                                        <td align="right"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></td>
+                                        <td align="right"><i class="fa fa-ban" aria-hidden="true"></i></td>
+                                        <td align="right"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+                                    </tr>
+                                </table>
+                            </div>
+    
+                            <div class="card-body">
+                                <a href="#" >
+                                <h6 class="card-title" style="font-size: 12px; font-weight: bold;">{{item.title}}</h6>
+                                </a>
+                                <i class="fa fa-user fa-xs" aria-hidden="true">user</i> <i class="fa fa-caret-down fa-xs" aria-hidden="true"></i>
+                                
+                            </div>
+                </div>
+            </cdk-drop>
+        </div>
+    </div>
+    <div class="col-sm-2" >
+        <div class="example-container">
+            <cdk-drop
+            #useracceptanceList
+            [data]="useracceptance"
+            [connectedTo]="[inputqueueList, requirementsgatheringList, workinprogressList, qualityassuranceList, doneList]"
+            (dropped)="drop($event)"
+            class="example-list" id="useracceptance">
+                <div class="card" *ngFor="let item of useracceptance" id="{{item.id}}" cdkDrag>
+                        <div class="card-header bg-info" style="height:40px; font-size: 12px; font-weight: bold;">
+                                <table style="width:100%">
+                                    <tr>
+                                        <td >Project-name</td>
+                                        <td align="right"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></td>
+                                        <td align="right"><i class="fa fa-ban" aria-hidden="true"></i></td>
+                                        <td align="right"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+                                    </tr>
+                                </table>
+                            </div>
+    
+                            <div class="card-body">
+                                <a href="#" >
+                                <h6 class="card-title" style="font-size: 12px; font-weight: bold;">{{item.title}}</h6>
+                                </a>
+                                <i class="fa fa-user fa-xs" aria-hidden="true">user</i> <i class="fa fa-caret-down fa-xs" aria-hidden="true"></i>
+                                
+                            </div>
+                </div>
+            </cdk-drop>
+        </div>
+    </div>
+
+    <div class="col-sm-2" >
+        <div class="example-container">
+            <cdk-drop
+            #doneList
+            [data]="done"
+            [connectedTo]="[inputqueueList, requirementsgatheringList, workinprogressList, qualityassuranceList, useracceptanceList]"
+            (dropped)="drop($event)"
+            class="example-list" id="done">
+                <div class="card" *ngFor="let item of done" id="{{item.id}}" cdkDrag style="padding: 0px ; max-height: 100px; border-left: solid 0.4em; border-left-color: green;">
+                        <div class="card-body">
+                            <a href="#" >
+                            <h6 class="card-title" style="font-size: 12px; font-weight: bold;">{{item.title}}</h6>
+                            </a>                            
+                        </div>
+                </div>
+            </cdk-drop>
+        </div>
+    </div>
+</div>
