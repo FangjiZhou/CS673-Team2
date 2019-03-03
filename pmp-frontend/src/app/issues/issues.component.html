@@ -36,7 +36,14 @@
   </div>
 </div>
 
-<br/>
+<div class="row vdivide" >
+        <div style="margin-left: 15px; margin-top: 5px; font-size: 12px;" >
+            <label (click)="open(content)" style="cursor: copy; ">
+                <i class="fa fa-plus-circle" aria-hidden="true"> Add an issue</i>
+            </label>
+        </div>
+    <hr/>
+</div>
 <div class="row vdivide" >
     <div class="col-sm-2" >
         <div class="example-container">
@@ -52,7 +59,7 @@
                                 <table style="width:100%">
                                     <tr>
                                         <td >Project-name</td>
-                                        <td align="right"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></td>
+                                        <td align="right" (mousedown)="$event.stopPropagation(); open(content)" style="cursor: pointer; "><i class="fa fa-pencil fa-lg" aria-hidden="true" ></i></td>
                                         <td align="right"><i class="fa fa-ban" aria-hidden="true"></i></td>
                                         <td align="right"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
                                     </tr>
@@ -217,3 +224,82 @@
         </div>
     </div>
 </div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h6 class="modal-title" id="modal-basic-title">Create New Issue</h6>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')" id="IssueboxClose">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="newIssueForm" (ngSubmit)="onSubmitNewIssue(modal)">
+        <div class="form-group">
+
+            <label for="issueName">Issue Name</label>
+            <div class="input-group">
+                <input id="issueName" formControlName="name"  class="form-control" [ngClass]="{'is-invalid': submitted && i.name.errors}" placeholder="issue name" type="text">
+                <div *ngIf="submitted && i.name.errors" class="invalid-feedback">
+                    <div *ngIf="i.name.errors.required">Issue name is required</div>
+                </div>
+            </div>
+
+            <label for="startDate">Start Date</label>
+            <div class="input-group">
+                <input id="startDate" formControlName="start_date" class="form-control" [ngClass]="{'is-invalid': submitted && i.start_date.errors}" placeholder="yyyy-mm-dd" name="dp_comp" ngbDatepicker #dp="ngbDatepicker" >                
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+                </div>
+                <div *ngIf="submitted && i.start_date.errors" class="invalid-feedback">
+                    <div *ngIf="i.start_date.errors.required">start date is required</div>
+                </div>
+            </div>
+
+            <label for="dueDate">Due Date</label>
+            <div class="input-group">
+                <input id="dueDate" formControlName="due_date" class="form-control" [ngClass]="{'is-invalid': submitted && i.due_date.errors}" placeholder="yyyy-mm-dd" name="dp_dueDate" ngbDatepicker #dp_1="ngbDatepicker" >                
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="dp_1.toggle()" type="button"></button>
+                </div>
+                <div *ngIf="submitted && i.due_date.errors" class="invalid-feedback">
+                    <div *ngIf="i.due_date.errors.required">due date is required</div>
+                </div>
+            </div>
+
+            <label for="user">Assign to user</label>
+            <div class="input-group">
+                <select id="user" formControlName="project_id" class="custom-select form-control" [ngClass]="{'is-invalid': submitted && i.project_id.errors}">
+                    <option selected>Choose...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <div *ngIf="submitted && i.project_id.errors" class="invalid-feedback">
+                    <div *ngIf="i.project_id.errors.required">project is required</div>
+                </div>
+            </div>
+
+            <label for="project">Select Project</label>
+            <div class="input-group">
+                <select id="project" formControlName="employee_id" class="custom-select form-control" [ngClass]="{'is-invalid': submitted && i.employee_id.errors}">
+                    <option selected>Choose...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <div *ngIf="submitted && i.employee_id.errors" class="invalid-feedback">
+                    <div *ngIf="i.employee_id.errors.required">employee is required</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary" class="btn btn-success float-right">Create New</button>
+            </div>
+        <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+    </form>
+    </div>
+    <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div> -->
+</ng-template>

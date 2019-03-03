@@ -43,3 +43,5 @@
     - jwt
     - flask_sqlalchemy
     
+# Run : 
+- python run.py

@@ -10,9 +10,7 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
-
-  loginUserData = {}
-
+  
   loginForm: FormGroup;
   loading = false;
   submitted = false;

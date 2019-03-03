@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {Issue} from '../models/issue'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { element } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-issues',
@@ -9,9 +12,61 @@ import {Issue} from '../models/issue'
 })
 export class IssuesComponent implements OnInit {
 
-  constructor() { }
+  closeResult: string;
+
+  newIssueForm: FormGroup;
+  loading = false;
+  submitted = false;
+  returnUrl: string;
+  error = '';
+
+  constructor(private modalService: NgbModal, private formBuilder: FormBuilder, private eleRef: ElementRef) { }
   
+  ngOnInit() {
+    this.newIssueForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      start_date: ['', Validators.required],
+      due_date: ['', Validators.required],
+      project_id: ['', Validators.required],
+      employee_id: ['', Validators.required]
+  });
+  }
+
+  resetNewIssue(){
+    this.newIssueForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      start_date: ['', Validators.required],
+      due_date: ['', Validators.required],
+      project_id: ['', Validators.required],
+      employee_id: ['', Validators.required]
+   });
+  }
+  new_issue = {
+    "name": "",
+    "start_date":"",
+    "due_date":"",
+    "status": "",
+    "project_id": null,
+    "employee_id":null
+  }
   
+  // convenience getter for easy access to form fields
+  get i() { return this.newIssueForm.controls; }
+
+  // create new issue
+  onSubmitNewIssue(modal) {
+    this.submitted = true;
+    // stop here if form is invalid
+    if (this.newIssueForm.invalid) {
+        return;
+    }
+
+    console.log('issue to create');
+    this.newIssueForm.reset();
+    modal.dismiss('Submitting the form');
+    this.submitted = false;
+}
+
   public inputqueue: Issue[] = [
     {id:1, title: 'Get to work', dateAdded: new Date().toString() },
     {id:2, title: 'Pick up groceries', dateAdded: new Date().toString() },
@@ -35,9 +90,6 @@ export class IssuesComponent implements OnInit {
     {id:5, title: 'Get up', dateAdded: new Date().toString() },
     {id:6, title: 'Brush teeth', dateAdded: new Date().toString() }
   ];
-  
-  ngOnInit() {
-  }
 
   addItem(list: string, todo: string) {
     if (list === 'inputqueue') {
@@ -52,12 +104,31 @@ export class IssuesComponent implements OnInit {
     // first check if it was moved within the same list or moved to a different list
     if (event.previousContainer === event.container) {
       // change the items index if it was moved within the same list
+      console.log(event.item.element)
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
       // remove item from the previous list and add it to the new array
       transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
       console.log(event.item.element.nativeElement.id)
       console.log(event.container.element.nativeElement.id)
+    }
+  }
+
+  open(content) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
     }
   }
 
