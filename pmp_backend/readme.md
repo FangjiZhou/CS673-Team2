@@ -42,6 +42,8 @@
     - SQLAlchemy
     - jwt
     - flask_sqlalchemy
+    - flask_cors
+    - flask_socketio
     
 # Run : 
 - python run.py

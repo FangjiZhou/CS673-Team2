@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9c56f80-65c8-4633-80e3-83d3b6980f69" name="Default Changelist" comment="adding the user api paths">
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/auth/auth.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/auth/auth.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -156,14 +150,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="6" />
-          <entry key="md" value="19" />
+          <entry key="md" value="25" />
           <entry key="py" value="8547" />
           <entry key="txt" value="627" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="19" />
+          <entry key="Markdown" value="25" />
           <entry key="PLAIN_TEXT" value="633" />
           <entry key="Python" value="8547" />
         </counts>
@@ -189,10 +183,10 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.1">
+    <splitter split-orientation="horizontal" split-proportion="0.2">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/run.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="45">
@@ -204,11 +198,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/__init__.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="573">
-                  <caret line="55" column="9" lean-forward="true" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
-                  <folding>
-                    <element signature="e#38#106#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="30">
+                  <caret line="2" column="15" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="15" />
                 </state>
               </provider>
             </entry>
@@ -225,13 +216,12 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/api_module/chat_controller.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="23" column="93" selection-start-line="23" selection-start-column="93" selection-end-line="23" selection-end-column="93" />
+                <state relative-caret-position="15">
+                  <caret line="1" column="19" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="19" />
                   <folding>
-                    <element signature="e#0#45#0" expanded="true" />
                     <marker date="1550526028855" expanded="true" signature="1152:1157" ph="..." />
                   </folding>
                 </state>
@@ -348,8 +338,8 @@
             <entry file="file://$PROJECT_DIR$/readme.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="644">
-                    <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
+                  <first_editor relative-caret-position="617">
+                    <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
                   </first_editor>
                   <second_editor />
                 </state>
@@ -721,8 +711,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RDE" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.498779" visible="true" weight="0.23061225" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.501221" side_tool="true" visible="true" weight="0.23061225" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.498779" visible="true" weight="0.2887755" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.501221" side_tool="true" visible="true" weight="0.2887755" />
       <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Black Caiman" order="13" />
       <window_info anchor="bottom" id="Python Console" order="14" weight="0.32970297" />
@@ -825,17 +815,6 @@
           <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/chat_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="93" selection-start-line="23" selection-start-column="93" selection-end-line="23" selection-end-column="93" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-            <marker date="1550526028855" expanded="true" signature="1152:1157" ph="..." />
           </folding>
         </state>
       </provider>
@@ -985,16 +964,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="55" column="9" lean-forward="true" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
-          <folding>
-            <element signature="e#38#106#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1013,11 +982,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/chat_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="19" />
+          <folding>
+            <marker date="1550526028855" expanded="true" signature="1152:1157" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="644">
-            <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
+          <first_editor relative-caret-position="617">
+            <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
           </first_editor>
           <second_editor />
         </state>
