@@ -1,5 +1,63 @@
 # PmpFrontend
 
+## Project Structure
+
+```
+.
+├── admin
+│   ├── admin.component.html
+│   ├── admin.component.scss
+│   ├── admin.component.spec.ts
+│   └── admin.component.ts
+├── app-routing.module.ts
+├── app.component.html
+├── app.component.scss
+├── app.component.spec.ts
+├── app.component.ts
+├── app.module.ts
+├── auth
+│   ├── auth.component.html
+│   ├── auth.component.scss
+│   ├── auth.component.spec.ts
+│   └── auth.component.ts
+├── chats
+│   ├── chats.component.html
+│   ├── chats.component.scss
+│   ├── chats.component.spec.ts
+│   └── chats.component.ts
+├── guard
+│   ├── auth.guard.spec.ts
+│   └── auth.guard.ts
+├── home
+│   ├── home.component.html
+│   ├── home.component.scss
+│   ├── home.component.spec.ts
+│   └── home.component.ts
+├── issues
+│   ├── font-awesome.min.css
+│   ├── issues.component.html
+│   ├── issues.component.scss
+│   ├── issues.component.spec.ts
+│   └── issues.component.ts
+├── models
+│   └── issue.ts
+├── nav
+│   ├── nav.component.html
+│   ├── nav.component.scss
+│   ├── nav.component.spec.ts
+│   └── nav.component.ts
+├── services
+│   ├── auth.service.spec.ts
+│   ├── auth.service.ts
+│   ├── issuetracker.service.spec.ts
+│   └── issuetracker.service.ts
+└── sprints
+    ├── sprints.component.html
+    ├── sprints.component.scss
+    ├── sprints.component.spec.ts
+    └── sprints.component.ts
+```
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.2.
 
 ## Development server
