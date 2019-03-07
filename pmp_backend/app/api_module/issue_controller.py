@@ -26,18 +26,21 @@ def create_issue(current_user):
     start_date = parse_date(data.get('start_date', ''))
     due_date = parse_date(data.get('due_date', ''))
     status = data.get('status')
+    priority = data.get('priority', 'medium')
     project = Project.query.filter_by(id=data.get('project_id')).first()
     employee = Employee.query.filter_by(id=data.get('employee_id')).first()
 
     if not project or not employee or not start_date or not due_date or not name:
         return jsonify({'message': 'No employee | sprint | start_date | due_date | name found with your inputs'}), 400
     json_issue = {'name': name, 'start_date': start_date, 'due_date': due_date, 'status': status,
-                 'project': project, 'employee': employee}
+                  'project': project, 'employee': employee, 'priority': priority}
     new_issue = Issue(json_issue=json_issue)
     db.session.add(new_issue)
+    db.session.flush()
+    id_ = new_issue.id
     db.session.commit()
 
-    return jsonify({'message': 'New Issue created!'})
+    return jsonify({'message': 'New Issue created!', 'id': id_})
 
 
 @issue_mod.route('/<issue_id>/', methods=['PUT'])
@@ -50,16 +53,26 @@ def update_issue(current_user, issue_id):
     if not issue:
         return jsonify({'message': 'No Issue found with your inputs'})
     data = request.get_json()
-    name = data.get('name')
-    start_date = parse_date(data.get('start_date', ''))
-    due_date = parse_date(data.get('due_date', ''))
-    status = data.get('status')
-    project = Project.query.filter_by(id=data.get('project_id')).first()
-    employee = Employee.query.filter_by(id=data.get('employee_id')).first()
+    if 'new_stage' in data:
+        # add a tracking on the issue
+        comment = 'moved from '+issue.status+' to '+data.get('new_stage')
+        employee = Employee.query.filter_by(id=1).first()
+        json_issue_tracking = {'date': datetime.now(), 'comment': comment, 'issue': issue, 'employee': employee}
+        issue_tracking = IssueTracking(json_issue_tracking)
+        issue.status = data.get('new_stage')
+        db.session.add(issue_tracking)
+    else:
+        name = data.get('name')
+        start_date = parse_date(data.get('start_date', ''))
+        due_date = parse_date(data.get('due_date', ''))
+        status = data.get('status')
+        priority = data.get('priority', 'medium')
+        project = Project.query.filter_by(id=data.get('project_id')).first()
+        employee = Employee.query.filter_by(id=data.get('employee_id')).first()
 
-    json_issue = {'name': name, 'start_date': start_date, 'due_date': due_date, 'status': status,
-                  'project': project, 'employee': employee}
-    issue.update(json_issue=json_issue)
+        json_issue = {'name': name, 'start_date': start_date, 'due_date': due_date, 'status': status,
+                      'project': project, 'employee': employee, 'priority': priority}
+        issue.update(json_issue=json_issue)
     db.session.merge(issue)
     db.session.commit()
 
@@ -76,14 +89,23 @@ def get_all_issues(current_user):
     issues = Issue.query.all()
     output = []
 
+    datetimeFormat = '%Y-%m-%d %H:%M:%S'
+    today = datetime.now()
+
     for issue in issues:
         issue_data = {}
         issue_data['id'] = issue.id
         issue_data['name'] = issue.name
         issue_data['start_date'] = issue.start_date
         issue_data['due_date'] = issue.due_date
+        due_date = datetime.strptime(str(issue.due_date), datetimeFormat)
+        diff = due_date - today
+        remaining = str(diff.days)+' d '+str(round(diff.seconds / 60, 0))+' mn'
+        issue_data['remaining'] = remaining
         issue_data['status'] = issue.status
-        issue_data['sprint'] = {'id': issue.project.id, 'name': issue.project.name}
+        issue_data['priority'] = issue.priority
+        issue_data['project'] = {'id': issue.project.id, 'name': issue.project.name}
+        issue_data['employee'] = {'id': issue.employee.id, 'name': issue.employee.user.name}
         output.append(issue_data)
 
     return jsonify({'issues': output})
@@ -101,12 +123,20 @@ def get_one_issue(current_user, issue_id):
     if not issue:
         return jsonify({'message': 'No Issue found!'})
 
+    datetimeFormat = '%Y-%m-%d %H:%M:%S'
+    today = datetime.now()
+
     issue_data = {}
     issue_data['id'] = issue.id
     issue_data['name'] = issue.name
     issue_data['start_date'] = issue.start_date
     issue_data['due_date'] = issue.due_date
+    due_date = datetime.strptime(str(issue.due_date), datetimeFormat)
+    diff = due_date - today
+    remaining = str(diff.days) + ' d ' + str(round(diff.seconds / 60, 0)) + ' mn'
+    issue_data['remaining'] = remaining
     issue_data['status'] = issue.status
+    issue_data['priority'] = issue.priority
     issue_data['project'] = {'id': issue.project.id, 'name': issue.project.name}
     issue_data['employee'] = {'id': issue.employee.id, 'name': issue.employee.user.name}
     issue_data['tracking'] = [{'id': tracking.id, 'date': tracking.date, 'comment': tracking.comment,
@@ -133,6 +163,7 @@ def get_all_issues_of_a_project(current_user, project_id):
         issue_data['start_date'] = issue.start_date
         issue_data['due_date'] = issue.due_date
         issue_data['status'] = issue.status
+        issue_data['priority'] = issue.priority
         issue_data['project'] = {'id': issue.project.id, 'name': issue.project.name}
         issue_data['employee'] = {'id': issue.employee.id, 'name': issue.employee.user.name}
         output.append(issue_data)
@@ -157,6 +188,7 @@ def get_all_issues_of_a_project_with_status(current_user, project_id, status):
         issue_data['start_date'] = issue.start_date
         issue_data['due_date'] = issue.due_date
         issue_data['status'] = issue.status
+        issue_data['priority'] = issue.priority
         issue_data['sprint'] = {'id': issue.project.id, 'name': issue.project.name}
         issue_data['employee'] = {'id': issue.employee.id, 'name': issue.employee.user.name}
         output.append(issue_data)
@@ -181,6 +213,7 @@ def get_all_issues_of_one_employee(current_user, employee_id):
         issue_data['start_date'] = issue.start_date
         issue_data['due_date'] = issue.due_date
         issue_data['status'] = issue.status
+        issue_data['priority'] = issue.priority
         issue_data['project'] = {'id': issue.project.id, 'name': issue.project.name}
         issue_data['employee'] = {'id': issue.employee.id, 'name': issue.employee.user.name}
         issue_data['tracking'] = [{'id': tracking.id, 'date': tracking.date, 'comment': tracking.comment,
@@ -208,6 +241,7 @@ def get_all_issues_of_one_employee_with_status(current_user, employee_id, status
         task_data['start_date'] = issue.start_date
         task_data['due_date'] = issue.due_date
         task_data['status'] = issue.status
+        task_data['priority'] = issue.priority
         task_data['project'] = {'id': issue.project.id, 'name': issue.project.name}
         task_data['employee'] = {'id': issue.employee.id, 'name': issue.employee.user.name}
         task_data['tracking'] = [{'id': tracking.id, 'date': tracking.date, 'comment': tracking.comment,

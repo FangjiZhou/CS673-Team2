@@ -244,14 +244,14 @@ class Issue(db.Model):
     start_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     due_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     status = db.Column(db.String(192), nullable=False)
-
+    priority = db.Column(db.String(192), nullable=False)
     # 1 to 1 relationship with user
     project_id = db.Column(db.Integer, db.ForeignKey('project.id'), nullable=False)
-    project = db.relationship('Project', backref=db.backref('issue', lazy=True, uselist=False))
+    project = db.relationship('Project', backref=db.backref('issue', lazy=True))
 
     # 1 to 1 relationship with user
     employee_id = db.Column(db.Integer, db.ForeignKey('employee.id'), nullable=False)
-    employee = db.relationship('Employee', backref=db.backref('issue', lazy=True, uselist=False))
+    employee = db.relationship('Employee', backref=db.backref('issue', lazy=True))
 
     def __init__(self, json_issue):
         self.name = json_issue.get('name')
@@ -260,6 +260,7 @@ class Issue(db.Model):
         self.status = json_issue.get('status')
         self.project = json_issue.get('project', None)
         self.employee = json_issue.get('employee', None)
+        self.priority = json_issue.get('priority', 'medium')
 
     def update(self, json_issue):
         self.name = json_issue.get('name')
@@ -268,6 +269,7 @@ class Issue(db.Model):
         self.status = json_issue.get('status')
         self.project = json_issue.get('project', None)
         self.employee = json_issue.get('employee', None)
+        self.priority = json_issue.get('priority', 'medium')
 
     def __repr__(self):
         return str(self.__class__) + ": " + str(self.__dict__)
@@ -288,8 +290,8 @@ class IssueTracking(db.Model):
     issue = db.relationship('Issue', backref=db.backref('issue_tracking'))
 
     # 1 to 1 relationship with employee
-    employee_id = db.Column(db.Integer, db.ForeignKey('employee.id'), nullable=False)
-    employee = db.relationship('Employee', backref=db.backref('issue_tracking', lazy=True, uselist=False))
+    employee_id = db.Column(db.Integer, db.ForeignKey('employee.id'), nullable=True)
+    employee = db.relationship('Employee', backref=db.backref('issue_tracking', lazy=True))
 
     def __init__(self, json_issue_tracking):
         self.date = json_issue_tracking.get('date')
@@ -316,6 +318,7 @@ class Task(db.Model):
     start_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     due_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     status = db.Column(db.String(192), nullable=False)
+    priority = db.Column(db.String(192), nullable=False)
 
     # 1 to 1 relationship with Sprint
     sprint_id = db.Column(db.Integer, db.ForeignKey('sprint.id'), nullable=False)
@@ -332,6 +335,7 @@ class Task(db.Model):
         self.status = json_task.get('status')
         self.sprint = json_task.get('sprint')
         self.employee = json_task.get('employee')
+        self.priority = json_task.get('priority', 'medium')
 
     def update(self, json_task):
         self.name = json_task.get('name')
@@ -340,6 +344,7 @@ class Task(db.Model):
         self.status = json_task.get('status')
         self.sprint = json_task.get('sprint')
         self.employee = json_task.get('employee')
+        self.priority = json_task.get('priority', 'medium')
 
     def __repr__(self):
         return str(self.__class__) + ": " + str(self.__dict__)

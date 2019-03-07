@@ -1,0 +1,112 @@
+3
+j\©E  ã            	   @   sP  d dl mZ d dlmZ G dd„ dejƒZG dd„ deƒZG dd„ dejƒZG d	d
+„ d
+ejƒZG dd„ dejƒZG dd„ dejƒZ	G dd„ dejƒZ
+G dd„ dejƒZG dd„ dejƒZG dd„ dejƒZG dd„ dejƒZG dd„ dejƒZejdejdejejdƒddejd ejejd!ƒddƒZG d"d#„ d#ejƒZG d$d%„ d%ejƒZd&S )'é    )Údb)Údatetimec               @   sZ   e Zd ZdZdZejejdddZejej	ej
+jƒ dZejej	ej
+jƒ ej
+jƒ dZ1111dS )ÚBasezE
+       Define a base model for other database tables to inherit
+    T)Úprimary_keyÚautoincrement)Údefault)r   ÚonupdateN)Ú__name__Ú
+__module__Ú__qualname__Ú__doc__Ú__abstract__r   ÚColumnÚIntegerÚidÚDateTimeÚfuncÚcurrent_timestampZdate_createdÚdate_modified© r   r   úO/Users/wgcyrl/Documents/GitHub/CS673-Team2/pmp_backend/app/api_module/models.pyr      s
+   r   c               @   s¢   e Zd ZdZdZejejdƒddZejejdƒdddZ	ejejdƒddZ
+ejejdƒddZejejdƒddZejejddZd	d
+„ Zdd„ Zdd„ ZdS )ÚUsera¤  
+        Define a User model
+        name : <string> The name of the user
+        email : <string> The email of the user; will also be used as username for login, auth,...
+        password : <string> The password of the user
+        profile : <string> The profile or brief description of the user
+        skills : <list> list of skills of the user
+        admin : <boolean> to precise if the user is an admin or not
+    Úuseré€   F)ÚnullableT)r   Úuniqueéÿ   c             C   s(   || _ || _|| _|| _|| _|| _d S )N)ÚnameÚemailÚpasswordÚprofileÚskillsÚadmin)Úselfr   r   r   r    r!   r"   r   r   r   Ú__init__)   s    zUser.__init__c             C   s   t | jƒd t | jƒ S )Nz: )ÚstrÚ	__class__Ú__dict__)r#   r   r   r   Ú__repr__1   s    zUser.__repr__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   Ú__str__4   s    zUser.__str__N)r	   r
+   r   r   Ú__tablename__r   r   ÚStringr   r   r   r    r!   ÚBooleanr"   r$   r(   r)   r   r   r   r   r      s   	r   c               @   sX  e Zd ZdZdZejddddfZejej	dddZ
+ejejd	ƒd
+dZejejd
+ejdZejejddZejejd
+dZejej	ejdƒd
+dZejdejddddZejej	ejdƒd
+dZejdejddddZejej	ejdƒd
+dZejdejddddZejej	ejdƒd
+dZejdejddddZdd„ Zdd„ Z dd„ Z!dS )ÚEmployeeai  
+        Define a the Employee model
+        badge : <string> the badge number of the employee
+        start_date : <datetime> the starting date of the user as an employee at a company
+        end_date : <datetime> the probable ending date of the user as employee in a company
+        is_full_time : <boolean> to precise if the employee is full time or not
+        user : <User> The user from which we create the employee
+        company : <Company> The company to which the employee belong
+        role : <Role> The role of the employee on the company
+        team : <Team> The team to which the employee belong
+    ÚemployeeÚbadgeÚ
+company_idZunique_badge_per_company)r   T)r   r   é–   F)r   )r   r   zuser.idr   )Úlazy)Úbackrefz
+company.idÚCompanyzrole.idÚRolezteam.idÚTeamc             C   sv   |j ddƒ| _|j dtjƒ ƒ| _|j dd ƒ| _|j ddƒ| _|j dd ƒ| _|j dd ƒ| _|j d	d ƒ| _	|j d
+ƒ| _
+d S )Nr/   Ú Ú
+start_dateÚend_dateÚis_full_timeFr   ÚcompanyÚroleÚteam)Úgetr/   r   Únowr8   r9   r:   r   r;   r<   r=   )r#   Zjson_employeer   r   r   r$   `   s    zEmployee.__init__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r(   j   s    zEmployee.__repr__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r)   m   s    zEmployee.__str__N)"r	   r
+   r   r   r*   r   ÚUniqueConstraintÚ__table_args__r   r   r   r+   r/   r   r   Úutcnowr8   r9   r,   r:   Ú
+ForeignKeyÚuser_idÚrelationshipr3   r   r0   r;   Zrole_idr<   Zteam_idr=   r$   r(   r)   r   r   r   r   r-   8   s&   
+r-   c               @   s    e Zd ZdZejddddfZejejdddZ	ejej
+dƒd	d
+Zejejdd
+Zejejejdƒd	d
+ZejdejddddZdd„ Zdd„ Zdd„ ZdS )r6   r=   r   r0   Zunique_team_name_per_company)r   T)r   r   éÀ   F)r   z
+company.idr4   )r2   )r3   c             C   s(   |j dƒ| _|j dƒ| _|j dƒ| _d S )Nr   Úcommentr;   )r>   r   rG   r;   )r#   Z	json_teamr   r   r   r$   €   s    zTeam.__init__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r(   …   s    zTeam.__repr__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r)   ˆ   s    zTeam.__str__N)r	   r
+   r   r*   r   r@   rA   r   r   r   r+   r   ÚTextrG   rC   r0   rE   r3   r;   r$   r(   r)   r   r   r   r   r6   q   s   r6   c               @   s^   e Zd ZdZejejdddZejejdƒddZ	ejej
+ddZdd„ Zd	d
+„ Zdd„ ZdS )r5   r<   T)r   r   rF   F)r   c             C   s   |j dƒ| _|j dƒ| _d S )Nr   rG   )r>   r   rG   )r#   Z	json_roler   r   r   r$   “   s    zRole.__init__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r(   —   s    zRole.__repr__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r)   š   s    zRole.__str__N)r	   r
+   r   r*   r   r   r   r   r+   r   rH   rG   r$   r(   r)   r   r   r   r   r5   Œ   s   r5   c               @   s`   e Zd ZdZejejdddZejejdƒdddZ	ejej
+ddZdd	„ Zd
+d„ Zdd„ ZdS )r4   r;   T)r   r   rF   F)r   r   )r   c             C   s   |j dƒ| _|j dƒ| _d S )Nr   rG   )r>   r   rG   )r#   Zjson_companyr   r   r   r$   ¥   s    zCompany.__init__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r(   ©   s    zCompany.__repr__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r)   ¬   s    zCompany.__str__N)r	   r
+   r   r*   r   r   r   r   r+   r   rH   rG   r$   r(   r)   r   r   r   r   r4      s   r4   c               @   sÈ   e Zd ZdZejddddfZejejdddZ	ejej
+dƒd	d
+Zejejd	ejdZejejd	ejdZejejdd
+Zejejejdƒd	d
+ZejdejddddZdd„ Zdd„ Zdd„ ZdS )ÚProjectÚprojectr   r0   Zunique_project_name_per_company)r   T)r   r   rF   F)r   )r   r   z
+company.idr4   )r2   )r3   c             C   sP   |j dƒ| _|j dtjƒ ƒ| _|j dtjƒ ƒ| _|j dd ƒ| _|j dd ƒ| _d S )Nr   r8   Údue_daterG   r;   )r>   r   r   r?   r8   rK   rG   r;   )r#   Zjson_projectr   r   r   r$   Á   s
+    zProject.__init__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r(   È   s    zProject.__repr__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r)   Ë   s    zProject.__str__N)r	   r
+   r   r*   r   r@   rA   r   r   r   r+   r   r   r   rB   r8   rK   rH   rG   rC   r0   rE   r3   r;   r$   r(   r)   r   r   r   r   rI   °   s   rI   c               @   sæ   e Zd ZdZejddddfZejejdddZ	ejej
+dƒd	d
+Zejejd	ejdZejejd	ejdZejejejjƒ ejjƒ dZejejdd
+Zejejejdƒd	d
+ZejdejddddZdd„ Zdd„ Zdd„ ZdS )ÚSprintÚsprintr   Ú
+project_idZunique_sprint_name_per_project)r   T)r   r   rF   F)r   )r   r   )r   r   z
+project.idrI   )r2   )r3   c             C   sL   |j dƒ| _|j dtjƒ ƒ| _|j dtjƒ ƒ| _|j dƒ| _|j dƒ| _d S )Nr   r8   rK   rG   rJ   )r>   r   r   r?   r8   rK   rG   rJ   )r#   Zjson_sprintr   r   r   r$   á   s
+    zSprint.__init__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r(   è   s    zSprint.__repr__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r)   ë   s    zSprint.__str__N)r	   r
+   r   r*   r   r@   rA   r   r   r   r+   r   r   r   rB   r8   rK   r   r   r   rH   rG   rC   rN   rE   r3   rJ   r$   r(   r)   r   r   r   r   rL   Ï   s   rL   c               @   s  e Zd ZdZejejdddZejejdƒddZ	ejej
+dejdZejej
+dejdZejejdƒddZejejdƒddZejejejdƒddZejd	ejddd
+dZejejejdƒddZejdejddd
+dZdd„ Zdd„ Zdd„ Zdd„ ZdS )ÚIssueÚissueT)r   r   rF   F)r   )r   r   z
+project.idrI   )r2   )r3   zemployee.idr-   c             C   sj   |j dƒ| _|j dtjƒ ƒ| _|j dtjƒ ƒ| _|j dƒ| _|j dd ƒ| _|j dd ƒ| _|j ddƒ| _	d S )	Nr   r8   rK   ÚstatusrJ   r.   ÚpriorityÚmedium)
+r>   r   r   r?   r8   rK   rQ   rJ   r.   rR   )r#   Ú
+json_issuer   r   r   r$      s    zIssue.__init__c             C   sj   |j dƒ| _|j dtjƒ ƒ| _|j dtjƒ ƒ| _|j dƒ| _|j dd ƒ| _|j dd ƒ| _|j ddƒ| _	d S )	Nr   r8   rK   rQ   rJ   r.   rR   rS   )
+r>   r   r   r?   r8   rK   rQ   rJ   r.   rR   )r#   rT   r   r   r   Úupdate	  s    zIssue.updatec             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r(     s    zIssue.__repr__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r)     s    zIssue.__str__N)r	   r
+   r   r*   r   r   r   r   r+   r   r   r   rB   r8   rK   rQ   rR   rC   rN   rE   r3   rJ   Úemployee_idr.   r$   rU   r(   r)   r   r   r   r   rO   ï   s   		rO   c               @   sÄ   e Zd ZdZejejdddZejejej	j
+ƒ ej	j
+ƒ dZejejddZejejejdƒddZejdejdƒd	Zejejejd
+ƒddZejdejdddd	Zdd„ Zdd„ Zdd„ ZdS )ÚIssueTrackingZissue_trackingT)r   r   )r   r   )r   zissue.idFrO   )r3   zemployee.idr-   )r2   c             C   s4   |j dƒ| _|j dƒ| _|j dƒ| _|j dƒ| _d S )NÚdaterG   rP   r.   )r>   rX   rG   rP   r.   )r#   Zjson_issue_trackingr   r   r   r$   (  s    zIssueTracking.__init__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r(   .  s    zIssueTracking.__repr__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r)   1  s    zIssueTracking.__str__N)r	   r
+   r   r*   r   r   r   r   r   r   r   rX   rH   rG   rC   Zissue_idrE   r3   rP   rV   r.   r$   r(   r)   r   r   r   r   rW     s   rW   c               @   s  e Zd ZdZejddddfZejejdddZ	ejej
+dƒd	d
+Zejejd	ejdZejejd	ejdZejej
+dƒd	d
+Zejej
+dƒd	d
+Zejejejdƒd	d
+ZejdejddddZejejejdƒd	d
+Zejdejddd	ddZdd„ Zdd„ Zdd„ Zdd„ ZdS )ÚTaskÚtaskr   Ú	sprint_idZunique_task_name_per_sprint)r   T)r   r   rF   F)r   )r   r   z	sprint.idrL   )r2   )r3   zemployee.idr-   )r2   Úuselistc             C   sf   |j dƒ| _|j dtjƒ ƒ| _|j dtjƒ ƒ| _|j dƒ| _|j dƒ| _|j dƒ| _|j ddƒ| _	d S )	Nr   r8   rK   rQ   rM   r.   rR   rS   )
+r>   r   r   r?   r8   rK   rQ   rM   r.   rR   )r#   Ú	json_taskr   r   r   r$   K  s    zTask.__init__c             C   sf   |j dƒ| _|j dtjƒ ƒ| _|j dtjƒ ƒ| _|j dƒ| _|j dƒ| _|j dƒ| _|j ddƒ| _	d S )	Nr   r8   rK   rQ   rM   r.   rR   rS   )
+r>   r   r   r?   r8   rK   rQ   rM   r.   rR   )r#   r]   r   r   r   rU   T  s    zTask.updatec             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r(   ]  s    zTask.__repr__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r)   `  s    zTask.__str__N)r	   r
+   r   r*   r   r@   rA   r   r   r   r+   r   r   r   rB   r8   rK   rQ   rR   rC   r[   rE   r3   rM   rV   r.   r$   rU   r(   r)   r   r   r   r   rY   5  s    		rY   c               @   sÆ   e Zd ZdZejejdddZejejej	j
+ƒ ej	j
+ƒ dZejejddZejejejdƒddZejdejdƒd	Zejejejd
+ƒddZejdejddddd	Zdd„ Zdd„ Zdd„ ZdS )ÚTaskTrackingZtask_trackingT)r   r   )r   r   )r   ztask.idFrY   )r3   zemployee.idr-   )r2   r\   c             C   s@   |j dtjƒ ƒ| _|j dd ƒ| _|j dd ƒ| _|j dd ƒ| _d S )NrX   rG   rZ   r.   )r>   r   r?   rX   rG   rZ   r.   )r#   Zjson_task_trackingr   r   r   r$   s  s    zTaskTracking.__init__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r(   y  s    zTaskTracking.__repr__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r)   |  s    zTaskTracking.__str__N)r	   r
+   r   r*   r   r   r   r   r   r   r   rX   rH   rG   rC   Ztask_idrE   r3   rZ   rV   r.   r$   r(   r)   r   r   r   r   r^   d  s   r^   Úemployee_chatroomrV   zemployee.idT)r   Úchatroom_idzchat_room.idc               @   s’   e Zd ZdZejejdddZejejdƒddZ	ejejdƒddZ
+ejejdejdZejded	ejddd
+dZdd„ Zdd„ Zdd„ ZdS )ÚChatRoomZ	chat_roomT)r   r   rF   F)r   )r   r   r-   Úsubquery)r2   )Ú	secondaryr2   r3   c             C   s.   |j dƒ| _|j dƒ| _|j dtjƒ ƒ| _d S )Nr   Útyper8   )r>   r   rd   r   r?   r8   )r#   Zjson_chat_roomr   r   r   r$   “  s    zChatRoom.__init__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r(   ˜  s    zChatRoom.__repr__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r)   ›  s    zChatRoom.__str__N)r	   r
+   r   r*   r   r   r   r   r+   r   rd   r   r   rB   r8   rE   r_   r3   Z	employeesr$   r(   r)   r   r   r   r   ra   ‡  s   
+ra   c               @   sÂ   e Zd ZdZejejdddZejejddZ	ejej
+dejdZejejejdƒddZejdejdddd	d
+ZejejejdƒddZejdejdddd	d
+Zdd„ Zdd„ Zdd„ ZdS )ÚMessageÚmessageT)r   r   )r   F)r   r   zchat_room.idra   )r2   r\   )r3   zemployee.idr-   c             C   s<   |j dd ƒ| _|j dtjƒ ƒ| _|j dƒ| _|j dƒ| _d S )Nrf   Úsending_dateÚchatroomr.   )r>   rf   r   r?   rg   rh   r.   )r#   Zjson_messager   r   r   r$   ®  s    zMessage.__init__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r(   ´  s    zMessage.__repr__c             C   s   t | jƒd t | jƒ S )Nz: )r%   r&   r'   )r#   r   r   r   r)   ·  s    zMessage.__str__N)r	   r
+   r   r*   r   r   r   r   rH   rf   r   r   rB   rg   rC   r`   rE   r3   rh   rV   r.   r$   r(   r)   r   r   r   r   re   Ÿ  s   re   N)Úappr   r   ÚModelr   r   r-   r6   r5   r4   rI   rL   rO   rW   rY   r^   ÚTabler   r   rC   r_   ra   re   r   r   r   r   Ú<module>   s$   &9 */
