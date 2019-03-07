@@ -26,13 +26,14 @@ def create_task(current_user):
     start_date = parse_date(data.get('start_date', ''))
     due_date = parse_date(data.get('due_date', ''))
     status = data.get('status')
+    priority = data.get('priority', 'medium')
     sprint = Sprint.query.filter_by(id=data.get('sprint_id')).first()
     employee = Employee.query.filter_by(id=data.get('employee_id')).first()
 
     if not sprint or not employee or not start_date or not due_date or not name:
         return jsonify({'message': 'No employee | sprint | start_date | due_date | name found with your inputs'})
     json_task = {'name': name, 'start_date': start_date, 'due_date': due_date, 'status': status,
-                 'sprint': sprint, 'employee': employee}
+                 'sprint': sprint, 'employee': employee, 'priority': priority}
     new_task = Task(json_task=json_task)
     db.session.add(new_task)
     db.session.commit()
@@ -54,11 +55,12 @@ def update_task(current_user, task_id):
     start_date = parse_date(data.get('start_date', ''))
     due_date = parse_date(data.get('due_date', ''))
     status = data.get('status')
+    priority = data.get('priority', 'medium')
     sprint = Sprint.query.filter_by(id=data.get('sprint_id')).first()
     employee = Employee.query.filter_by(id=data.get('employee_id')).first()
 
     json_task = {'name': name, 'start_date': start_date, 'due_date': due_date, 'status': status,
-                 'sprint': sprint, 'employee': employee}
+                 'sprint': sprint, 'employee': employee, 'priority': priority}
     task.update(json_task=json_task)
     db.session.merge(task)
     db.session.commit()
@@ -83,6 +85,7 @@ def get_all_task(current_user):
         task_data['start_date'] = task.start_date
         task_data['due_date'] = task.due_date
         task_data['status'] = task.status
+        task_data['priority'] = task.priority
         task_data['sprint'] = {'id': task.sprint.id, 'name': task.sprint.name}
         output.append(task_data)
 
@@ -107,6 +110,7 @@ def get_one_task(current_user, task_id):
     task_data['start_date'] = task.start_date
     task_data['due_date'] = task.due_date
     task_data['status'] = task.status
+    task_data['priority'] = task.priority
     task_data['sprint'] = {'id': task.sprint.id, 'name': task.sprint.name}
     task_data['employee'] = {'id': task.employee.id, 'name': task.employee.user.name}
     task_data['tracking'] = [{'id': tracking.id, 'date': tracking.date, 'comment': tracking.comment,
@@ -133,6 +137,7 @@ def get_all_task_of_a_sprint(current_user, sprint_id):
         task_data['start_date'] = task.start_date
         task_data['due_date'] = task.due_date
         task_data['status'] = task.status
+        task_data['priority'] = task.priority
         task_data['sprint'] = {'id': task.sprint.id, 'name': task.sprint.name}
         task_data['employee'] = {'id': task.employee.id, 'name': task.employee.user.name}
         output.append(task_data)
@@ -157,6 +162,7 @@ def get_all_task_of_a_sprint_with_status(current_user, sprint_id, status):
         task_data['start_date'] = task.start_date
         task_data['due_date'] = task.due_date
         task_data['status'] = task.status
+        task_data['priority'] = task.priority
         task_data['sprint'] = {'id': task.sprint.id, 'name': task.sprint.name}
         task_data['employee'] = {'id': task.employee.id, 'name': task.employee.user.name}
         output.append(task_data)
@@ -181,6 +187,7 @@ def get_all_tasks_of_one_employee(current_user, employee_id):
         task_data['start_date'] = task.start_date
         task_data['due_date'] = task.due_date
         task_data['status'] = task.status
+        task_data['priority'] = task.priority
         task_data['sprint'] = {'id': task.sprint.id, 'name': task.sprint.name}
         task_data['employee'] = {'id': task.employee.id, 'name': task.employee.user.name}
         task_data['tracking'] = [{'id': tracking.id, 'date': tracking.date, 'comment': tracking.comment,
@@ -208,6 +215,7 @@ def get_all_tasks_of_one_employee_with_status(current_user, employee_id, status)
         task_data['start_date'] = task.start_date
         task_data['due_date'] = task.due_date
         task_data['status'] = task.status
+        task_data['priority'] = task.priority
         task_data['sprint'] = {'id': task.sprint.id, 'name': task.sprint.name}
         task_data['employee'] = {'id': task.employee.id, 'name': task.employee.user.name}
         task_data['tracking'] = [{'id': tracking.id, 'date': tracking.date, 'comment': tracking.comment,
