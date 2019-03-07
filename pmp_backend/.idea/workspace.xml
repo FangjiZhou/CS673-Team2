@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9c56f80-65c8-4633-80e3-83d3b6980f69" name="Default Changelist" comment="adding the user api paths">
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/models/issue.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/models/issue.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/issue_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/issue_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/task_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/task_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local/db/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/local/db/app.db" afterDir="false" />
-    </list>
+    <list default="true" id="c9c56f80-65c8-4633-80e3-83d3b6980f69" name="Default Changelist" comment="adding the user api paths" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +164,7 @@
         <counts>
           <entry key="html" value="1" />
           <entry key="json" value="2" />
-          <entry key="md" value="2" />
+          <entry key="md" value="3" />
           <entry key="py" value="37" />
           <entry key="txt" value="2" />
         </counts>
@@ -182,7 +173,7 @@
         <counts>
           <entry key="HTML" value="1" />
           <entry key="JSON" value="2" />
-          <entry key="Markdown" value="2" />
+          <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Python" value="37" />
         </counts>
@@ -238,11 +229,14 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/config.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/readme.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="SPLIT">
+                  <first_editor relative-caret-position="495">
+                    <caret line="33" selection-start-line="33" selection-end-line="33" selection-end-column="3" />
+                  </first_editor>
+                  <second_editor />
                 </state>
               </provider>
             </entry>
@@ -271,7 +265,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/api_module/issue_controller.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="634">
@@ -461,9 +455,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1680" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -706,15 +699,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1680" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13205537" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15140416" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.65495205" visible="true" weight="0.22673267" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.65495205" weight="0.32772276" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946752" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -722,8 +715,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RDE" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49893504" weight="0.280198" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.34504792" side_tool="true" visible="true" weight="0.22673267" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4981685" visible="true" weight="0.2887755" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50183153" side_tool="true" visible="true" weight="0.2887755" />
       <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Black Caiman" order="13" />
       <window_info anchor="bottom" id="Python Console" order="14" weight="0.32970297" />
@@ -941,16 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="542">
-            <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/api_module/helpers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -1020,6 +1003,16 @@
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="495">
+            <caret line="33" selection-start-line="33" selection-end-line="33" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
