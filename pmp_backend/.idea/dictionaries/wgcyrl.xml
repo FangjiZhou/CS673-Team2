@@ -4,6 +4,8 @@
       <w>abcdefghjklmnpqrstuvwxyz</w>
       <w>chatroom</w>
       <w>fulltime</w>
+      <w>jsonify</w>
+      <w>socketio</w>
       <w>tablename</w>
     </words>
   </dictionary>

@@ -16,7 +16,7 @@ role_mod = Blueprint('role', __name__, url_prefix='/api/role')
 @role_mod.route('/', methods=['POST'])
 @token_required
 def create_role(current_user):
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     data = request.get_json()
@@ -35,7 +35,7 @@ def create_role(current_user):
 @token_required
 def get_all_roles(current_user):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     roles = Role.query.all()
@@ -45,6 +45,7 @@ def get_all_roles(current_user):
         role_data = {}
         role_data['id'] = role.id
         role_data['name'] = role.name
+        role_data['comment'] = role.comment
         output.append(role_data)
 
     return jsonify({'roles': output})
@@ -54,7 +55,7 @@ def get_all_roles(current_user):
 @token_required
 def get_one_role(current_user, role_id):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     role = Role.query.filter_by(id=role_id).first()
@@ -68,3 +69,26 @@ def get_one_role(current_user, role_id):
     role_data['comment'] = role.comment
 
     return jsonify({'role': role_data})
+
+
+@role_mod.route('/<role_id>/', methods=['PUT'])
+@token_required
+def update_team(current_user, role_id):
+    if not current_user:
+        return jsonify({'message': 'Cannot perform that function!'}), 200
+
+    role = Role.query.filter_by(id=role_id).first()
+    data = request.get_json()
+    name = data.get('name')
+    comment = data.get('comment', None)
+
+    if not role:
+        return jsonify({'message': 'Role not  found'}), 400
+
+    role.name = name
+    role.comment = comment
+    db.session.merge(role)
+    db.session.commit()
+
+    return jsonify({'message': 'role updated!'})
+

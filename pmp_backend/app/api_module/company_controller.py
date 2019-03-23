@@ -7,7 +7,7 @@ from app.api_module.user_controllers import token_required
 from app import db
 
 # Import module models (i.e. Company)
-from app.api_module.models import Company
+from app.api_module.models import Company, Employee
 
 # Define the blueprint: 'api', set its url prefix: app.url/${path}
 company_mod = Blueprint('company', __name__, url_prefix='/api/company')
@@ -16,7 +16,7 @@ company_mod = Blueprint('company', __name__, url_prefix='/api/company')
 @company_mod.route('/', methods=['POST'])
 @token_required
 def create_company(current_user):
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     data = request.get_json()
@@ -31,11 +31,30 @@ def create_company(current_user):
     return jsonify({'message': 'New Company created!'})
 
 
+@company_mod.route('/<company_id>/', methods=['PUT'])
+@token_required
+def update_company(current_user, company_id):
+    if not current_user:
+        return jsonify({'message': 'Cannot perform that function!'})
+
+    company = Company.query.filter_by(id=company_id).first()
+    data = request.get_json()
+    name = data.get('name')
+    comment = data.get('comment', None)
+
+    company.name = name
+    company.comment = comment
+    db.session.merge(company)
+    db.session.commit()
+
+    return jsonify({'message': 'Company updated!'})
+
+
 @company_mod.route('/', methods=['GET'])
 @token_required
 def get_all_company(current_user):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     companies = Company.query.all()
@@ -43,8 +62,11 @@ def get_all_company(current_user):
 
     for company in companies:
         company_data = {}
+        q = db.session.query(Employee).filter(Employee.company_id == company.id)
         company_data['id'] = company.id
         company_data['name'] = company.name
+        company_data['comment'] = company.comment
+        company_data['nbr_employee'] = q.count()
         output.append(company_data)
 
     return jsonify({'companies': output})
@@ -54,7 +76,7 @@ def get_all_company(current_user):
 @token_required
 def get_one_company(current_user, company_id):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     company = Company.query.filter_by(id=company_id).first()

@@ -1,6 +1,10 @@
+import gevent.monkey
+gevent.monkey.patch_all()
+
 # Import flask and template operators
 from flask import Flask, render_template
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
+from flask_socketio import SocketIO, emit, rooms
 
 
 # Import SQLAlchemy
@@ -15,6 +19,11 @@ app.config.from_object('config')
 # Define the database object which is imported
 # by modules and controllers
 db = SQLAlchemy(app)
+
+
+@app.route('/')
+def hello():
+    return 'hello from the back end 2'
 
 
 # Sample HTTP error handling
@@ -54,4 +63,20 @@ db.create_all()
 
 
 CORS(app)
+
+socketio = SocketIO()
+
+socketio.init_app(app)
+
+from app.api_module import chat_events
+
+# @socketio.on('message', namespace="/api/chat")
+# def handle_my_custom_event(json):
+#     print('received my event: ' + str(json))
+#     emit('message', json)
+#
+#
+# @socketio.on('connect', namespace="/api/chat")
+# def test_connect():
+#     print("client connected:", rooms()[0])
 

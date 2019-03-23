@@ -76,6 +76,7 @@ class Employee(db.Model):
     start_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     end_date = db.Column(db.DateTime, nullable=True)
     is_full_time = db.Column(db.Boolean, nullable=False)
+    active = db.Column(db.Boolean, nullable=False)
 
     # 1 to 1 relationship with user
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
@@ -98,6 +99,7 @@ class Employee(db.Model):
         self.start_date = json_employee.get('start_date', datetime.now())
         self.end_date = json_employee.get('end_date', None)
         self.is_full_time = json_employee.get('is_full_time', False)
+        self.active = json_employee.get('active', True)
         self.user = json_employee.get('user', None)
         self.company = json_employee.get('company', None)
         self.role = json_employee.get('role', None)
@@ -108,6 +110,19 @@ class Employee(db.Model):
 
     def __str__(self):
         return str(self.__class__) + ": " + str(self.__dict__)
+
+
+# the many to many relationship between team and projects
+team_project = db.Table('team_project',
+                        db.Column('team_id', db.Integer, db.ForeignKey('team.id'), primary_key=True),
+                        db.Column('project_id', db.Integer, db.ForeignKey('project.id'), primary_key=True)
+                        )
+
+# the many to many relationship between team and projects
+team_sprint = db.Table('team_sprint',
+                       db.Column('team_id', db.Integer, db.ForeignKey('team.id'), primary_key=True),
+                       db.Column('sprint_id', db.Integer, db.ForeignKey('sprint.id'), primary_key=True)
+                       )
 
 
 class Team(db.Model):
@@ -190,6 +205,8 @@ class Project(db.Model):
     company_id = db.Column(db.Integer, db.ForeignKey('company.id'), nullable=False)
     company = db.relationship('Company', backref=db.backref('project', lazy=True))
 
+    teams = db.relationship('Team', secondary=team_project, backref=db.backref('project'))
+
     def __init__(self, json_project):
         self.name = json_project.get('name')
         self.start_date = json_project.get('start_date', datetime.now())
@@ -222,6 +239,8 @@ class Sprint(db.Model):
     project_id = db.Column(db.Integer, db.ForeignKey('project.id'), nullable=False)
     project = db.relationship('Project', backref=db.backref('sprint', lazy=True))
 
+    teams = db.relationship('Team', secondary=team_sprint, backref=db.backref('sprint'))
+
     def __init__(self, json_sprint):
         self.name = json_sprint.get('name')
         self.start_date = json_sprint.get('start_date', datetime.now())
@@ -249,8 +268,8 @@ class Issue(db.Model):
     project_id = db.Column(db.Integer, db.ForeignKey('project.id'), nullable=False)
     project = db.relationship('Project', backref=db.backref('issue', lazy=True))
 
-    # 1 to 1 relationship with user
-    employee_id = db.Column(db.Integer, db.ForeignKey('employee.id'), nullable=False)
+    # 1 to n relationship with user
+    employee_id = db.Column(db.Integer, db.ForeignKey('employee.id'))
     employee = db.relationship('Employee', backref=db.backref('issue', lazy=True))
 
     def __init__(self, json_issue):
@@ -287,7 +306,7 @@ class IssueTracking(db.Model):
 
     # 1 to 1 relationship with issue
     issue_id = db.Column(db.Integer, db.ForeignKey('issue.id'), nullable=False)
-    issue = db.relationship('Issue', backref=db.backref('issue_tracking'))
+    issue = db.relationship('Issue', backref=db.backref('issue_tracking', cascade="all,delete"))
 
     # 1 to 1 relationship with employee
     employee_id = db.Column(db.Integer, db.ForeignKey('employee.id'), nullable=True)
@@ -324,9 +343,9 @@ class Task(db.Model):
     sprint_id = db.Column(db.Integer, db.ForeignKey('sprint.id'), nullable=False)
     sprint = db.relationship('Sprint', backref=db.backref('task', lazy=True))
 
-    # 1 to 1 relationship with employee
+    # 1 to n relationship with employee
     employee_id = db.Column(db.Integer, db.ForeignKey('employee.id'), nullable=False)
-    employee = db.relationship('Employee', backref=db.backref('task', lazy=True, uselist=False))
+    employee = db.relationship('Employee', backref=db.backref('task', lazy=True))
 
     def __init__(self, json_task):
         self.name = json_task.get('name')
@@ -362,11 +381,11 @@ class TaskTracking(db.Model):
 
     # 1 to n relationship with task
     task_id = db.Column(db.Integer, db.ForeignKey('task.id'), nullable=False)
-    task = db.relationship('Task', backref=db.backref('task_tracking'))
+    task = db.relationship('Task', backref=db.backref('task_tracking', cascade="all,delete"))
 
-    # 1 to 1 relationship with employee
+    # 1 to n relationship with employee
     employee_id = db.Column(db.Integer, db.ForeignKey('employee.id'), nullable=False)
-    employee = db.relationship('Employee', backref=db.backref('task_tracking', lazy=True, uselist=False))
+    employee = db.relationship('Employee', backref=db.backref('task_tracking', lazy=True))
 
     def __init__(self, json_task_tracking):
         self.date = json_task_tracking.get('date', datetime.now())
@@ -397,8 +416,7 @@ class ChatRoom(db.Model):
     type = db.Column(db.String(192), nullable=False)
     start_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
-    employees = db.relationship('Employee', secondary=employee_chatroom, lazy='subquery',
-                                backref=db.backref('chat_room', lazy=True))
+    employees = db.relationship('Employee', secondary=employee_chatroom, backref=db.backref('chat_room'))
 
     def __init__(self, json_chat_room):
         self.name = json_chat_room.get('name')
@@ -419,13 +437,13 @@ class Message(db.Model):
     message = db.Column(db.Text, nullable=True)
     sending_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
-    # 1 to 1 relationship with ChatRoom
+    # 1 to n relationship with ChatRoom
     chatroom_id = db.Column(db.Integer, db.ForeignKey('chat_room.id'), nullable=False)
-    chatroom = db.relationship('ChatRoom', backref=db.backref('message', lazy=True, uselist=False))
+    chatroom = db.relationship('ChatRoom', backref=db.backref('message', lazy=True))
 
-    # 1 to 1 relationship with employee
+    # 1 to n relationship with employee
     employee_id = db.Column(db.Integer, db.ForeignKey('employee.id'), nullable=False)
-    employee = db.relationship('Employee', backref=db.backref('message', lazy=True, uselist=False))
+    employee = db.relationship('Employee', backref=db.backref('message', lazy=True))
 
     def __init__(self, json_message):
         self.message = json_message.get('message', None)

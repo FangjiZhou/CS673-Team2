@@ -17,23 +17,24 @@ employee_mod = Blueprint('employee', __name__, url_prefix='/api/employee')
 @employee_mod.route('/', methods=['POST'])
 @token_required
 def create_employee(current_user):
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'}), 401
 
     data = request.get_json()
     badge = data.get('badge')
     start_date = parse_date(data.get('start_date', ''))
     end_date = parse_date(data.get('end_date', ''))
-    is_full_time = data.get('is_full_time')
+    is_full_time = data.get('is_full_time', False)
+    active = data.get('active', True)
     user = User.query.filter_by(id=data.get('user_id')).first()
     role = Role.query.filter_by(id=data.get('role_id')).first()
     team = Team.query.filter_by(id=data.get('team_id')).first()
     company = Company.query.filter_by(id=data.get('company_id')).first()
 
     if not company or not role or not team or not user:
-        return jsonify({'message': 'No company | role | team | user found with your inputs ids'})
+        return jsonify({'message': 'No company | role | team | user found with your inputs ids'}), 400
     json_employee = {'badge': badge, 'start_date': start_date, 'end_date': end_date,
-                     'is_full_time': is_full_time, 'user': user, 'role': role, 'team': team, 'company': company}
+                     'is_full_time': is_full_time, 'active': active, 'user': user, 'role': role, 'team': team, 'company': company}
     new_employee = Employee(json_employee=json_employee)
     db.session.add(new_employee)
     db.session.commit()
@@ -41,11 +42,42 @@ def create_employee(current_user):
     return jsonify({'message': 'New Employee created!'})
 
 
+@employee_mod.route('/<employee_id>/', methods=['PUT'])
+@token_required
+def update_employee(current_user, employee_id):
+    if not current_user:
+        return jsonify({'message': 'Cannot perform that function!'}), 200
+
+    employee = Employee.query.filter_by(id=employee_id).first()
+    data = request.get_json()
+    badge = data.get('badge')
+    start_date = parse_date(data.get('start_date', ''))
+    end_date = parse_date(data.get('end_date', ''))
+    is_full_time = data.get('is_full_time', False)
+    active = data.get('active', True)
+    role = Role.query.filter_by(id=data.get('role_id')).first()
+
+    if not employee or not role:
+        return jsonify({'message': 'Role not  found'}), 400
+
+    employee.badge = badge
+    employee.start_date = start_date
+    employee.end_date = end_date
+    employee.is_full_time = is_full_time
+    employee.active = active
+    employee.role = role
+
+    db.session.merge(employee)
+    db.session.commit()
+
+    return jsonify({'message': 'employee updated!'})
+
+
 @employee_mod.route('/', methods=['GET'])
 @token_required
 def get_all_employee(current_user):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'}), 401
 
     employees = Employee.query.all()
@@ -56,7 +88,15 @@ def get_all_employee(current_user):
         employe_data['id'] = employee.id
         employe_data['badge'] = employee.badge
         employe_data['name'] = employee.user.name
+        employe_data['role'] = employee.role.name
+        employe_data['role_id'] = employee.role.id
+        employe_data['profile'] = employee.user.profile
+        employe_data['user_id'] = employee.user.id
+        employe_data['active'] = employee.active
         employe_data['company_name'] = employee.company.name
+        employe_data['team_name'] = employee.team.name
+        employe_data['start_date'] = str(employee.start_date)
+        employe_data['due_date'] = str(employee.end_date)
         employe_data['is_full_time'] = employee.is_full_time
         output.append(employe_data)
 
@@ -80,6 +120,7 @@ def get_one_employee(current_user, employee_id):
     employe_data['badge'] = employee.badge
     employe_data['is_full_time'] = employee.is_full_time
     employe_data['user'] = {'id': employee.user.id, 'name': employee.user.name}
+    # employe_data['chatroom'] = employee.chat_room[0].name
     employe_data['company'] = {'id': employee.company.id, 'name': employee.company.name}
     employe_data['role'] = {'id': employee.role.id, 'name': employee.role.name}
     employe_data['team'] = {'id': employee.team.id, 'name': employee.team.name}
