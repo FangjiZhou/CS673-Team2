@@ -2,43 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9c56f80-65c8-4633-80e3-83d3b6980f69" name="Default Changelist" comment="adding the user api paths">
-      <change afterPath="$PROJECT_DIR$/app.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api_module/chat_events.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/auth/auth.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/auth/auth.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/auth/auth.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/auth/auth.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/chats/chats.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/chats/chats.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/chats/chats.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/chats/chats.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/chats/chats.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/chats/chats.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/models/issue.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/models/issue.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/nav/nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/nav/nav.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/services/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/services/issuetracker.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/services/issuetracker.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Pmp_backEnd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pmp_backEnd.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/wgcyrl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/wgcyrl.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/chat_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/chat_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/company_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/company_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/employee_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/employee_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/issue_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/issue_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/project_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/project_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/role_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/role_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/team_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/team_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/user_controllers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/user_controllers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local/db/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/local/db/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,7 +23,7 @@
     <SUITE FILE_PATH="coverage/Pmp_backEnd$run.coverage" NAME="run Coverage Results" MODIFIED="1549988488894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pmp_backend$pytest_in_test_user_ctlr_py.coverage" NAME="pytest in test_user_ctlr.py Coverage Results" MODIFIED="1550885492701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pmp_backend$pytest_for_test_user_ctlr_UsersTest_test_user_instance.coverage" NAME="pytest for test_user_ctlr.UsersTest.test_user_instance Coverage Results" MODIFIED="1550885439669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/pmp_backend$run.coverage" NAME="run Coverage Results" MODIFIED="1553327537583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pmp_backend$run.coverage" NAME="run Coverage Results" MODIFIED="1553443084400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pmp_backend$helpers.coverage" NAME="helpers Coverage Results" MODIFIED="1550254627902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/api_module" />
     <SUITE FILE_PATH="coverage/pmp_backend$pytest_for_test_user_ctlr_UsersTest_test_user_creation.coverage" NAME="pytest for test_user_ctlr.UsersTest.test_user_creation Coverage Results" MODIFIED="1550869440427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pmp_backend$pytest_for_test_user_ctlr_UsersTest_test_user_login_with_invalid_cred.coverage" NAME="pytest for test_user_ctlr.UsersTest.test_user_login_with_invalid_cred Coverage Results" MODIFIED="1550870988414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
@@ -228,14 +193,14 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.28416485">
+    <splitter split-orientation="horizontal" split-proportion="0.7310195">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/run.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+                <state relative-caret-position="60">
+                  <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
                 </state>
               </provider>
             </entry>
@@ -270,11 +235,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/api_module/issue_controller.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1980">
-                  <caret line="143" column="66" selection-start-line="141" selection-start-column="30" selection-end-line="143" selection-end-column="66" />
+                <state relative-caret-position="199">
+                  <caret line="254" column="27" selection-start-line="254" selection-start-column="18" selection-end-line="254" selection-end-column="27" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
                   </folding>
@@ -378,18 +343,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="30">
                   <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/readme.md">
-              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="368">
-                    <caret line="52" column="23" lean-forward="true" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
-                  </first_editor>
-                  <second_editor />
                 </state>
               </provider>
             </entry>
@@ -503,9 +456,9 @@
         <option value="$PROJECT_DIR$/app/api_module/employee_controller.py" />
         <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/app.yaml" />
+        <option value="$PROJECT_DIR$/run.py" />
       </list>
     </option>
   </component>
@@ -536,6 +489,12 @@
               <item name="pmp_backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="pmp_backend" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pmp_backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pmp_backend" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="api_module" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pmp_backend" type="b2602c69:ProjectViewProjectNode" />
@@ -767,7 +726,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.57081807" weight="0.28469387" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5702076" visible="true" weight="0.28469387" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946752" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -775,8 +734,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RDE" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.5482296" visible="true" weight="0.26734695" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.45177045" side_tool="true" visible="true" weight="0.26734695" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.5482296" weight="0.26734695" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.42979243" side_tool="true" visible="true" weight="0.28469387" />
       <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Black Caiman" order="13" />
       <window_info anchor="bottom" id="Python Console" order="14" weight="0.32970297" />
@@ -931,16 +890,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/issue_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="143" column="66" selection-start-line="141" selection-start-column="30" selection-end-line="143" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/api_module/project_controller.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="452">
@@ -1061,13 +1010,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/api_module/chat_events.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
@@ -1085,10 +1027,17 @@
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="368">
-            <caret line="52" column="23" lean-forward="true" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
+          <first_editor relative-caret-position="563">
+            <caret line="65" column="50" lean-forward="true" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="50" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1096,6 +1045,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/issue_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="254" column="27" selection-start-line="254" selection-start-column="18" selection-end-line="254" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

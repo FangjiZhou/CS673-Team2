@@ -4,6 +4,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {Issue} from '../models/issue'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {IssuetrackerService} from '../services/issuetracker.service';
+import {AuthService} from '../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 
 
@@ -42,7 +43,7 @@ export class IssuesComponent implements OnInit {
   useracceptance = [];
 
 
-  constructor(private toast: ToastrService, private modalService: NgbModal, private formBuilder: FormBuilder, private eleRef: ElementRef, private issueTracker: IssuetrackerService) { }
+  constructor(private _auth:AuthService, private toast: ToastrService, private modalService: NgbModal, private formBuilder: FormBuilder, private eleRef: ElementRef, private issueTracker: IssuetrackerService) { }
   
   ngOnInit() {
     this.newIssueForm = this.formBuilder.group({
@@ -324,31 +325,37 @@ addItem(list: string, todo: Issue) {
     if (this.commentForm.invalid) {
         return;
     }
-    var comment_obj = {
-      comment: this.c.comment.value,
-      date: new Date().toString().split('-')[0],
-      employee_id: 1,
-      employee_name: "cyril",
-      id: null
-    }
-    this.issueTracker.addCommentToIssue(this.c.issue_id.value, comment_obj).subscribe(
-      data => {
-        this.detail_issue['tracking'].push(comment_obj);
-        this.commentForm.reset();
-        this.submitted = false;
-        modal.dismiss('Submitting the form');
-        this.toast.success('Success',  'comment added to the issue', {
-          closeButton: true
-        });
-      },
-      error =>{
-        this.toast.error('Error',  'Fail to add comment on issue'+ error, {
-          closeButton: true
-        });
-        modal.dismiss('Submitting the form');
+    if (this._auth.getUserEmployeeId != false){
+      var comment_obj = {
+        comment: this.c.comment.value,
+        date: new Date().toString().split('-')[0],
+        employee_id: this._auth.getUserEmployeeId,
+        employee_name: this._auth.getusername,
+        id: null
       }
-    );
-
+      this.issueTracker.addCommentToIssue(this.c.issue_id.value, comment_obj).subscribe(
+        data => {
+          this.detail_issue['tracking'].push(comment_obj);
+          this.commentForm.reset();
+          this.submitted = false;
+          modal.dismiss('Submitting the form');
+          this.toast.success('Success',  'comment added to the issue', {
+            closeButton: true
+          });
+        },
+        error =>{
+          this.toast.error('Error',  'Fail to add comment on issue'+ error, {
+            closeButton: true
+          });
+          modal.dismiss('Submitting the form');
+        }
+      );
+    }else{
+      console.log('Not And Employee, Login as an employee before adding comment on issue');
+      this.toast.warning('warning',  'Login as an employee before adding comment on issue', {
+        closeButton: true
+      });
+    }
     
   }
 }

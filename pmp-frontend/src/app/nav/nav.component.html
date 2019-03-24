@@ -26,9 +26,9 @@
     </ul>
     <ul class="navbar-nav">
       <a title="Messages" class="nav-link" routerLink="/messages" routerLinkActive="active" ><i class="fa fa-envelope" aria-hidden="true"> Chat</i></a>
+      <a class="nav-link" href="account" routerLinkActive="active"><i class="fa fa-user-o" aria-hidden="true"> My Account</i></a>
       <a title="Logout" class="nav-link" style="cursor:pointer" *ngIf="_authService.isAuthenticated" (click)="_authService.logoutUser()"><i class="fa fa-power-off" aria-hidden="true"> Logout</i></a> 
       <a title="Login" class="nav-link" routerLink="/login" *ngIf="!_authService.isAuthenticated" routerLinkActive="inactive"><i class="fa fa-sign-in" aria-hidden="true">Login</i></a>
-      <a class="nav-link" href="account" routerLinkActive="active"><i class="fa fa-user-o" aria-hidden="true"> My Account</i></a>
     </ul>
   </div>
 </nav>    
