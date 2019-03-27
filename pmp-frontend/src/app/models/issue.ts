@@ -8,4 +8,5 @@ export interface Issue {
     project : any;
     priority : string;
     employee : any;
+    sprint: any;
 }

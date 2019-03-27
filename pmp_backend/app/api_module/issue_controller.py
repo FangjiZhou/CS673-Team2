@@ -96,8 +96,8 @@ def get_all_issues(current_user):
         issue_data = {}
         issue_data['id'] = issue.id
         issue_data['name'] = issue.name
-        issue_data['start_date'] = issue.start_date
-        issue_data['due_date'] = issue.due_date
+        issue_data['start_date'] = str(issue.start_date)
+        issue_data['due_date'] = str(issue.due_date)
         due_date = datetime.strptime(str(issue.due_date), datetimeFormat)
         diff = due_date - today
         remaining = str(diff.days)+' d '+str(round(diff.seconds / 60, 0))+' mn'
@@ -129,8 +129,8 @@ def get_one_issue(current_user, issue_id):
     issue_data = {}
     issue_data['id'] = issue.id
     issue_data['name'] = issue.name
-    issue_data['start_date'] = issue.start_date
-    issue_data['due_date'] = issue.due_date
+    issue_data['start_date'] = str(issue.start_date)
+    issue_data['due_date'] = str(issue.due_date)
     due_date = datetime.strptime(str(issue.due_date), datetimeFormat)
     diff = due_date - today
     remaining = str(diff.days) + ' d ' + str(round(diff.seconds / 60, 0)) + ' mn'
@@ -160,8 +160,8 @@ def get_all_issues_of_a_project(current_user, project_id):
         issue_data = {}
         issue_data['id'] = issue.id
         issue_data['name'] = issue.name
-        issue_data['start_date'] = issue.start_date
-        issue_data['due_date'] = issue.due_date
+        issue_data['start_date'] = str(issue.start_date)
+        issue_data['due_date'] = str(issue.due_date)
         issue_data['status'] = issue.status
         issue_data['priority'] = issue.priority
         issue_data['project'] = {'id': issue.project.id, 'name': issue.project.name}
@@ -185,8 +185,8 @@ def get_all_issues_of_a_project_with_status(current_user, project_id, status):
         issue_data = {}
         issue_data['id'] = issue.id
         issue_data['name'] = issue.name
-        issue_data['start_date'] = issue.start_date
-        issue_data['due_date'] = issue.due_date
+        issue_data['start_date'] = str(issue.start_date)
+        issue_data['due_date'] = str(issue.due_date)
         issue_data['status'] = issue.status
         issue_data['priority'] = issue.priority
         issue_data['sprint'] = {'id': issue.project.id, 'name': issue.project.name}
@@ -210,8 +210,8 @@ def get_all_issues_of_one_employee(current_user, employee_id):
         issue_data = {}
         issue_data['id'] = issue.id
         issue_data['name'] = issue.name
-        issue_data['start_date'] = issue.start_date
-        issue_data['due_date'] = issue.due_date
+        issue_data['start_date'] = str(issue.start_date)
+        issue_data['due_date'] = str(issue.due_date)
         issue_data['status'] = issue.status
         issue_data['priority'] = issue.priority
         issue_data['project'] = {'id': issue.project.id, 'name': issue.project.name}
@@ -238,8 +238,8 @@ def get_all_issues_of_one_employee_with_status(current_user, employee_id, status
         task_data = {}
         task_data['id'] = issue.id
         task_data['name'] = issue.name
-        task_data['start_date'] = issue.start_date
-        task_data['due_date'] = issue.due_date
+        task_data['start_date'] = str(issue.start_date)
+        task_data['due_date'] = str(issue.due_date)
         task_data['status'] = issue.status
         task_data['priority'] = issue.priority
         task_data['project'] = {'id': issue.project.id, 'name': issue.project.name}
@@ -290,3 +290,21 @@ def delete_tracking_on_a_issue(current_user, issue_tracking_id):
     db.session.commit()
 
     return jsonify({'message': 'The tracking message has been deleted on the issue!'})
+
+
+@issue_mod.route('/<issue_id>/', methods=['DELETE'])
+@token_required
+def delete_one_issue(current_user, issue_id):
+
+    if not current_user.admin:
+        return jsonify({'message': 'Cannot perform that function!'}), 404
+
+    issue = Issue.query.filter_by(id=issue_id).first()
+
+    if not issue:
+        return jsonify({'message': 'No Issue found!'})
+
+    db.session.delete(issue)
+    db.session.commit()
+
+    return jsonify({'message': 'The issue has been deleted on the issue!'})

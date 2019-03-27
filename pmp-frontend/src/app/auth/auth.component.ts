@@ -3,6 +3,7 @@ import {AuthService} from '../services/auth.service'
 import { Router, ActivatedRoute } from '@angular/router'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-auth',
@@ -12,15 +13,18 @@ import { first } from 'rxjs/operators';
 export class AuthComponent implements OnInit {
   
   loginForm: FormGroup;
+  registrationForm: FormGroup;
   loading = false;
   submitted = false;
   returnUrl: string;
   error = '';
+  show_registration = false;
 
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
               private router: Router,
-              private _auth: AuthService, 
+              private _auth: AuthService,
+              private toast: ToastrService, 
               private _router: Router) { 
                 // redirect to home if already logged in
                   if (this._auth.isAuthenticated) { 
@@ -33,10 +37,17 @@ export class AuthComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
-  });
+    });
 
-  // get return url from route parameters or default to '/'
-  this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/issues';
+    this.registrationForm = this.formBuilder.group({
+      name : ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+      profile: ['', Validators.required],
+      skills: ['', Validators.required]
+    });
+    // get return url from route parameters or default to '/'
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/issues';
   }
 
   // convenience getter for easy access to form fields
@@ -61,6 +72,43 @@ export class AuthComponent implements OnInit {
       });
   }
 
+  // convenience getter for easy access to form fields
+  get r() { return this.registrationForm.controls; }
+  onSubmitRegistration(){
+    this.submitted = true;
+    // stop here if form is invalid
+    if (this.registrationForm.invalid) {
+        return;
+    }
+    console.log(this.r);
+    var newUserData={
+      name: this.r.name.value,
+      email: this.r.email.value,
+      password: this.r.password.value,
+      admin: false,
+      profile: this.r.profile.value,
+      skills: this.r.skills.value.split(',')
+    }
+    this._auth.createNewUser(newUserData).subscribe(
+      data => {
+        this.toast.success('Success',  'New User Well Created, Now You can login !', {
+          closeButton: true
+        });
+        this.router.navigate([this.returnUrl]);
+      },
+      error => {
+        this.toast.error('Error',  'Fail to Create the New User'+ error, {
+          closeButton: true
+        });
+      }
+    );
+    this.submitted= false;
+    this.showRegister();    
+  }
+
+  showRegister(){
+    this.show_registration = !this.show_registration;
+  }
   
 
 }

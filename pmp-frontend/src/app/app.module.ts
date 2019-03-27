@@ -15,7 +15,24 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './guard/auth.guard';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import {NgbModule, NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';  
+import { ToastrModule } from 'ngx-toastr';
+import { IssuePipePipe } from './pipes/issue-pipe.pipe';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { MessageslistPipe } from './pipes/messageslist.pipe';
+import { MomentModule } from 'angular2-moment';
+import { CompanyComponent } from './company/company.component';
+import { ProjectComponent } from './project/project.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { RolesComponent } from './roles/roles.component';
+import { AccountComponent } from './account/account.component';
+import { ListfilterPipe } from './pipes/listfilter.pipe';
+import { TeamComponent } from './team/team.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { SequentialPipe } from './pipes/sequential.pipe';
+
+
 
 @NgModule({
   declarations: [
@@ -26,7 +43,17 @@ import {NgbModule, NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-b
     IssuesComponent,
     SprintsComponent,
     ChatsComponent,
-    AdminComponent
+    AdminComponent,
+    IssuePipePipe,
+    MessageslistPipe,
+    CompanyComponent,
+    ProjectComponent,
+    EmployeeComponent,
+    RolesComponent,
+    AccountComponent,
+    ListfilterPipe,
+    TeamComponent,
+    SequentialPipe
   ],
   imports: [
     BrowserModule,
@@ -38,7 +65,16 @@ import {NgbModule, NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-b
     AngularFontAwesomeModule,
     NgbModule,
     NgbPaginationModule, 
-    NgbAlertModule
+    NgbAlertModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-top-right',
+      toastClass: 'toast toast-bootstrap-compatibility-fix'
+    }),
+    ScrollToModule.forRoot(),
+    MomentModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

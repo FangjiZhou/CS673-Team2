@@ -11,7 +11,7 @@ from app import db
 from flask_cors import CORS
 
 # Import module models (i.e. User)
-from app.api_module.models import User
+from app.api_module.models import User, Employee
 
 # Define the blueprint: 'api', set its url prefix: app.url/${path}
 api_mod = Blueprint('api', __name__, url_prefix='/api')
@@ -19,6 +19,7 @@ api_mod = Blueprint('api', __name__, url_prefix='/api')
 from app import app
 
 CORS(app, resources={r"*": {"origins": "*"}})
+
 
 def token_required(f):
     @wraps(f)
@@ -54,11 +55,9 @@ def doc():
 
 
 @api_mod.route('/user/', methods=['POST'])
-@token_required
-def create_user(current_user):
-    if not current_user.admin:
-        return jsonify({'message': 'Cannot perform that function!'})
-
+def create_user():
+    # if not current_user.admin:
+    #     return jsonify({'message': 'Cannot perform that function!'})
     data = request.get_json()
 
     hashed_password = generate_password_hash(data['password'], method='sha256')
@@ -91,6 +90,34 @@ def get_all_users(current_user):
         user_data['name'] = user.name
         user_data['email'] = user.email
         output.append(user_data)
+
+    return jsonify({'users': output})
+
+
+@api_mod.route('/user/unemployed/', methods=['GET'])
+@token_required
+def get_all_unemployed_users(current_user):
+
+    if not current_user:
+        return jsonify({'message': 'Cannot perform that function!'})
+
+    users = User.query.all()
+
+    output = []
+
+    for user in users:
+        user_data = {}
+        user_data['id'] = user.id
+        user_data['name'] = user.name
+        user_data['email'] = user.email
+        user_data['skills'] = user.skills
+        user_data['profile'] = user.profile
+        employed = False
+        for emp in user.employee:
+            if emp.active:
+                employed = True
+        if not employed and user.profile != 'admin':
+            output.append(user_data)
 
     return jsonify({'users': output})
 
@@ -152,7 +179,12 @@ def login():
     if check_password_hash(user.password, auth['password']):
         exp_date = datetime.datetime.utcnow() + datetime.timedelta(minutes=360000)
         token = jwt.encode({'id': user.id, 'exp': exp_date}, app.config['SECRET_KEY'])
-        out = jsonify({'username': auth['username'], 'token': token.decode('UTF-8'), 'expiration date': exp_date})
+        employee = Employee.query.filter_by(user_id=user.id).first()
+        if not employee:
+            employee_id = False
+        else:
+            employee_id = employee.id
+        out = jsonify({'username': auth['username'], 'token': token.decode('UTF-8'), 'expiration date': exp_date, 'employee_id':employee_id})
         return out
 
     return make_response(jsonify({'message': 'Could not verify'}), 401, {'WWW-Authenticate': 'Basic realm="Login required!"'})

@@ -25,13 +25,29 @@ export class AuthService {
   public get isAuthenticated() {
     return !!localStorage.getItem(this.currentUser);
   }
-
+  
   public get getUserToken(): string{
     if (this.isAuthenticated){
       var token = this.currentUserValue['token']
       return token;
     }
     return '';
+  }
+
+  public get getusername(): string{
+    if (this.isAuthenticated){
+      var username = this.currentUserValue['username']
+      return username;
+    }
+    return '';
+  }
+
+  public get getUserEmployeeId(): any{
+    if (this.isAuthenticated){
+      var employee_id = this.currentUserValue['employee_id']
+      return employee_id;
+    }
+    return false;
   }
 
   loginUser(username, password) {
@@ -76,6 +92,13 @@ export class AuthService {
       }, (err:HttpErrorResponse) => {
           console.log(err)
       });
+  }
+
+  createNewUser(userData:any){
+    const headers = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+    };
+    return this.http.post<any>(environment.API_URL + '/user/', userData, headers)
   }
 
   logout() {

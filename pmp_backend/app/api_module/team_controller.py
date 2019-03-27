@@ -7,7 +7,7 @@ from app.api_module.user_controllers import token_required
 from app import db
 
 # Import module models (i.e. Team)
-from app.api_module.models import Team, Company
+from app.api_module.models import Team, Company, Employee
 
 # Define the blueprint: 'api', set its url prefix: app.url/${path}
 team_mod = Blueprint('team', __name__, url_prefix='/api/team')
@@ -16,7 +16,7 @@ team_mod = Blueprint('team', __name__, url_prefix='/api/team')
 @team_mod.route('/', methods=['POST'])
 @token_required
 def create_team(current_user):
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     data = request.get_json()
@@ -38,7 +38,7 @@ def create_team(current_user):
 @token_required
 def get_all_teams(current_user):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     teams = Team.query.all()
@@ -46,8 +46,12 @@ def get_all_teams(current_user):
 
     for team in teams:
         team_data = {}
+        q = db.session.query(Employee).filter(Employee.team_id == team.id)
         team_data['id'] = team.id
         team_data['name'] = team.name
+        team_data['comment'] = team.comment
+        team_data['nbr_employee'] = q.count()
+        team_data['company'] = {'id': team.company.id, 'name': team.company.name}
         output.append(team_data)
 
     return jsonify({'teams': output})
@@ -57,7 +61,7 @@ def get_all_teams(current_user):
 @token_required
 def get_one_team(current_user, team_id):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     team = Team.query.filter_by(id=team_id).first()
@@ -73,3 +77,22 @@ def get_one_team(current_user, team_id):
                             'name': team.company.name}
 
     return jsonify({'team': team_data})
+
+
+@team_mod.route('/<team_id>/', methods=['PUT'])
+@token_required
+def update_team(current_user, team_id):
+    if not current_user:
+        return jsonify({'message': 'Cannot perform that function!'})
+
+    team = Team.query.filter_by(id=team_id).first()
+    data = request.get_json()
+    name = data.get('name')
+    comment = data.get('comment', None)
+
+    team.name = name
+    team.comment = comment
+    db.session.merge(team)
+    db.session.commit()
+
+    return jsonify({'message': 'team updated!'})

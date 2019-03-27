@@ -6,6 +6,12 @@ import { SprintsComponent } from './sprints/sprints.component';
 import { ChatsComponent } from './chats/chats.component';
 import { AdminComponent } from './admin/admin.component';
 import { AuthComponent } from './auth/auth.component';
+import { CompanyComponent } from './company/company.component';
+import { ProjectComponent } from './project/project.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { RolesComponent } from './roles/roles.component';
+import { AccountComponent } from './account/account.component';
+import { TeamComponent } from './team/team.component';
 import { AuthGuard } from '../app/guard/auth.guard';
 
 const routes: Routes = [
@@ -14,6 +20,12 @@ const routes: Routes = [
   {path:'sprints', component: SprintsComponent, canActivate: [AuthGuard]},
   {path:'messages', component: ChatsComponent, canActivate: [AuthGuard]},
   {path:'admin', component: AdminComponent, canActivate: [AuthGuard]},
+  {path:'company', component: CompanyComponent, canActivate: [AuthGuard]},
+  {path:'project', component: ProjectComponent, canActivate: [AuthGuard]},
+  {path:'employee', component: EmployeeComponent, canActivate: [AuthGuard]},
+  {path:'role', component: RolesComponent, canActivate: [AuthGuard]},
+  {path:'account', component: AccountComponent, canActivate: [AuthGuard]},
+  {path:'team', component: TeamComponent, canActivate: [AuthGuard]},
   {path:'login', component: AuthComponent},
   // otherwise redirect to login
   { path: '**', redirectTo: '/login' }
