@@ -1,11 +1,20 @@
-# Built in Angular
-https://angular.io/guide/quickstart
+# CS673Proj
 
 
-after you have installed all dependencies run the following:
 
-npm install
+# This is our repository for team 2, please leave all notes here
 
-then run:
+# Tech stack will be as follows
 
-npm start
+# Python 3.2.7 (https://www.python.org/downloads/)
+
+# Flask as backend tool (https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database)
+
+# Front end (using bootstrap (https://themes.getbootstrap.com/product/dashboard/)
+# Github, Slack, Trello
+
+# Heroku (https://www.heroku.com/)
+
+# SQL Lite DB
+
+# Balsamiq for design features (https://balsamiq.cloud/)
