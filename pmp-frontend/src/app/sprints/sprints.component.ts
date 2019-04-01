@@ -1,15 +1,15 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import {Issue} from '../models/issue'
+import {Sprint} from '../models/sprint'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {IssuetrackerService} from '../services/issuetracker.service';
+import {SprintService} from '../services/sprint.service';
 import {AuthService} from '../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
-  selector: 'app-issues',
+  selector: 'app-sprints',
   templateUrl: './sprints.component.html',
   styleUrls: ['./sprints.component.scss']
 })
@@ -17,7 +17,7 @@ export class SprintsComponent implements OnInit {
 
   closeResult: string;
 
-  newIssueForm: FormGroup;
+  newSprintForm: FormGroup;
   commentForm: FormGroup;
   loading = false;
   submitted = false;
@@ -43,10 +43,10 @@ export class SprintsComponent implements OnInit {
   useracceptance = [];
 
 
-  constructor(private _auth:AuthService, private toast: ToastrService, private modalService: NgbModal, private formBuilder: FormBuilder, private eleRef: ElementRef, private issueTracker: IssuetrackerService) { }
+  constructor(private _auth:AuthService, private toast: ToastrService, private modalService: NgbModal, private formBuilder: FormBuilder, private eleRef: ElementRef, private sprintTracker: SprintService) { }
 
   ngOnInit() {
-    this.newIssueForm = this.formBuilder.group({
+    this.newSprintForm = this.formBuilder.group({
       name: ['', Validators.required],
       start_date: ['', Validators.required],
       due_date: ['', Validators.required],
@@ -59,15 +59,15 @@ export class SprintsComponent implements OnInit {
   });
 
   // init the globals arrays of list
-  this.issueTracker.listProject().subscribe(data => {
+  this.sprintTracker.listProject().subscribe(data => {
     this.project_list = data['projects']
   });
 
-  this.issueTracker.listEmployee().subscribe(data => {
+  this.sprintTracker.listEmployee().subscribe(data => {
     this.employee_list = data['employees']
   });
 
-  this.issueTracker.listSprints().subscribe(data => {
+  this.sprintTracker.listSprints().subscribe(data => {
     this.sprint_list = data['sprints']
   });
 
@@ -76,7 +76,7 @@ export class SprintsComponent implements OnInit {
   }
 
   refresh_lists(){
-    this.issueTracker.listIssues().subscribe(data => {
+    this.sprintTracker.listSprints().subscribe(data => {
       this.issue_list = data['issues']
 
       //filter for each arrray
@@ -90,34 +90,34 @@ export class SprintsComponent implements OnInit {
 
   }
   // convenience getter for easy access to form fields
-  get i() { return this.newIssueForm.controls; }
+  get i() { return this.newSprintForm.controls; }
 
   // create new issue
   onSubmitIssue(modal) {
     this.submitted = true;
     // stop here if form is invalid
-    if (this.newIssueForm.invalid) {
+    if (this.newSprintForm.invalid) {
         return;
     }
 
     // the issue is valid and we can push it to the rest api
-    var new_issue:Issue = {id: null, dateAdded: new Date().toString(),
+    var new_sprint:Sprint = {id: null, dateAdded: new Date().toString(),
       name : this.i.name.value, start_date : this.i.start_date.value['year']+"-"+this.i.start_date.value['month']+"-"+this.i.start_date.value['day']+" 00:00:00",
       due_date : this.i.due_date.value['year']+"-"+this.i.due_date.value['month']+"-"+this.i.due_date.value['day']+" 23:59:59", status : "Input Queue",
       priority : this.i.priority.value, project : JSON.parse(this.i.project_id.value), employee : JSON.parse(this.i.employee_id.value), sprint:''}
     console.log(this.i)
     if(this.i.issue_id.value>0){
       var is_id = this.i.issue_id.value.toString()
-      new_issue.status = this.i.issue_status.value.toString();
+      new_sprint.status = this.i.sprint_status.value.toString();
       // call the service to update the issue:
       console.log('update starting')
       if (this.i.sprint_id.value != ''){
         console.log('change to task')
         // create the task first, then delete the issue
-        new_issue.sprint = JSON.parse(this.i.sprint_id.value);
-        this.issueTracker.createTaskFromIssue(new_issue).subscribe(
+        new_sprint.sprint = JSON.parse(this.i.sprint_id.value);
+        this.sprintTracker.createTaskFromSprint(new_sprint).subscribe(
           data =>{
-            this.issueTracker.deleteIssue(is_id).subscribe(
+            this.sprintTracker.deleteSprint(is_id).subscribe(
               data => {
                 console.log('from issue to task completed');
                 this.normal_ops_ending(modal, 'from issue to task completed');
@@ -138,7 +138,7 @@ export class SprintsComponent implements OnInit {
       }else{ // simple update
         console.log('simple update')
         // put the issue directly
-        this.issueTracker.updateIssue(is_id, new_issue).subscribe(
+        this.sprintTracker.updateSprint(is_id, new_sprint).subscribe(
           data => {
             console.log('update issue done');
             this.normal_ops_ending(modal, 'Issue well updated ');
@@ -151,12 +151,12 @@ export class SprintsComponent implements OnInit {
       }
     }else{
       // call the service to create the issue:
-      this.issueTracker.createIssue(new_issue).subscribe(
+      this.sprintTracker.createSprint(new_sprint).subscribe(
         data => {
           var id_ = data['id']
-          new_issue['id']=id_
+          new_sprint['id']=id_
           console.log('issue created');
-          this.issueTracker.getOneIssue(id_).subscribe(data => {
+          this.sprintTracker.getOneSprint(id_).subscribe(data => {
             this.inputqueue.push(data['issue']);
           });
           this.normal_ops_ending(modal, 'new issue created');
@@ -164,14 +164,14 @@ export class SprintsComponent implements OnInit {
         error => {
           this.error = error;
           console.log('fail to create issue');
-          console.log(new_issue);
+          console.log(new_sprint);
           this.error_occur(modal, 'fail to create issue'+error);
     });
   }
 }
 
 normal_ops_ending(modal:any, message:any){
-  this.newIssueForm.reset();
+  this.newSprintForm.reset();
   modal.dismiss('Submitting the form');
   this.submitted = false;
   this.refresh_lists();
@@ -181,7 +181,7 @@ normal_ops_ending(modal:any, message:any){
 }
 
 error_occur(modal:any, error:any){
-  this.newIssueForm.reset();
+  this.newSprintForm.reset();
   modal.dismiss('Submitting the form');
   this.submitted = false;
   this.toast.error('Error occur', error, {
@@ -189,7 +189,7 @@ error_occur(modal:any, error:any){
   });
 }
 
-addItem(list: string, todo: Issue) {
+addItem(list: string, todo: Sprint) {
   if(todo == null){
     return;
   }
@@ -204,7 +204,7 @@ addItem(list: string, todo: Issue) {
 }
 
 
-  drop(event: CdkDragDrop<Issue[]>) {
+  drop(event: CdkDragDrop<Sprint[]>) {
     // first check if it was moved within the same list or moved to a different list
     if (event.previousContainer === event.container) {
       // change the items index if it was moved within the same list
@@ -216,7 +216,7 @@ addItem(list: string, todo: Issue) {
 
       // update the stage of the issue
       // call the service to create the issue:
-    this.issueTracker.changeIssueStage(issue_id, stage_name).subscribe(
+    this.sprintTracker.changeSprintStage(issue_id, stage_name).subscribe(
       data => {
         // remove item from the previous list and add it to the new array
         transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
@@ -240,7 +240,7 @@ addItem(list: string, todo: Issue) {
   open_edit_issue(content, issue) {
     console.log(issue);
     this.show_create = false;
-    this.newIssueForm = this.formBuilder.group({
+    this.newSprintForm = this.formBuilder.group({
       name: [issue.name, [Validators.required, Validators.minLength(2)]],
       start_date: [{year: parseInt(issue.start_date.split('-')[0]), month: parseInt(issue.start_date.split('-')[1]), day: parseInt(issue.start_date.split('-')[2])}, [Validators.required, Validators.minLength(5)]],
       due_date: [{year: parseInt(issue.due_date.split('-')[0]), month: parseInt(issue.due_date.split('-')[1]), day: parseInt(issue.due_date.split('-')[2])}, [Validators.required, Validators.minLength(5)]],
@@ -282,7 +282,7 @@ addItem(list: string, todo: Issue) {
       issue_id : [is_id]
     });
     // retreive the issue details and push it to the detail_issue varialble
-    this.issueTracker.getOneIssue(is_id).subscribe(data => {
+    this.sprintTracker.getOneSprint(is_id).subscribe(data => {
       this.detail_issue = data['issue']
     });
     this.modalService.open(content, { size: 'lg' });
@@ -299,7 +299,7 @@ addItem(list: string, todo: Issue) {
   deleteIssue(modal:any){
     console.log(this.issue_to_delete)
     var issue_id = this.issue_to_delete['id'].toString()
-    this.issueTracker.deleteIssue(issue_id).subscribe(
+    this.sprintTracker.deleteSprint(issue_id).subscribe(
       data => {
         this.refresh_lists();
         modal.dismiss('Submitting the form');
@@ -333,7 +333,7 @@ addItem(list: string, todo: Issue) {
         employee_name: this._auth.getusername,
         id: null
       }
-      this.issueTracker.addCommentToIssue(this.c.issue_id.value, comment_obj).subscribe(
+      this.sprintTracker.addCommentToSprint(this.c.issue_id.value, comment_obj).subscribe(
         data => {
           this.detail_issue['tracking'].push(comment_obj);
           this.commentForm.reset();
