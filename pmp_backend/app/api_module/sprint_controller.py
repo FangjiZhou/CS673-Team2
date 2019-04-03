@@ -8,7 +8,7 @@ from app import db
 from app.api_module.helpers import parse_date
 
 # Import module models (i.e. Role)
-from app.api_module.models import Project, Sprint
+from app.api_module.models import Project, Sprint, Team
 
 # Define the blueprint: 'api', set its url prefix: app.url/${path}
 sprint_mod = Blueprint('sprint', __name__, url_prefix='/api/sprint')
@@ -17,8 +17,8 @@ sprint_mod = Blueprint('sprint', __name__, url_prefix='/api/sprint')
 @sprint_mod.route('/', methods=['POST'])
 @token_required
 def create_sprint(current_user):
-    if not current_user.admin:
-        return jsonify({'message': 'Cannot perform that function!'})
+    if not current_user:
+        return jsonify({'message': 'Cannot perform that function!'}), 401
 
     data = request.get_json()
     name = data.get('name')
@@ -26,20 +26,47 @@ def create_sprint(current_user):
     due_date = parse_date(data.get('due_date', ''))
     comment = data.get('comment', None)
     project = Project.query.filter_by(id=data.get('project_id')).first()
+    teams = data.get('teams', [])
 
     json_sprint = {'name': name, 'start_date': start_date, 'due_date': due_date, 'comment': comment, 'project': project}
     new_sprint = Sprint(json_sprint=json_sprint)
+    for item in teams:
+        team = Team.query.filter_by(id=item['id']).first()
+        new_sprint.teams = new_sprint.teams + [team]
+
     db.session.add(new_sprint)
     db.session.commit()
 
     return jsonify({'message': 'New sprint created!'})
 
 
+@sprint_mod.route('/<sprint_id>/', methods=['PUT'])
+@token_required
+def update_sprint(current_user, sprint_id):
+    if not current_user:
+        return jsonify({'message': 'Cannot perform that function!'}), 401
+
+    sprint = Sprint.query.filter_by(id=sprint_id).first()
+    data = request.get_json()
+    name = data.get('name')
+    start_date = parse_date(data.get('start_date', ''))
+    due_date = parse_date(data.get('due_date', ''))
+    if not sprint:
+        return jsonify({'message': 'sprint not found'}), 400
+    sprint.name = name
+    sprint.start_date = start_date
+    sprint.due_date = due_date
+    db.session.merge(sprint)
+    db.session.commit()
+
+    return jsonify({'message': 'sprint updated!'})
+
+
 @sprint_mod.route('/', methods=['GET'])
 @token_required
 def get_all_sprints(current_user):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     sprints = Sprint.query.all()
@@ -49,6 +76,8 @@ def get_all_sprints(current_user):
         sprint_data = {}
         sprint_data['id'] = sprint.id
         sprint_data['name'] = sprint.name
+        sprint_data['start_date'] = str(sprint.start_date)
+        sprint_data['due_date'] = str(sprint.due_date)
         sprint_data['project'] = {'id': sprint.project.id, 'name': sprint.project.name}
         output.append(sprint_data)
 
@@ -59,7 +88,7 @@ def get_all_sprints(current_user):
 @token_required
 def get_one_sprint(current_user, sprint_id):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     sprint = Sprint.query.filter_by(id=sprint_id).first()
@@ -82,7 +111,7 @@ def get_one_sprint(current_user, sprint_id):
 @token_required
 def get_all_sprints_of_a_project(current_user, project_id):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     sprints = Sprint.query.filter_by(company_id=project_id)

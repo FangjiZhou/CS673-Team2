@@ -112,9 +112,9 @@ def get_all_projects_of_a_company(current_user, company_id):
 
 @project_mod.route('/<project_id>/', methods=['PUT'])
 @token_required
-def update_team(current_user, project_id):
+def update_project(current_user, project_id):
     if not current_user:
-        return jsonify({'message': 'Cannot perform that function!'})
+        return jsonify({'message': 'Cannot perform that function!'}), 401
 
     project = Project.query.filter_by(id=project_id).first()
     data = request.get_json()
@@ -122,7 +122,8 @@ def update_team(current_user, project_id):
     start_date = parse_date(data.get('start_date', ''))
     due_date = parse_date(data.get('due_date', ''))
     comment = data.get('comment', None)
-
+    if not project:
+        return jsonify({'message': 'Project not found'}), 400
     project.name = name
     project.start_date = start_date
     project.due_date = due_date

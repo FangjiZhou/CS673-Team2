@@ -18,7 +18,7 @@ issue_mod = Blueprint('issue', __name__, url_prefix='/api/issue')
 @issue_mod.route('/', methods=['POST'])
 @token_required
 def create_issue(current_user):
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'}), 401
 
     data = request.get_json()
@@ -46,7 +46,7 @@ def create_issue(current_user):
 @issue_mod.route('/<issue_id>/', methods=['PUT'])
 @token_required
 def update_issue(current_user, issue_id):
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     issue = Issue.query.filter_by(id=issue_id).first()
@@ -56,7 +56,7 @@ def update_issue(current_user, issue_id):
     if 'new_stage' in data:
         # add a tracking on the issue
         comment = 'moved from '+issue.status+' to '+data.get('new_stage')
-        employee = Employee.query.filter_by(id=1).first()
+        employee = Employee.query.filter_by(id=data.get('employee_id')).first()
         json_issue_tracking = {'date': datetime.now(), 'comment': comment, 'issue': issue, 'employee': employee}
         issue_tracking = IssueTracking(json_issue_tracking)
         issue.status = data.get('new_stage')
@@ -83,7 +83,7 @@ def update_issue(current_user, issue_id):
 @token_required
 def get_all_issues(current_user):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     issues = Issue.query.all()
@@ -115,7 +115,7 @@ def get_all_issues(current_user):
 @token_required
 def get_one_issue(current_user, issue_id):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     issue = Issue.query.filter_by(id=issue_id).first()
@@ -150,7 +150,7 @@ def get_one_issue(current_user, issue_id):
 @token_required
 def get_all_issues_of_a_project(current_user, project_id):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     issues = Issue.query.filter_by(project_id=project_id)
@@ -175,7 +175,7 @@ def get_all_issues_of_a_project(current_user, project_id):
 @token_required
 def get_all_issues_of_a_project_with_status(current_user, project_id, status):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     issues = Issue.query.filter_by(project_id=project_id, status=status)
@@ -200,7 +200,7 @@ def get_all_issues_of_a_project_with_status(current_user, project_id, status):
 @token_required
 def get_all_issues_of_one_employee(current_user, employee_id):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     issues = Issue.query.filter_by(employee_id=employee_id)
@@ -228,7 +228,7 @@ def get_all_issues_of_one_employee(current_user, employee_id):
 @token_required
 def get_all_issues_of_one_employee_with_status(current_user, employee_id, status):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     issues = Issue.query.filter_by(employee_id=employee_id, status=status)
@@ -254,9 +254,9 @@ def get_all_issues_of_one_employee_with_status(current_user, employee_id, status
 
 @issue_mod.route('/tracking/<issue_id>/', methods=['POST'])
 @token_required
-def create_new_tracking_on_a_task(current_user, issue_id):
+def create_new_tracking_on_issue(current_user, issue_id):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     data = request.get_json()
@@ -278,7 +278,7 @@ def create_new_tracking_on_a_task(current_user, issue_id):
 @issue_mod.route('/tracking/<issue_tracking_id>/', methods=['DELETE'])
 @token_required
 def delete_tracking_on_a_issue(current_user, issue_tracking_id):
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'}), 401
 
     issue_tracking = IssueTracking.query.filter_by(id=issue_tracking_id).first()
@@ -296,7 +296,7 @@ def delete_tracking_on_a_issue(current_user, issue_tracking_id):
 @token_required
 def delete_one_issue(current_user, issue_id):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'}), 404
 
     issue = Issue.query.filter_by(id=issue_id).first()
@@ -307,4 +307,4 @@ def delete_one_issue(current_user, issue_id):
     db.session.delete(issue)
     db.session.commit()
 
-    return jsonify({'message': 'The issue has been deleted on the issue!'})
+    return jsonify({'message': 'The issue has been deleted!'})

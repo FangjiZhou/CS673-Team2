@@ -64,7 +64,7 @@ db.create_all()
 
 CORS(app)
 
-socketio = SocketIO()
+socketio = SocketIO(async_mode='gevent')
 
 socketio.init_app(app)
 

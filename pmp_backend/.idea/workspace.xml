@@ -2,9 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9c56f80-65c8-4633-80e3-83d3b6980f69" name="Default Changelist" comment="adding the user api paths">
+      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/nav/nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/nav/nav.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/nav/nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/nav/nav.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/services/issuetracker.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/services/issuetracker.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/sprints/sprints.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/sprints/sprints.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/sprints/sprints.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/sprints/sprints.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/sprints/sprints.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/sprints/sprints.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/app.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api_module/issue_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/issue_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api_module/project_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/project_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api_module/sprint_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/sprint_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api_module/task_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/task_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api_module/user_controllers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/user_controllers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local/db/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/local/db/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_user_ctlr.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_user_ctlr.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,11 +37,11 @@
     <SUITE FILE_PATH="coverage/pmp_backend$Flask__run_2_py_.coverage" NAME="Flask (run_2.py) Coverage Results" MODIFIED="1552569609730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/pmp_backend$pytest_for_test_user_ctlr_UsersTest_test_create_user.coverage" NAME="pytest for test_user_ctlr.UsersTest.test_create_user Coverage Results" MODIFIED="1550884122212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Pmp_backEnd$t.coverage" NAME="t Coverage Results" MODIFIED="1549984807860" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../backend" />
-    <SUITE FILE_PATH="coverage/pmp_backend$pytest_for_test_user_ctlr_UsersTest.coverage" NAME="pytest for test_user_ctlr.UsersTest Coverage Results" MODIFIED="1550870470395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/pmp_backend$pytest_for_test_user_ctlr_UsersTest.coverage" NAME="pytest for test_user_ctlr.UsersTest Coverage Results" MODIFIED="1553610045332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Pmp_backEnd$run.coverage" NAME="run Coverage Results" MODIFIED="1549988488894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pmp_backend$pytest_in_test_user_ctlr_py.coverage" NAME="pytest in test_user_ctlr.py Coverage Results" MODIFIED="1550885492701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pmp_backend$pytest_for_test_user_ctlr_UsersTest_test_user_instance.coverage" NAME="pytest for test_user_ctlr.UsersTest.test_user_instance Coverage Results" MODIFIED="1550885439669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/pmp_backend$run.coverage" NAME="run Coverage Results" MODIFIED="1553443084400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pmp_backend$run.coverage" NAME="run Coverage Results" MODIFIED="1554233557836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pmp_backend$helpers.coverage" NAME="helpers Coverage Results" MODIFIED="1550254627902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/api_module" />
     <SUITE FILE_PATH="coverage/pmp_backend$pytest_for_test_user_ctlr_UsersTest_test_user_creation.coverage" NAME="pytest for test_user_ctlr.UsersTest.test_user_creation Coverage Results" MODIFIED="1550869440427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pmp_backend$pytest_for_test_user_ctlr_UsersTest_test_user_login_with_invalid_cred.coverage" NAME="pytest for test_user_ctlr.UsersTest.test_user_login_with_invalid_cred Coverage Results" MODIFIED="1550870988414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
@@ -146,27 +164,30 @@
     <session id="-1634022387">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="11" />
-          <entry key="md" value="312" />
-          <entry key="py" value="11820" />
-          <entry key="txt" value="638" />
+          <entry key="md" value="343" />
+          <entry key="py" value="12218" />
+          <entry key="txt" value="644" />
           <entry key="yaml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="312" />
-          <entry key="PLAIN_TEXT" value="649" />
-          <entry key="Python" value="11820" />
+          <entry key="Markdown" value="343" />
+          <entry key="PLAIN_TEXT" value="655" />
+          <entry key="Python" value="12218" />
           <entry key="YAML" value="8" />
         </counts>
       </usages-collector>
@@ -174,8 +195,8 @@
         <counts>
           <entry key="html" value="1" />
           <entry key="json" value="2" />
-          <entry key="md" value="4" />
-          <entry key="py" value="49" />
+          <entry key="md" value="5" />
+          <entry key="py" value="52" />
           <entry key="txt" value="3" />
           <entry key="yaml" value="1" />
         </counts>
@@ -184,23 +205,23 @@
         <counts>
           <entry key="HTML" value="1" />
           <entry key="JSON" value="2" />
-          <entry key="Markdown" value="4" />
+          <entry key="Markdown" value="5" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="49" />
+          <entry key="Python" value="52" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7310195">
+    <splitter split-orientation="horizontal" split-proportion="0.2855392">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/run.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+                <state relative-caret-position="90">
+                  <caret line="6" column="52" lean-forward="true" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
                 </state>
               </provider>
             </entry>
@@ -235,11 +256,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/api_module/issue_controller.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="199">
-                  <caret line="254" column="27" selection-start-line="254" selection-start-column="18" selection-end-line="254" selection-end-column="27" />
+                <state relative-caret-position="524">
+                  <caret line="310" lean-forward="true" selection-start-line="310" selection-end-line="310" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
                   </folding>
@@ -250,8 +271,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/api_module/employee_controller.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="11" selection-start-line="11" selection-end-line="11" />
+                <state relative-caret-position="1905">
+                  <caret line="137" column="37" selection-start-line="137" selection-start-column="31" selection-end-line="137" selection-end-column="37" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
                   </folding>
@@ -260,9 +281,21 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tests/test_user_ctlr.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+                  <folding>
+                    <element signature="e#0#15#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/api_module/team_controller.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="528">
+                <state relative-caret-position="1245">
                   <caret line="92" column="20" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
@@ -274,7 +307,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/api_module/role_controller.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="461">
+                <state relative-caret-position="1170">
                   <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
@@ -290,8 +323,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/api_module/project_controller.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="452">
-                  <caret line="121" column="26" selection-start-line="121" selection-start-column="26" selection-end-line="121" selection-end-column="26" />
+                <state relative-caret-position="584">
+                  <caret line="133" column="51" lean-forward="true" selection-start-line="112" selection-end-line="133" selection-end-column="51" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
                   </folding>
@@ -302,8 +335,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/__init__.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="350">
-                  <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+                <state relative-caret-position="990">
+                  <caret line="66" column="39" selection-start-line="66" selection-start-column="39" selection-end-line="66" selection-end-column="39" />
                 </state>
               </provider>
             </entry>
@@ -311,8 +344,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/api_module/chat_events.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="624">
-                  <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
+                <state relative-caret-position="285">
+                  <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -320,8 +353,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/api_module/sprint_controller.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1530">
-                  <caret line="102" selection-start-line="102" selection-end-line="102" />
+                <state relative-caret-position="-739">
+                  <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
                   </folding>
@@ -330,19 +363,35 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/requirements.txt">
+            <entry file="file://$PROJECT_DIR$/app/api_module/user_controllers.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret selection-end-line="12" selection-end-column="17" />
+                <state relative-caret-position="385">
+                  <caret line="181" column="23" lean-forward="true" selection-start-line="181" selection-start-column="23" selection-end-line="181" selection-end-column="23" />
+                  <folding>
+                    <element signature="e#0#15#0" expanded="true" />
+                    <marker date="1553690355343" expanded="true" signature="1519:5805" ph="..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app.yaml">
+            <entry file="file://$PROJECT_DIR$/readme.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="SPLIT">
+                  <first_editor relative-caret-position="367">
+                    <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/anaconda3/envs/pmp_backend_2/lib/python3.6/site-packages/jwt/api_jwt.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+                <state relative-caret-position="491">
+                  <caret line="217" selection-start-line="217" selection-end-line="217" />
                 </state>
               </provider>
             </entry>
@@ -350,8 +399,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/api_module/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="59">
-                  <caret line="76" column="9" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
+                <state relative-caret-position="313">
+                  <caret line="378" column="8" selection-start-line="378" selection-start-column="4" selection-end-line="378" selection-end-column="8" />
                   <folding>
                     <element signature="e#135#153#0" expanded="true" />
                     <marker date="1553265778482" expanded="true" signature="5893:6037" ph="..." />
@@ -366,31 +415,6 @@
                     <marker date="1553265778482" expanded="true" signature="15822:16080" ph="..." />
                     <marker date="1553265778482" expanded="true" signature="17209:17384" ph="..." />
                     <marker date="1553265778482" expanded="true" signature="18275:18521" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/api_module/task_controller.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="624">
-                  <caret line="236" column="17" selection-start-line="236" selection-start-column="17" selection-end-line="236" selection-end-column="17" />
-                  <folding>
-                    <element signature="e#0#45#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/api_module/user_controllers.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="32">
-                  <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-                  <folding>
-                    <element signature="e#0#15#0" expanded="true" />
-                    <marker date="1553280121585" expanded="true" signature="1519:5805" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -416,6 +440,10 @@
       <find>first</find>
       <find>employee.n</find>
       <find>employee.na</find>
+      <find>/tracking</find>
+      <find>filter</find>
+      <find>PUT</find>
+      <find>delete</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -437,11 +465,7 @@
         <option value="$PROJECT_DIR$/../backend/t.py" />
         <option value="$PROJECT_DIR$/app/api_module/controllers.py" />
         <option value="$PROJECT_DIR$/tests/payload.txt" />
-        <option value="$PROJECT_DIR$/app/api_module/sprint_controller.py" />
         <option value="$PROJECT_DIR$/app/api_module/helpers.py" />
-        <option value="$PROJECT_DIR$/tests/test_user_ctlr.py" />
-        <option value="$PROJECT_DIR$/app/api_module/task_controller.py" />
-        <option value="$PROJECT_DIR$/app/api_module/issue_controller.py" />
         <option value="$PROJECT_DIR$/run_2.py" />
         <option value="$PROJECT_DIR$/app/api_module/events.py" />
         <option value="$PROJECT_DIR$/app/api_module/chat_controller.py" />
@@ -449,16 +473,20 @@
         <option value="$PROJECT_DIR$/app/api_module/company_controller.py" />
         <option value="$PROJECT_DIR$/app/api_module/team_controller.py" />
         <option value="$PROJECT_DIR$/app/api_module/role_controller.py" />
-        <option value="$PROJECT_DIR$/app/api_module/project_controller.py" />
         <option value="$PROJECT_DIR$/app/api_module/models.py" />
         <option value="$PROJECT_DIR$/app/api_module/models.py" />
-        <option value="$PROJECT_DIR$/app/api_module/user_controllers.py" />
         <option value="$PROJECT_DIR$/app/api_module/employee_controller.py" />
+        <option value="$PROJECT_DIR$/tests/test_user_ctlr.py" />
+        <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/app/api_module/user_controllers.py" />
+        <option value="$PROJECT_DIR$/app.yaml" />
         <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/app/api_module/task_controller.py" />
+        <option value="$PROJECT_DIR$/app/api_module/issue_controller.py" />
+        <option value="$PROJECT_DIR$/app/api_module/project_controller.py" />
+        <option value="$PROJECT_DIR$/app/api_module/sprint_controller.py" />
         <option value="$PROJECT_DIR$/readme.md" />
-        <option value="$PROJECT_DIR$/app.yaml" />
-        <option value="$PROJECT_DIR$/run.py" />
       </list>
     </option>
   </component>
@@ -478,6 +506,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -505,7 +534,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -589,7 +617,7 @@
       <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_user_ctlr.UsersTest.test_create_user" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_user_ctlr.UsersTest" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Pmp_backEnd" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -601,7 +629,7 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_user_ctlr.UsersTest.test_create_user&quot;" />
+      <option name="_new_target" value="&quot;test_user_ctlr.UsersTest&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -640,18 +668,18 @@
     <list>
       <item itemvalue="Flask server.Pmp_backEnd" />
       <item itemvalue="Python tests.pytest in test_user_ctlr.py" />
-      <item itemvalue="Python tests.pytest for test_user_ctlr.UsersTest.test_create_user" />
       <item itemvalue="Python tests.pytest for test_user_ctlr.UsersTest.test_user_instance" />
       <item itemvalue="Python.run" />
       <item itemvalue="Flask server.Flask (run_2.py)" />
+      <item itemvalue="Python tests.pytest for test_user_ctlr.UsersTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.run" />
+        <item itemvalue="Python tests.pytest for test_user_ctlr.UsersTest" />
         <item itemvalue="Flask server.Flask (run_2.py)" />
         <item itemvalue="Python tests.pytest in test_user_ctlr.py" />
         <item itemvalue="Python tests.pytest for test_user_ctlr.UsersTest.test_user_instance" />
-        <item itemvalue="Python tests.pytest for test_user_ctlr.UsersTest.test_create_user" />
       </list>
     </recent_temporary>
   </component>
@@ -677,15 +705,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_in_test_user_ctlr_py - 2019.02.22 at 20h 06m 34s.xml">
-      <configuration name="pytest in test_user_ctlr.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_in_test_user_ctlr_py - 2019.02.22 at 20h 08m 28s.xml">
-      <configuration name="pytest in test_user_ctlr.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_for_test_user_ctlr_UsersTest_test_create_user - 2019.02.22 at 20h 08m 43s.xml">
-      <configuration name="pytest for test_user_ctlr.UsersTest.test_create_user" configurationId="tests" />
-    </history-entry>
     <history-entry file="pytest_in_test_user_ctlr_py - 2019.02.22 at 20h 08m 58s.xml">
       <configuration name="pytest in test_user_ctlr.py" configurationId="tests" />
     </history-entry>
@@ -707,6 +726,15 @@
     <history-entry file="pytest_in_test_user_ctlr_py - 2019.02.22 at 20h 31m 33s.xml">
       <configuration name="pytest in test_user_ctlr.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="pytest_for_test_user_ctlr_UsersTest - 2019.03.26 at 10h 18m 43s.xml">
+      <configuration name="pytest for test_user_ctlr.UsersTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_user_ctlr_UsersTest - 2019.03.26 at 10h 20m 07s.xml">
+      <configuration name="pytest for test_user_ctlr.UsersTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_user_ctlr_UsersTest - 2019.03.26 at 10h 20m 47s.xml">
+      <configuration name="pytest for test_user_ctlr.UsersTest" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -721,12 +749,12 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15567766" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15018316" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5702076" visible="true" weight="0.28469387" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5677656" weight="0.30510205" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946752" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -734,8 +762,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RDE" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.5482296" weight="0.26734695" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.42979243" side_tool="true" visible="true" weight="0.28469387" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.5470086" visible="true" weight="0.3" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.45299146" side_tool="true" visible="true" weight="0.3" />
       <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Black Caiman" order="13" />
       <window_info anchor="bottom" id="Python Console" order="14" weight="0.32970297" />
@@ -759,20 +787,8 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/models/db.model.py" />
-    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/werkzeug/wrappers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="1458" column="8" selection-start-line="1458" selection-start-column="8" selection-end-line="1458" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/functools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="73" column="4" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/werkzeug/wrappers.py" />
+    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/functools.py" />
     <entry file="file://$PROJECT_DIR$/models/create_db.py" />
     <entry file="file://$PROJECT_DIR$/app/api_module/forms.py" />
     <entry file="file://$PROJECT_DIR$/app/templates/404.html">
@@ -784,13 +800,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py" />
     <entry file="file://$PROJECT_DIR$/../backend/t.py" />
-    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/flask/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="140" column="8" selection-start-line="140" selection-start-column="8" selection-end-line="140" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/flask/config.py" />
     <entry file="file://$PROJECT_DIR$/app/templates/docstring.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -798,35 +808,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/sqlalchemy/engine/threadlocal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="109" column="8" selection-start-line="109" selection-start-column="8" selection-end-line="109" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/sqlalchemy/engine/threadlocal.py" />
     <entry file="file://$PROJECT_DIR$/tests/pmp_backend.postman_collection.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8976" />
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="1080" column="8" selection-start-line="1080" selection-start-column="8" selection-end-line="1080" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/werkzeug/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="826" column="8" selection-start-line="826" selection-start-column="8" selection-end-line="826" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/requests/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/flask/app.py" />
+    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/werkzeug/test.py" />
+    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/requests/__init__.py" />
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/python_stubs/-743676300/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -834,13 +824,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/jwt/api_jws.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="144" column="28" lean-forward="true" selection-start-line="144" selection-start-column="28" selection-end-line="144" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/jwt/api_jws.py" />
     <entry file="file://$PROJECT_DIR$/tests/payload.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -848,28 +832,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/flask_cors/extension.py">
+    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/flask_cors/extension.py" />
+    <entry file="file://$PROJECT_DIR$/run_2.py" />
+    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/flask_socketio/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/app/api_module/helpers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2415">
-          <caret line="161" column="39" lean-forward="true" selection-start-line="161" selection-start-column="39" selection-end-line="161" selection-end-column="39" />
+        <state relative-caret-position="75">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
           <folding>
-            <element signature="e#284#309#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_user_ctlr.py">
+    <entry file="file://$PROJECT_DIR$/app/api_module/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="84" column="33" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="33" />
+        <state relative-caret-position="75">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run_2.py" />
-    <entry file="file://$USER_HOME$/anaconda3/envs/Pmp_backEnd/lib/python3.6/site-packages/flask_socketio/__init__.py">
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="649" column="4" selection-start-line="649" selection-start-column="4" selection-end-line="649" selection-end-column="4" />
+        <state relative-caret-position="210">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/chat_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -890,20 +886,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/project_controller.py">
+    <entry file="file://$PROJECT_DIR$/app/api_module/employee_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="121" column="26" selection-start-line="121" selection-start-column="26" selection-end-line="121" selection-end-column="26" />
+        <state relative-caret-position="1905">
+          <caret line="137" column="37" selection-start-line="137" selection-start-column="31" selection-end-line="137" selection-end-column="37" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_user_ctlr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/api_module/team_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
+        <state relative-caret-position="1245">
           <caret line="92" column="20" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/role_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="66" column="39" selection-start-line="66" selection-start-column="39" selection-end-line="66" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/chat_events.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/issue_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="310" lean-forward="true" selection-start-line="310" selection-end-line="310" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="52" lean-forward="true" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/task_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="307" column="23" selection-start-line="307" selection-start-column="23" selection-end-line="307" selection-end-column="23" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
@@ -912,8 +969,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api_module/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="76" column="9" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
+        <state relative-caret-position="313">
+          <caret line="378" column="8" selection-start-line="378" selection-start-column="4" selection-end-line="378" selection-end-column="8" />
           <folding>
             <element signature="e#135#153#0" expanded="true" />
             <marker date="1553265778482" expanded="true" signature="5893:6037" ph="..." />
@@ -932,20 +989,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/helpers.py">
+    <entry file="file://$PROJECT_DIR$/app/api_module/project_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/role_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
+        <state relative-caret-position="584">
+          <caret line="133" column="51" lean-forward="true" selection-start-line="112" selection-end-line="133" selection-end-column="51" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
@@ -954,107 +1001,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api_module/sprint_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
+        <state relative-caret-position="-739">
+          <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/employee_controller.py">
+    <entry file="file://$USER_HOME$/anaconda3/envs/pmp_backend_2/lib/python3.6/site-packages/jwt/api_jwt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/chat_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        <state relative-caret-position="491">
+          <caret line="217" selection-start-line="217" selection-end-line="217" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api_module/user_controllers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="385">
+          <caret line="181" column="23" lean-forward="true" selection-start-line="181" selection-start-column="23" selection-end-line="181" selection-end-column="23" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1553280121585" expanded="true" signature="1519:5805" ph="..." />
+            <marker date="1553690355343" expanded="true" signature="1519:5805" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/task_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="236" column="17" selection-start-line="236" selection-start-column="17" selection-end-line="236" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/chat_events.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="12" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="563">
-            <caret line="65" column="50" lean-forward="true" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="50" />
+          <first_editor relative-caret-position="367">
+            <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/issue_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="254" column="27" selection-start-line="254" selection-start-column="18" selection-end-line="254" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

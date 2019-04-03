@@ -55,9 +55,10 @@ def doc():
 
 
 @api_mod.route('/user/', methods=['POST'])
-def create_user():
-    # if not current_user.admin:
-    #     return jsonify({'message': 'Cannot perform that function!'})
+@token_required
+def create_user(current_user):
+    if not current_user:
+        return jsonify({'message': 'Cannot perform that function!'})
     data = request.get_json()
 
     hashed_password = generate_password_hash(data['password'], method='sha256')
@@ -77,7 +78,7 @@ def create_user():
 @token_required
 def get_all_users(current_user):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     users = User.query.all()
@@ -126,7 +127,7 @@ def get_all_unemployed_users(current_user):
 @token_required
 def get_one_user(current_user, user_id):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     user = User.query.filter_by(id=user_id).first()
@@ -147,7 +148,7 @@ def get_one_user(current_user, user_id):
 @api_mod.route('/user/<user_id>/', methods=['DELETE'])
 @token_required
 def delete_user(current_user, user_id):
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'})
 
     user = User.query.filter_by(id=user_id).first()

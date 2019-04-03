@@ -18,8 +18,8 @@ class UsersTest(unittest.TestCase):
         self.app = app
         self.client = self.app.test_client
         self.user = {
-            'username': 'wgcyrl@amazon.com',
-            'password': 'cyril@12345',
+            'username': 'admin@email.com',
+            'password': 'admin@12345',
             'token': ''
         }
         with self.app.app_context():
