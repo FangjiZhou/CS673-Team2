@@ -31,6 +31,7 @@ import { ListfilterPipe } from './pipes/listfilter.pipe';
 import { TeamComponent } from './team/team.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { SequentialPipe } from './pipes/sequential.pipe';
+import { SprintPipe } from './pipes/sprint.pipe';
 
 
 
@@ -53,7 +54,8 @@ import { SequentialPipe } from './pipes/sequential.pipe';
     AccountComponent,
     ListfilterPipe,
     TeamComponent,
-    SequentialPipe
+    SequentialPipe,
+    SprintPipe
   ],
   imports: [
     BrowserModule,

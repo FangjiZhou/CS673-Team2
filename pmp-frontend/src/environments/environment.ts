@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API_URL: 'http://localhost:5005/api'
+  API_URL: 'https://pmp-backend.herokuapp.com/api',
+  API_URL_: 'http://localhost:5005/api'
 };
 
 /*

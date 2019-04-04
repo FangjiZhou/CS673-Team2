@@ -65,9 +65,9 @@
             class="example-list" id="Input Queue">
                 <div class="card" *ngFor="let item of inputqueue | issuePipe:user_filter:project_filter" id="{{item.id}}" cdkDrag>
                         <div class="card-header" style="height:40px; font-size: 12px; font-weight: bold;">
-                                <table style="width:100%">
+                                <table style="width:100%;">
                                     <tr>
-                                        <td >{{item.project.name}}</td>
+                                        <td style="font-size: 0.9em;" >{{item.project.name}}</td>
                                         <td align="right" (mousedown)="$event.stopPropagation(); open_edit_issue(content, item)" style="cursor: pointer; "><i class="fa fa-pencil fa-lg" aria-hidden="true" ></i></td>
                                         <td align="right"><i class="fa fa-ban" aria-hidden="true"></i></td>
                                         <td align="right" (mousedown)="$event.stopPropagation(); showIssueModalDelete(content_delete_issue, item)"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
@@ -103,7 +103,7 @@
                         <div class="card-header" style="height:40px; font-size: 12px; font-weight: bold;">
                                 <table style="width:100%">
                                     <tr>
-                                        <td >{{item.project.name}}</td>
+                                        <td style="font-size: 0.9em;">{{item.project.name}}</td>
                                         <td align="right" (mousedown)="$event.stopPropagation(); open_edit_issue(content, item)" style="cursor: pointer; "><i class="fa fa-pencil fa-lg" aria-hidden="true" ></i></td>
                                         <td align="right"><i class="fa fa-ban" aria-hidden="true"></i></td>
                                         <td align="right" (mousedown)="$event.stopPropagation(); showIssueModalDelete(content_delete_issue, item)"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
@@ -137,7 +137,7 @@
                         <div class="card-header bg-secondary" style="height:40px; font-size: 12px; font-weight: bold;">
                             <table style="width:100%">
                                 <tr>
-                                    <td >{{item.project.name}}</td>
+                                    <td style="font-size: 0.9em;">{{item.project.name}}</td>
                                     <td align="right" (mousedown)="$event.stopPropagation(); open_edit_issue(content, item)" style="cursor: pointer; "><i class="fa fa-pencil fa-lg" aria-hidden="true" ></i></td>
                                     <td align="right"><i class="fa fa-ban" aria-hidden="true"></i></td>
                                     <td align="right" (mousedown)="$event.stopPropagation(); showIssueModalDelete(content_delete_issue, item)"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
@@ -172,7 +172,7 @@
                         <div class="card-header bg-info" style="height:40px; font-size: 12px; font-weight: bold;">
                                 <table style="width:100%">
                                     <tr>
-                                        <td >{{item.project.name}}</td>
+                                        <td style="font-size: 0.9em;">{{item.project.name}}</td>
                                         <td align="right" (mousedown)="$event.stopPropagation(); open_edit_issue(content, item)" style="cursor: pointer; "><i class="fa fa-pencil fa-lg" aria-hidden="true" ></i></td>
                                         <td align="right"><i class="fa fa-ban" aria-hidden="true"></i></td>
                                         <td align="right" (mousedown)="$event.stopPropagation(); showIssueModalDelete(content_delete_issue, item)"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
@@ -206,7 +206,7 @@
                         <div class="card-header bg-info" style="height:40px; font-size: 12px; font-weight: bold;">
                                 <table style="width:100%">
                                     <tr>
-                                        <td >{{item.project.name}}</td>
+                                        <td style="font-size: 0.9em;">{{item.project.name}}</td>
                                         <td align="right" (mousedown)="$event.stopPropagation(); open_edit_issue(content, item)" style="cursor: pointer; "><i class="fa fa-pencil fa-lg" aria-hidden="true" ></i></td>
                                         <td align="right"><i class="fa fa-ban" aria-hidden="true"></i></td>
                                         <td align="right" (mousedown)="$event.stopPropagation(); showIssueModalDelete(content_delete_issue, item)"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
