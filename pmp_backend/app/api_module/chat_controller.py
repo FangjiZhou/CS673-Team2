@@ -18,7 +18,7 @@ chat_mod = Blueprint('chat', __name__, url_prefix='/api/chat')
 @token_required
 def create_chat_room(current_user):
     if not current_user:
-        return jsonify({'message': 'Cannot perform that function without login first!'}), 400
+        return jsonify({'message': 'Cannot perform that function without login first!'}), 401
 
     data = request.get_json()
     name = data.get('name', 'DM')

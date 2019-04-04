@@ -55,10 +55,9 @@ def doc():
 
 
 @api_mod.route('/user/', methods=['POST'])
-@token_required
-def create_user(current_user):
-    if not current_user:
-        return jsonify({'message': 'Cannot perform that function!'})
+def create_user():
+    # if not current_user:
+    #     return jsonify({'message': 'Cannot perform that function!'})
     data = request.get_json()
 
     hashed_password = generate_password_hash(data['password'], method='sha256')

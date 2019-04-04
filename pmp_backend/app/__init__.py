@@ -5,6 +5,7 @@ gevent.monkey.patch_all()
 from flask import Flask, render_template
 from flask_cors import CORS
 from flask_socketio import SocketIO, emit, rooms
+import pymysql
 
 
 # Import SQLAlchemy
@@ -64,7 +65,8 @@ db.create_all()
 
 CORS(app)
 
-socketio = SocketIO(async_mode='gevent')
+socketio = SocketIO()
+# socketio = SocketIO(async_mode='gevent')
 
 socketio.init_app(app)
 
