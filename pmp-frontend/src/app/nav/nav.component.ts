@@ -10,7 +10,7 @@ export class NavComponent implements OnInit {
 
   appTitle: string = 'P.M.> Platform'
 
-  constructor(private _authService : AuthService) { }
+  constructor(public _authService : AuthService) { }
 
   ngOnInit() {
   }

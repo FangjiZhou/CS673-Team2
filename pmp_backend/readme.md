@@ -3,9 +3,14 @@
 - The api_module will handle all the call from the client side
 - The file structure is represented as follows :
 ```
+├── app
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   └── __init__.cpython-36.pyc
 │   ├── api_module
 │   │   ├── __init__.py
 │   │   ├── chat_controller.py
+│   │   ├── chat_events.py
 │   │   ├── company_controller.py
 │   │   ├── employee_controller.py
 │   │   ├── helpers.py
@@ -20,16 +25,20 @@
 │   └── templates
 │       ├── 404.html
 │       └── docstring.html
+├── app.yaml
 ├── config.py
 ├── local
 │   └── db
 │       └── app.db
 ├── readme.md
+├── requirements.txt
 ├── run.py
 ├── static
 └── tests
     ├── payload.txt
-    └── pmp_backend.postman_collection.json
+    ├── pmp_backend.postman_collection.json
+    └── test_user_ctlr.py
+
 
 ```
 
@@ -53,6 +62,7 @@
     - urllib3 == 1.24.1
     
 # Run : 
+- pip install requirements.txt
 - python run.py
 
 # Deployment

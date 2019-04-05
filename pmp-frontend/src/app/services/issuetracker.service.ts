@@ -84,7 +84,8 @@ export class IssuetrackerService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json', 'x-access-token': this._auth.getUserToken })
     };
     const data = {
-      new_stage : stage
+      new_stage : stage,
+      employee_id: this._auth.getUserEmployeeId
     };
     return this.http.put<any>(environment.API_URL + '/issue/'+id+'/', data, headers)
   }
@@ -118,7 +119,7 @@ export class IssuetrackerService {
     };
     const data = {
       comment : comment['comment'],
-      employee_id: comment['employee_id']
+      employee_id: this._auth.getUserEmployeeId
     };
 
     return this.http.post<any>(environment.API_URL + '/issue/tracking/'+id+'/', data, headers)

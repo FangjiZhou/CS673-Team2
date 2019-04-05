@@ -107,7 +107,7 @@ def get_all_employee(current_user):
 @token_required
 def get_one_employee(current_user, employee_id):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'}), 401
 
     employee = Employee.query.filter_by(id=employee_id).first()
@@ -132,7 +132,7 @@ def get_one_employee(current_user, employee_id):
 @token_required
 def get_all_employee_of_a_company(current_user, company_id):
 
-    if not current_user.admin:
+    if not current_user:
         return jsonify({'message': 'Cannot perform that function!'}), 401
 
     employees = Employee.query.filter_by(company_id=company_id)

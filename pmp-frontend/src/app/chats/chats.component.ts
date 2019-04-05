@@ -327,12 +327,14 @@ export class ChatsComponent implements OnInit {
   send_new_message(room_id:number, room_name:string){
     if(this.text_message.length<1){
       return;
-    }else{      
+    }else{   
+      var date_msg = new Date();   
       var message ={
         employee_id :this.current_emp_id,
         room_id : room_id,
         room : room_name,
-        message : this.text_message
+        message : this.text_message,
+        sending_date : date_msg.getFullYear().toString()+'-'+String(date_msg.getMonth()+1)+'-'+date_msg.getDay().toString()+' '+date_msg.getHours().toString()+':'+date_msg.getMinutes().toString()+':'+date_msg.getSeconds().toString()
       }
       console.log('post message',message)
       this.chatserv.post_in_room('text', message);

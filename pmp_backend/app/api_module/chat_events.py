@@ -6,6 +6,7 @@ from app.api_module.models import ChatRoom, Message, Employee
 
 # Import the token_required for auth
 from app.api_module.user_controllers import token_required
+from app.api_module.helpers import parse_date
 
 from .. import socketio, db
 from datetime import datetime
@@ -38,10 +39,11 @@ def text(message):
     room_name = message.get('room')
     emp_id = message.get('employee_id')
     room_id = message.get('room_id')
+    sending_date = parse_date(message.get('sending_date', ''))
     message = message.get('message')
     room = ChatRoom.query.filter_by(id=room_id).first()
     employee = Employee.query.filter_by(id=emp_id).first()
-    sending_date = datetime.now()
+
     if not (employee and room):
         emit('message', 'not employee nor room', room=room)
     json_message = {'message': message, 'sending_date': sending_date, 'employee': employee, 'chatroom': room}

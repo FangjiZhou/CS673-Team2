@@ -21,7 +21,7 @@ def parse_date(date_str):
             else:  # 2018-07-11
                 return datetime.strptime(date_str.split('.')[0], '%Y-%m-%d')
         else:
-            return None
+            return datetime.now()
     except Exception as e:
         raise Exception('fail in date parser for :' + date_str + '  ' + str(e))
 

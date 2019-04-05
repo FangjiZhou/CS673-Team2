@@ -56,7 +56,7 @@ export class IssuesComponent implements OnInit {
       sprint_id: [''],
       issue_id:[''],
       issue_status: ['']
-  });
+    });
 
   // init the globals arrays of list
   this.issueTracker.listProject().subscribe(data => {
@@ -153,12 +153,6 @@ export class IssuesComponent implements OnInit {
       // call the service to create the issue: 
       this.issueTracker.createIssue(new_issue).subscribe(
         data => {
-          var id_ = data['id']
-          new_issue['id']=id_
-          console.log('issue created');
-          this.issueTracker.getOneIssue(id_).subscribe(data => {
-            this.inputqueue.push(data['issue']);
-          });
           this.normal_ops_ending(modal, 'new issue created');
         },
         error => {
