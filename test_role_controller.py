@@ -1,148 +1,117 @@
 import unittest
 import json
 from app import db, app
-from requests.auth import _basic_auth_str
-from app.api_module.helpers import string_generator
 import warnings
-# from app.api_module.models import Role
-# import jwt
 
-'''
-To start this test, we should first use postman to create two users with following information
-To make sure we have already have this user named role_test
-json_user_not_admin = {"name": "role_test", "email": "role_test@email.com",
-             "password": 'role123', "admin": False,
-             "profile": "Software Engineer",
-             "skills": ["java", "C#", "Python"]}
-json_user_admin = {"name": "wzc", "email": "wzc@email.com",
-             "password": 'wzc123', "admin": True,
-             "profile": "Software Engineer",
-             "skills": ["java", "C#", "Python"]}
-Make sure we have already have a role with {'name': 'role_test_name', 'comment': 'role_test_comment'}
-'''
 
 class RoleTest(unittest.TestCase):
     """
       Roles Test Case
+      by Zicheng Wang
     """
+
     def setUp(self):
         """
         Test Setup
         """
         self.app = app
         self.client = self.app.test_client
-        self.user_admin = {
-            'username': 'wzc@email.com',
-            'password': 'wzc123',
-            'token': ''
-        }
-        self.user_not_admin = {
-            'username': 'role_test@email.com',
-            'password': 'role123',
-            'token': ''
-        }
-        # json_user = {"name": "role_test", "email": "role_test@email.com",
-        #              "password": 'role123', "admin": False,
-        #              "profile": "Software Engineer",
-        #              "skills": ["java", "C#", "Python"]}
-        # request_token = self.client().get('/api/login/',
-        #                                   headers={'Content-Type': 'application/json',
-        #                                            'Authorization': _basic_auth_str(self.user_admin.get('username'),
-        #                                                                             self.user_admin.get('password'))})
-        # json_data = json.loads(request_token.data)
-        # self.user_admin['token'] = json_data.get('token')
-        # json_role = {'name': 'role_test_name', 'comment': 'role_test_comment'}
-        # request_role_create = self.client().post('/api/role/', headers={'Content-Type': 'application/json',
-        #                                                                 'x-access-token': self.user_admin['token']},
-        #                                          data=json.dumps(json_role))
-        # request_user_create = self.client().post('/api/user/', headers={'Content-Type': 'application/json',
-        #                                                                 'x-access-token': self.user_admin['token']},
-        #                                          data=json.dumps(json_user))
         with self.app.app_context():
             # create all tables
             db.create_all()
 
-    def test_admin_create_role(self):
-        """ test role creation """
+        # Create tests users
+        json_admin_user = {"name": "wzc_admin", "email": "wzc_admin@email.com",
+                           "password": "wzc", "admin": True,
+                           "profile": "Software Engineer",
+                           "skills": ["java", "C#", "Python"]}
+
+        self.client().post('/api/user/',
+                           headers={'Content-Type': 'application/json',
+                                    'x-access-token': ''},
+                           data=json.dumps(json_admin_user))
+
+        self.user_admin = {
+            'username': json_admin_user['email'],
+            'password': json_admin_user['password'],
+            'token': ''
+        }
+
+        # Get tokens
+        json_login_admin = {
+            "username": self.user_admin['username'],
+            "password": self.user_admin['password']
+        }
+        res_login_admin = self.client().post('/api/login',
+                                             headers={'Content-Type': 'application/json',
+                                                      'Authorization': 'Basic'},
+                                             data=json.dumps(json_login_admin))
+        json_data_login_admin = json.loads(res_login_admin.data)
+        self.user_admin['token'] = json_data_login_admin.get('token')
+
+        # Create test roles
+        json_test_role1 = {'name': 'role_test_name1', 'comment': 'role_test_comment1'}
+        self.client().post('/api/role/', headers={'Content-Type': 'application/json',
+                                                  'x-access-token': self.user_admin[
+                                                      'token']},
+                           data=json.dumps(json_test_role1))
+
+    def test_a_create_role(self):
+        """ test role creation with admin account """
         warnings.simplefilter("ignore")
-        request_token = self.client().get('/api/login/',
-                                          headers={'Content-Type': 'application/json',
-                                                   'Authorization': _basic_auth_str(self.user_admin.get('username'),
-                                                                                    self.user_admin.get('password'))})
-        json_data = json.loads(request_token.data)
-        self.user_admin['token'] = json_data.get('token')
-        json_role = {'name': string_generator()+'role_test_name', 'comment': string_generator()+'role_test_comment'}
+        json_test_role2 = {'name': 'role_test_name2', 'comment': 'role_test_comment2'}
         request_role_admin_create = self.client().post('/api/role/', headers={'Content-Type': 'application/json',
-                                                                        'x-access-token': self.user_admin['token']},
-                                                 data=json.dumps(json_role))
-        json_data = json.loads(request_role_admin_create.data)
-        self.assertTrue(json_data.get('message'))
-        self.assertEqual(json_data.get('message'), 'New Role created!')
+                                                                              'x-access-token': self.user_admin[
+                                                                                  'token']},
+                                                       data=json.dumps(json_test_role2))
+        json_data_test_admin_create_role = json.loads(request_role_admin_create.data)
+        self.assertTrue(json_data_test_admin_create_role.get('message'))
+        self.assertEqual(json_data_test_admin_create_role.get('message'), 'New Role created!')
         self.assertEqual(request_role_admin_create.status_code, 200)
 
-    def test_not_admin_create_role(self):
-        """ test role creation fail by non admin"""
+    def test_b_get_first_role(self):
         warnings.simplefilter("ignore")
-        request_token = self.client().get('/api/login/',
-                                          headers={'Content-Type': 'application/json',
-                                                   'Authorization': _basic_auth_str(self.user_not_admin.get('username'),
-                                                                                    self.user_not_admin.get('password'))})
-        json_data = json.loads(request_token.data)
-        self.user_not_admin['token'] = json_data.get('token')
-        json_role = {'name': string_generator()+'role_test_name', 'comment': string_generator()+'role_test_comment'}
-        request_role_not_admin_create = self.client().post('/api/role/', headers={'Content-Type': 'application/json',
-                                                                        'x-access-token': self.user_not_admin['token']},
-                                                 data=json.dumps(json_role))
-        json_data = json.loads(request_role_not_admin_create.data)
-        self.assertTrue(json_data.get('message'))
-        self.assertEqual(json_data.get('message'), 'Cannot perform that function!')
-        self.assertEqual(request_role_not_admin_create.status_code, 200)
+        request_first_role = self.client().get('/api/role/1/', headers={'Content-Type': 'application/json',
+                                                                        'x-access-token': self.user_admin['token']})
+        json_data_first_role = json.loads(request_first_role.data)
+        self.assertTrue(json_data_first_role.get('role'))
+        json_role1_name = json_data_first_role.get('role')['name']
+        self.assertEqual(json_role1_name, 'role_test_name1')
 
-    def test_admin_get_all_roles(self):
-        """ test to get all roles """
-        # user1 = {
-        #     'user': 'role_test@email.com',
-        #     'pwd': 'role123'}
+    def test_c_get_all_roles(self):
         warnings.simplefilter("ignore")
-        request_token = self.client().get('/api/login/',
-                                          headers={'Content-Type': 'application/json',
-                                                   'Authorization': _basic_auth_str(self.user_admin.get('username'),
-                                                                                    self.user_admin.get('password'))})
-        json_data = json.loads(request_token.data)
-        self.user_admin['token'] = json_data.get('token')
-        request_admin_get_role = self.client().get('/api/role/', headers={'Content-Type': 'application/json',
-                                                                'x-access-token': self.user_admin.get('token')})
-        get_data = json.loads(request_admin_get_role.data)
-        result = get_data.get('roles')[0]
-        result = result.get('name')
-        self.assertEqual(result,'role_test_name')
+        request_get_all_roles = self.client().get('/api/role/', headers={'Content-Type': 'application/json',
+                                                                         'x-access-token': self.user_admin['token']})
+        json_data_get_all_roles = json.loads(request_get_all_roles.data)
+        json_role1_name = json_data_get_all_roles.get('roles')[0]['name']
+        self.assertEqual(json_role1_name, 'role_test_name1')
 
-    def test_not_admin_get_all_roles(self):
-        """ test to get all roles """
-        # user1 = {
-        #     'user': 'role_test@email.com',
-        #     'pwd': 'role123'}
+    def test_d_not_exist_role(self):
         warnings.simplefilter("ignore")
-        request_token = self.client().get('/api/login/',
-                                          headers={'Content-Type': 'application/json',
-                                                   'Authorization': _basic_auth_str(self.user_not_admin.get('username'),
-                                                                                    self.user_not_admin.get('password'))})
-        json_data = json.loads(request_token.data)
-        self.user_not_admin['token'] = json_data.get('token')
-        request_not_admin_get_user = self.client().get('/api/role/', headers={'Content-Type': 'application/json',
-                                                                'x-access-token': self.user_not_admin.get('token')})
-        get_data = json.loads(request_not_admin_get_user.data)
-        result = get_data.get('message')
-        self.assertEqual(result,'Cannot perform that function!')
+        request_2_role = self.client().get('/api/role/2/', headers={'Content-Type': 'application/json',
+                                                                    'x-access-token': self.user_admin['token']})
+        json_data_2nd_role = json.loads(request_2_role.data)
+        self.assertEqual(json_data_2nd_role.get('message'), 'No role found!')
+
+    def test_e_update_role(self):
+        warnings.simplefilter("ignore")
+        json_test_update_role = {'name': 'role_test_name3', 'comment': 'role_test_comment3'}
+        request_update_role = self.client().put('/api/role/1/', headers={'Content-Type': 'application/json',
+                                                                         'x-access-token': self.user_admin[
+                                                                             'token']},
+                                                data=json.dumps(json_test_update_role))
+        json_data_update_role = json.loads(request_update_role.data)
+        self.assertEqual(json_data_update_role.get('message'), 'role updated!')
 
     def tearDown(self):
         """
         Tear Down
         """
         with self.app.app_context():
-            print("ending the app testing")
-            # db.session.remove()
-            # db.drop_all()
+            # Drop all tables
+            db.session.remove()
+            db.drop_all()
+
 
 if __name__ == '__main__':
     unittest.main()
