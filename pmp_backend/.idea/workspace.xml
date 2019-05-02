@@ -2,30 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9c56f80-65c8-4633-80e3-83d3b6980f69" name="Default Changelist" comment="adding the user api paths">
-      <change afterPath="$PROJECT_DIR$/local/db/app_new.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api_module/stats_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pmp-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pmp-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/issues/issues.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/auth/auth.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/auth/auth.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/chats/chats.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/chats/chats.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/chats/chats.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/chats/chats.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/chats/chats.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/chats/chats.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/home/home.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/nav/nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/nav/nav.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/nav/nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/nav/nav.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/services/issuetracker.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/services/issuetracker.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/sprints/sprints.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/sprints/sprints.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/sprints/sprints.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/sprints/sprints.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/app/sprints/sprints.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/app/sprints/sprints.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/environments/environment.prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/environments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pmp-frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../pmp-frontend/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Pmp_backEnd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pmp_backEnd.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/chat_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/chat_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/chat_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/chat_events.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/employee_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/employee_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_module/user_controllers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_module/user_controllers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +35,7 @@
     <SUITE FILE_PATH="coverage/Pmp_backEnd$run.coverage" NAME="run Coverage Results" MODIFIED="1549988488894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pmp_backend$pytest_in_test_user_ctlr_py.coverage" NAME="pytest in test_user_ctlr.py Coverage Results" MODIFIED="1550885492701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pmp_backend$pytest_for_test_user_ctlr_UsersTest_test_user_instance.coverage" NAME="pytest for test_user_ctlr.UsersTest.test_user_instance Coverage Results" MODIFIED="1550885439669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/pmp_backend$run.coverage" NAME="run Coverage Results" MODIFIED="1554374535663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pmp_backend$run.coverage" NAME="run Coverage Results" MODIFIED="1556749346625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pmp_backend$helpers.coverage" NAME="helpers Coverage Results" MODIFIED="1550254627902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/api_module" />
     <SUITE FILE_PATH="coverage/pmp_backend$pytest_for_test_user_ctlr_UsersTest_test_user_creation.coverage" NAME="pytest for test_user_ctlr.UsersTest.test_user_creation Coverage Results" MODIFIED="1550869440427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/pmp_backend$pytest_for_test_user_ctlr_UsersTest_test_user_login_with_invalid_cred.coverage" NAME="pytest for test_user_ctlr.UsersTest.test_user_login_with_invalid_cred Coverage Results" MODIFIED="1550870988414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
@@ -167,21 +158,23 @@
     <session id="-1634022387">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.1" value="2" />
+          <entry key="project.closed" value="11" />
+          <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="11" />
           <entry key="md" value="343" />
-          <entry key="py" value="12307" />
+          <entry key="py" value="13112" />
           <entry key="txt" value="656" />
           <entry key="yaml" value="8" />
         </counts>
@@ -190,7 +183,7 @@
         <counts>
           <entry key="Markdown" value="343" />
           <entry key="PLAIN_TEXT" value="667" />
-          <entry key="Python" value="12307" />
+          <entry key="Python" value="13112" />
           <entry key="YAML" value="8" />
         </counts>
       </usages-collector>
@@ -199,7 +192,7 @@
           <entry key="html" value="1" />
           <entry key="json" value="2" />
           <entry key="md" value="5" />
-          <entry key="py" value="54" />
+          <entry key="py" value="57" />
           <entry key="txt" value="7" />
           <entry key="yaml" value="1" />
         </counts>
@@ -210,14 +203,14 @@
           <entry key="JSON" value="2" />
           <entry key="Markdown" value="5" />
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Python" value="54" />
+          <entry key="Python" value="57" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5868056">
+    <splitter split-orientation="horizontal" split-proportion="0.6082779">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -232,8 +225,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/api_module/chat_controller.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="222">
-                  <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+                <state relative-caret-position="75">
+                  <caret line="15" selection-start-line="15" selection-end-line="15" />
                   <folding>
                     <element signature="e#0#29#0" expanded="true" />
                   </folding>
@@ -244,8 +237,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+                <state relative-caret-position="180">
+                  <caret line="12" column="115" selection-start-line="12" selection-start-column="115" selection-end-line="12" selection-end-column="115" />
                 </state>
               </provider>
             </entry>
@@ -254,7 +247,7 @@
             <entry file="file://$PROJECT_DIR$/app/api_module/company_controller.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="45">
-                  <caret line="3" column="52" lean-forward="true" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+                  <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
                 </state>
               </provider>
             </entry>
@@ -262,7 +255,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/api_module/issue_controller.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="301">
+                <state relative-caret-position="225">
                   <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
@@ -274,7 +267,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/api_module/employee_controller.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
+                <state relative-caret-position="285">
                   <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
@@ -284,113 +277,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/test_user_ctlr.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-                  <folding>
-                    <element signature="e#0#15#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/api_module/team_controller.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1380">
-                  <caret line="92" column="20" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
-                  <folding>
-                    <element signature="e#0#45#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/api_module/role_controller.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1305">
-                  <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
-                  <folding>
-                    <element signature="e#0#45#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/__init__.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/api_module/chat_events.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="222">
-                  <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-                  <folding>
-                    <element signature="e#0#25#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/api_module/helpers.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-                  <folding>
-                    <element signature="e#0#29#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/api_module/sprint_controller.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
-                  <folding>
-                    <element signature="e#0#45#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/api_module/user_controllers.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-10">
-                  <caret line="137" column="29" lean-forward="true" selection-start-line="137" selection-start-column="29" selection-end-line="137" selection-end-column="29" />
-                  <folding>
-                    <element signature="e#0#15#0" expanded="true" />
-                    <marker date="1554330720267" expanded="true" signature="1519:5781" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/api_module/__init__.py">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/api_module/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="5670">
-                  <caret line="378" column="8" selection-start-line="378" selection-start-column="4" selection-end-line="378" selection-end-column="8" />
+                <state relative-caret-position="5190">
+                  <caret line="347" column="12" selection-start-line="347" selection-start-column="4" selection-end-line="347" selection-end-column="12" />
                   <folding>
                     <element signature="e#135#153#0" expanded="true" />
                     <marker date="1553265778482" expanded="true" signature="5893:6037" ph="..." />
@@ -408,6 +298,133 @@
                   </folding>
                 </state>
               </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tests/test_user_ctlr.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+                  <folding>
+                    <element signature="e#0#15#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/api_module/team_controller.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1245">
+                  <caret line="92" column="20" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
+                  <folding>
+                    <element signature="e#0#45#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/api_module/role_controller.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1170">
+                  <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
+                  <folding>
+                    <element signature="e#0#45#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/__init__.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="211">
+                  <caret line="58" selection-start-line="58" selection-end-line="58" selection-end-column="33" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/api_module/chat_events.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="390">
+                  <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
+                  <folding>
+                    <element signature="e#0#25#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/api_module/helpers.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="300">
+                  <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+                  <folding>
+                    <element signature="e#0#29#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/api_module/sprint_controller.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
+                  <folding>
+                    <element signature="e#0#45#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/api_module/user_controllers.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1860">
+                  <caret line="137" column="29" selection-start-line="137" selection-start-column="29" selection-end-line="137" selection-end-column="29" />
+                  <folding>
+                    <element signature="e#0#15#0" expanded="true" />
+                    <marker date="1554330720267" expanded="true" signature="1519:5781" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/api_module/project_controller.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="945">
+                  <caret line="73" column="60" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="60" />
+                  <folding>
+                    <element signature="e#0#45#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/api_module/stats_controller.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="765">
+                  <caret line="60" column="17" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
+                  <folding>
+                    <element signature="e#0#36#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/api_module/__init__.py">
+              <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
         </leaf>
@@ -459,8 +476,6 @@
         <option value="$PROJECT_DIR$/app/api_module/company_controller.py" />
         <option value="$PROJECT_DIR$/app/api_module/team_controller.py" />
         <option value="$PROJECT_DIR$/app/api_module/role_controller.py" />
-        <option value="$PROJECT_DIR$/app/api_module/models.py" />
-        <option value="$PROJECT_DIR$/app/api_module/models.py" />
         <option value="$PROJECT_DIR$/tests/test_user_ctlr.py" />
         <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/app.yaml" />
@@ -471,11 +486,14 @@
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/app/api_module/employee_controller.py" />
         <option value="$PROJECT_DIR$/app/api_module/user_controllers.py" />
-        <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/app/api_module/chat_controller.py" />
         <option value="$PROJECT_DIR$/app/api_module/helpers.py" />
         <option value="$PROJECT_DIR$/app/api_module/chat_events.py" />
+        <option value="$PROJECT_DIR$/app/api_module/models.py" />
+        <option value="$PROJECT_DIR$/app/api_module/models.py" />
+        <option value="$PROJECT_DIR$/app/__init__.py" />
+        <option value="$PROJECT_DIR$/app/api_module/stats_controller.py" />
         <option value="$PROJECT_DIR$/config.py" />
       </list>
     </option>
@@ -487,8 +505,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1680" />
-    <option name="height" value="1050" />
+    <option name="height" value="975" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -496,7 +515,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -504,32 +522,11 @@
               <item name="pmp_backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="pmp_backend" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="pmp_backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pmp_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pmp_backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pmp_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="api_module" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pmp_backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pmp_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pmp_backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pmp_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -541,12 +538,12 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/api_module" />
+      <recent name="$PROJECT_DIR$/local/db" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/local/db" />
-      <recent name="$PROJECT_DIR$/app/api_module" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -745,12 +742,12 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12087912" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.092796095" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7112332" visible="true" weight="0.2510204" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4908425" weight="0.3510204" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946752" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -758,8 +755,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RDE" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.5470086" weight="0.3" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.2887668" side_tool="true" visible="true" weight="0.2510204" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.54395604" weight="0.29285714" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50915754" side_tool="true" visible="true" weight="0.21632653" />
       <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Black Caiman" order="13" />
       <window_info anchor="bottom" id="Python Console" order="14" weight="0.32970297" />
@@ -842,9 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="497">
           <caret line="307" column="23" selection-start-line="307" selection-start-column="23" selection-end-line="307" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -859,9 +853,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/chat_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/company_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/issue_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/api_module/employee_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
+        <state relative-caret-position="285">
           <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
@@ -869,63 +897,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_user_ctlr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/team_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="92" column="20" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/role_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1305">
-          <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/project_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="133" column="51" selection-start-line="112" selection-end-line="133" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/sprint_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/api_module/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5670">
-          <caret line="378" column="8" selection-start-line="378" selection-start-column="4" selection-end-line="378" selection-end-column="8" />
+        <state relative-caret-position="5190">
+          <caret line="347" column="12" selection-start-line="347" selection-start-column="4" selection-end-line="347" selection-end-column="12" />
           <folding>
             <element signature="e#135#153#0" expanded="true" />
             <marker date="1553265778482" expanded="true" signature="5893:6037" ph="..." />
@@ -944,12 +919,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
+    <entry file="file://$PROJECT_DIR$/tests/test_user_ctlr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        <state relative-caret-position="135">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/team_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1245">
+          <caret line="92" column="20" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/role_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="58" selection-start-line="58" selection-end-line="58" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/chat_events.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/sprint_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/user_controllers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1860">
+          <caret line="137" column="29" selection-start-line="137" selection-start-column="29" selection-end-line="137" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1554330720267" expanded="true" signature="1519:5781" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/project_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="73" column="60" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/stats_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="60" column="17" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api_module/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -958,75 +1027,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/company_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="52" lean-forward="true" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/user_controllers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="137" column="29" lean-forward="true" selection-start-line="137" selection-start-column="29" selection-end-line="137" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1554330720267" expanded="true" signature="1519:5781" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/helpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/chat_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/issue_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/api_module/chat_events.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        <state relative-caret-position="180">
+          <caret line="12" column="115" selection-start-line="12" selection-start-column="115" selection-end-line="12" selection-end-column="115" />
         </state>
       </provider>
     </entry>
