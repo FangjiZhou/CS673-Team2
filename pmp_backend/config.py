@@ -7,9 +7,10 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # Define the database - we are working with
 # SQLite for this example
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'local', 'db', 'app.db')
+# SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'local', 'db', 'app.db')
 # SQLALCHEMY_DATABASE_URI = 'mysql://b10c57cb5bea59:92a834dc@us-cdbr-iron-east-03.cleardb.net/heroku_3440541e3141452'
 # SQLALCHEMY_DATABASE_URI = 'mysql://root:admin123@localhost/pmp_db'
+SQLALCHEMY_DATABASE_URI = 'mysql://bc4af197a608dc:8ee2c423@us-cdbr-iron-east-03.cleardb.net/heroku_2a740fc0973bc5b'
 DATABASE_CONNECT_OPTIONS = {}
 
 # Application threads. A common general assumption is

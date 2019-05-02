@@ -14,7 +14,7 @@
     <div style="margin-left: 5vh; height:200px; overflow: auto; border-bottom: 0.5px solid grey;">
       <table>
         <tr *ngFor="let item of list_messages | issuePipe:'GM'" >
-          <td (mousedown)="activateCharRoom(item.room_id, item.room_name)" style="cursor: pointer;" [class.selected_room]="room_display[item.room_id]"> 
+          <td (mousedown)="activateCharRoom(item.room_id, item.room_name, item.room_name)" style="cursor: pointer;" [class.selected_room]="room_display[item.room_id]"> 
             <i class="fa fa-comments" aria-hidden="true" style="cursor: pointer;"> {{item.room_name}} </i> 
           </td>
           <td align="right" (mousedown)="open_modal_add_user(content_modal_new_user_to_gm, item.room_id, item.room_name);" style="cursor: pointer;"> 
@@ -45,7 +45,7 @@
             <tr *ngFor="let item of list_messages | issuePipe:'DM'" style="cursor:pointer;">
               <td [class.selected_room]="room_display[item.room_id]"> 
                 <em *ngFor="let user of item.room_users">
-                  <i class="fa fa-commenting" aria-hidden="true" style="cursor:pointer;" *ngIf="user.employee_id != current_emp_id" (mousedown)="activateCharRoom(item.room_id, user.employee_name)">                     
+                  <i class="fa fa-commenting" aria-hidden="true" style="cursor:pointer;" *ngIf="user.employee_id != current_emp_id" (mousedown)="activateCharRoom(item.room_id, user.employee_name, item.room_name)">                     
                       <label style="padding-left: 5px; cursor:pointer;"> {{user.employee_name}}</label> 
                   </i> 
               </em>
@@ -57,7 +57,7 @@
   </div>
 
   <div class="col-sm-8">
-      <h6>Messaging  {{current_room_name}}</h6>
+      <h6>Messaging  >>> {{current_room_name}}</h6>
       <hr width="100%" style="margin:0;">
       <div class="mesgs" *ngFor="let room of list_messages" [style.display]="room_display[room.room_id] ? 'block' : 'none'">
           <div class="msg_history" >
@@ -69,7 +69,8 @@
               <div *ngIf="msg.employee_id==current_emp_id" id="{{msg.id}}">
                  <div class="outgoing_msg">
                     <div class="sent_msg">
-                      <p> {{msg.value}} </p>
+                      <p *ngIf="msg.type == 'text'"> {{msg.value}}</p>
+                      <img *ngIf="msg.type == 'img'" src="{{msg.value}}"/>
                       <span class="time_date">You    |    {{msg.date | amCalendar}}</span> 
                     </div>
                   </div>
@@ -80,7 +81,8 @@
                     <div class="incoming_msg_img"> <i class="fa fa-user" aria-hidden="true"></i> </div>
                     <div class="received_msg">
                       <div class="received_withd_msg">
-                        <p>{{msg.value}}</p>
+                        <p *ngIf="msg.type == 'text'">{{msg.value}}</p>
+                        <img *ngIf="msg.type == 'img'" src="{{msg.value}}"/>
                         <span class="time_date">{{msg.employee_name}}    |    {{msg.date | amCalendar}}</span></div>
                     </div>
                   </div>
@@ -95,6 +97,13 @@
           <div class="input_msg_write">
             <!-- <input type="text" class="write_msg" placeholder="Type a message" /> -->
             <textarea class="write_msg" [(ngModel)]="text_message" placeholder="Type a chat message" (keypress)="keyPress($event, room.room_id, room.room_name)" style="width: 100%; padding-right: 10px;"></textarea>
+            <button class="emoji_btn" type="button">
+              <i
+                (click)="toggled = !toggled"
+                [(emojiPickerIf)]="toggled"
+                [emojiPickerDirection]="'bottom' || 'top' || 'left' || 'right'"
+                (emojiPickerSelect)="handleSelection($event)">😄</i>
+            </button>
             <button class="msg_send_btn" type="button" (mousedown)="send_new_message(room.room_id, room.room_name)"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
           </div>
         </div>
@@ -105,12 +114,53 @@
   <div class="col-sm-2">
     users
     <hr width="100%" style="margin:0;">
-    <div *ngFor="let room of list_messages" [style.display]="room_display[room.room_id] ? 'block' : 'none'">
+    <div *ngFor="let room of list_messages" [style.display]="room_display[room.room_id] ? 'block' : 'none'" style="height: 40%; overflow: auto;">
       <br/>
       <p style="margin-bottom: 0px;" *ngFor="let user of room.room_users">
         <i class="fa fa-at" aria-hidden="true" >{{user.employee_name}} </i>
       </p>
     </div>
+    <hr/>
+    <div>
+        <fieldset>
+            <legend style="color:blue; font-size: 0.5rem">Draw your emoji</legend>
+            <canvas #canvas id="canvas" width="210%" height="200%" style="border: 1px solid black;" >
+          </canvas>
+
+            <table>
+              <tr>
+                <td>Color</td>
+                <td><div style="width:10px;height:10px;background:green;" id="green" (click)="color('green')"></div></td>
+                <td><div style="width:10px;height:10px;background:blue;" id="blue" (click)="color('blue')"></div></td>
+                <td><div style="width:10px;height:10px;background:red;" id="red" (click)="color('red')"></div></td>
+                <td><div style="width:10px;height:10px;background:yellow;" id="yellow" (click)="color('yellow')"></div></td>
+                <td><div style="width:10px;height:10px;background:orange;" id="orange" (click)="color('orange')"></div></td>
+                <td><div style="width:10px;height:10px;background:black;" id="black" (click)="color('black')"></div></td>
+              </tr>              
+            </table>
+            <table>
+                <tr>
+                  <td>Eraser</td>
+                  <td><div style="width:15px;height:15px;background:white;border:2px solid;" id="white" (click)="color('white')"></div></td>
+                  <td><input type="button" value="clear" id="clr" size="23" (click)="erase()"></td>
+                  <td>
+                      <input type="button" value="send" id="btn" size="30" (click)="sendPictureMsg();" >
+                  </td>
+                </tr>
+            </table>
+            <!-- <table>
+              <tr>
+                <td>
+                    <input type="button" value="save" id="btn" size="30" (click)="save()" >
+                </td>
+              </tr>
+            </table> -->
+
+            <img id="canvasimg"  style="display:none;">
+            
+        </fieldset>
+    </div>
+    
   </div>
 
 </div>

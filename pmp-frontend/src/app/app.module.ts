@@ -32,6 +32,10 @@ import { TeamComponent } from './team/team.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { SequentialPipe } from './pipes/sequential.pipe';
 import { SprintPipe } from './pipes/sprint.pipe';
+import  {  NgxEmojiPickerModule  }  from  'ngx-emoji-picker';
+import { StatsComponent } from './stats/stats.component';
+// import { ChartModule } from 'angular-highcharts';
+
 
 
 
@@ -55,7 +59,8 @@ import { SprintPipe } from './pipes/sprint.pipe';
     ListfilterPipe,
     TeamComponent,
     SequentialPipe,
-    SprintPipe
+    SprintPipe,
+    StatsComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +81,8 @@ import { SprintPipe } from './pipes/sprint.pipe';
     }),
     ScrollToModule.forRoot(),
     MomentModule,
-    NgMultiSelectDropDownModule.forRoot()
+    NgMultiSelectDropDownModule.forRoot(),
+    NgxEmojiPickerModule.forRoot()
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

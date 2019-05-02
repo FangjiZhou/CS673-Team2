@@ -44,6 +44,7 @@ from app.api_module.sprint_controller import sprint_mod as sprint_mod
 from app.api_module.task_controller import task_mod as task_mod
 from app.api_module.issue_controller import issue_mod as issue_mod
 from app.api_module.chat_controller import chat_mod as chat_mod
+from app.api_module.stats_controller import stats_mod as stats_mod
 
 # Register blueprint(s)
 app.register_blueprint(api_mod)
@@ -55,6 +56,7 @@ app.register_blueprint(project_mod)
 app.register_blueprint(sprint_mod)
 app.register_blueprint(task_mod)
 app.register_blueprint(issue_mod)
+app.register_blueprint(stats_mod)
 app.register_blueprint(chat_mod)
 # app.register_blueprint(xyz_module)
 

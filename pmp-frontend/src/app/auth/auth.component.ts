@@ -47,7 +47,7 @@ export class AuthComponent implements OnInit {
       skills: ['', Validators.required]
     });
     // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/issues';
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home';
   }
 
   // convenience getter for easy access to form fields

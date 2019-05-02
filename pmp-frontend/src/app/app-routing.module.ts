@@ -13,9 +13,11 @@ import { RolesComponent } from './roles/roles.component';
 import { AccountComponent } from './account/account.component';
 import { TeamComponent } from './team/team.component';
 import { AuthGuard } from '../app/guard/auth.guard';
+import { StatsComponent } from './stats/stats.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent, canActivate: [AuthGuard]},
+  {path:'home', component: HomeComponent, canActivate: [AuthGuard]},
   {path:'issues', component: IssuesComponent, canActivate: [AuthGuard]},
   {path:'sprints', component: SprintsComponent, canActivate: [AuthGuard]},
   {path:'messages', component: ChatsComponent, canActivate: [AuthGuard]},
@@ -25,6 +27,7 @@ const routes: Routes = [
   {path:'employee', component: EmployeeComponent, canActivate: [AuthGuard]},
   {path:'role', component: RolesComponent, canActivate: [AuthGuard]},
   {path:'account', component: AccountComponent, canActivate: [AuthGuard]},
+  {path:'stats', component: StatsComponent, canActivate: [AuthGuard]},
   {path:'team', component: TeamComponent, canActivate: [AuthGuard]},
   {path:'login', component: AuthComponent},
   // otherwise redirect to login
